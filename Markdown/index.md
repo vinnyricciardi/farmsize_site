@@ -44,8 +44,8 @@ HTML('''
     .yourDiv {position: fixed;top: 100px; right: 0px; 
               background: white;
               height: 100%;
-              width: 300px; 
-              padding: 20px; 
+              width: 175px; 
+              padding: 10px; 
               z-index: 10000}
 </style>
 <script>
@@ -79,8 +79,8 @@ function showthis(url) {
     .yourDiv {position: fixed;top: 100px; right: 0px; 
               background: white;
               height: 100%;
-              width: 300px; 
-              padding: 20px; 
+              width: 175px; 
+              padding: 10px; 
               z-index: 10000}
 </style>
 <script>
@@ -107,9 +107,11 @@ function showthis(url) {
 
 
 
-# <center>Project Overview</center>
-## <center>What portion of the global food supply is produced by smallholders?</center>
-### <center>Vinny Ricciardi, Larissa Jarvis, Navin Ramankutty</center>
+<center><h1> Project Overview</h1>
+<h2>What portion of the global food supply is produced by smallholders?</h2>
+<h3>Vinny Ricciardi, Larissa Jarvis, Brenton Chookolingo, and Navin Ramankutty<br><br>
+Institute for Resources, Environment, and Sustainability<br><br>
+University of British Columbia</h3></center>
 
 <a name="RQs"></a>
 <h2>RQ's</h2><br>
@@ -140,7 +142,7 @@ We compiled a semi-global database that includes crop production contributions b
 <a name="Data"></a>
 <h2>Data</h2><br>
 
-All available national census statistics that report crop production and/or harvest area by farm size were compiled into a single dataset ([see data coverage python notebook for details](https://vinnyricciardi6.wixsite.com/project-portfolio/farm-size-1)). Since many sub-national level datasets do not report production by farm size, our main dataset captures harvested area by farm size per crop. A second dataset was compiled and used as a yield look up table per crop per farm size class. Due to the IR, this yield look up table will be necessary to calculate a more accurate estimate of production contributions by farm size stratum than previous attempts (5,8).
+All available national census statistics that report crop production and/or harvest area by farm size were compiled into a single dataset ([see data coverage python notebook for details](https://vinnyricciardi.github.io/farmsize_site/Html/Data_Coverage)). Since many sub-national level datasets do not report production by farm size, our main dataset captures harvested area by farm size per crop. A second dataset was compiled and used as a yield look up table per crop per farm size class. Due to the IR, this yield look up table will be necessary to calculate a more accurate estimate of production contributions by farm size stratum than previous attempts (5,8).
 
 <a name="Analysis"></a>
 <h2>Analysis</h2><br>
