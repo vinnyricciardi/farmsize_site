@@ -1,0 +1,957 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Data\_Coverage.nb}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
+         \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{l+s}{\PYZlt{}script\PYZgt{}}
+         \PY{l+s}{code\PYZus{}show=true; }
+         \PY{l+s}{function code\PYZus{}toggle() \PYZob{}}
+         \PY{l+s}{ if (code\PYZus{}show)\PYZob{}}
+         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).hide();}
+         \PY{l+s}{ \PYZcb{} else \PYZob{}}
+         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).show();}
+         \PY{l+s}{ \PYZcb{}}
+         \PY{l+s}{ code\PYZus{}show = !code\PYZus{}show}
+         \PY{l+s}{\PYZcb{} }
+         \PY{l+s}{\PYZdl{}( document ).ready(code\PYZus{}toggle);}
+         \PY{l+s}{\PYZlt{}/script\PYZgt{}}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} <IPython.core.display.HTML object>
+\end{Verbatim}
+        
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
+         \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
+         \PY{l+s}{\PYZlt{}style\PYZgt{}}
+         \PY{l+s}{    .yourDiv \PYZob{}position: fixed;top: 100px; right: 0px; }
+         \PY{l+s}{              background: white;}
+         \PY{l+s}{              height: 100}\PY{l+s}{\PYZpc{}}\PY{l+s}{;}
+         \PY{l+s}{              width: 300px; }
+         \PY{l+s}{              padding: 20px; }
+         \PY{l+s}{              z\PYZhy{}index: 10000\PYZcb{}}
+         \PY{l+s}{\PYZlt{}/style\PYZgt{}}
+         \PY{l+s}{\PYZlt{}script\PYZgt{}}
+         \PY{l+s}{function showthis(url) \PYZob{}}
+         \PY{l+s}{	window.open(url, }\PY{l+s}{\PYZdq{}}\PY{l+s}{pres}\PY{l+s}{\PYZdq{}}\PY{l+s}{, }
+         \PY{l+s}{                }\PY{l+s}{\PYZdq{}}\PY{l+s}{toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500}\PY{l+s}{\PYZdq{}}\PY{l+s}{);}
+         \PY{l+s}{	return(false);}
+         \PY{l+s}{\PYZcb{}}
+         \PY{l+s}{\PYZlt{}/script\PYZgt{}}
+         
+         \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}SpatialCoverage\PYZgt{}2. Spatial Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}TemporalCoverage\PYZgt{}3. Temporal Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}ClassOverlaps\PYZgt{}4. Farm size class overlaps\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}YieldLookUpTable\PYZgt{}5. Yield look\PYZhy{}up table\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
+         
+         \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}LeftOff\PYZgt{}Left Off Here\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{\PYZlt{}/div\PYZgt{}}
+         \PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}20}]:} <IPython.core.display.HTML object>
+\end{Verbatim}
+        
+    \#
+
+Data Coverage Overview
+
+\#\#
+
+What portion of the global food supply is produced by smallholders?
+
+\#\#\#
+
+Vinny Ricciardi, Larissa Jarvis, Navin Ramankutty
+
+    Data
+
+ 1. Harvested area per farm size class 2. Yield per crop per farm size
+class
+
+    To Dos:
+
+\begin{itemize}
+\tightlist
+\item
+  Update this document with new database codes. This is partially
+  updated, but after the spartial coverage section, it relies on the old
+  data.
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{c}{\PYZsh{} Import dependencies}
+         \PY{k+kn}{import} \PY{n+nn}{warnings}
+         \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+         \PY{k+kn}{import} \PY{n+nn}{geopandas} \PY{k+kn}{as} \PY{n+nn}{gpd}
+         \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
+         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
+         \PY{k+kn}{from} \PY{n+nn}{matplotlib.path} \PY{k+kn}{import} \PY{n}{Path}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib.patches} \PY{k+kn}{as} \PY{n+nn}{patches}
+         \PY{k+kn}{from} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{import} \PY{n}{cm} 
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib} \PY{k+kn}{as} \PY{n+nn}{mpl}
+         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{k+kn}{import} \PY{n+nn}{geopy}
+         \PY{k+kn}{import} \PY{n+nn}{mpld3}
+         \PY{k+kn}{import} \PY{n+nn}{plotly.plotly} \PY{k+kn}{as} \PY{n+nn}{py}
+         \PY{k+kn}{import} \PY{n+nn}{cmocean}
+         
+         \PY{n}{pd}\PY{o}{.}\PY{n}{set\PYZus{}option}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{display.max\PYZus{}columns}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
+         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c}{\PYZsh{} Set all plotting params:}
+        \PY{n}{title\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{20}
+        \PY{n}{x\PYZus{}lab\PYZus{}tick\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
+        \PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
+        \PY{n}{x\PYZus{}lab\PYZus{}label\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
+        \PY{n}{y\PYZus{}lab\PYZus{}label\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
+        \PY{n}{lengend\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{16}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{c}{\PYZsh{} Import data}
+        \PY{c}{\PYZsh{} df = pd.read\PYZus{}csv(\PYZsq{}/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/\PYZsq{}}
+        \PY{c}{\PYZsh{}                  \PYZsq{}CropbyFarmsize\PYZus{}2\PYZus{}20170711.csv\PYZsq{},}
+        \PY{c}{\PYZsh{}                  low\PYZus{}memory=False)}
+        
+        \PY{c}{\PYZsh{} df = pd.read\PYZus{}csv(\PYZsq{}/Users/Vinny\PYZus{}Ricciardi/Downloads/farmsize\PYZus{}df.csv\PYZsq{},                 }
+        \PY{c}{\PYZsh{}                  low\PYZus{}memory=False)}
+        
+        \PY{n}{PATH} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/FarmSize\PYZus{}data\PYZus{}fullyProcessed.csv}\PY{l+s}{\PYZsq{}}
+        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{PATH}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}76}]:} \PY{c}{\PYZsh{} df = df.query(\PYZdq{}theme == \PYZsq{}Landuse\PYZsq{}\PYZdq{})}
+\end{Verbatim}
+
+    Spatial Coverage
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{United States of America}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{United States}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Bosnia and Herzegovina}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Bosnia and Herz.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{United Republic of Tanzania}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Tanzania}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Russian Federation}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Russia}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Republic}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Rep.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Republic}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Rep.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Republic}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Rep.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\end{Verbatim}
+
+    To do: - What percentage of global production does our sample represent?
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{pivoted} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{df}\PY{p}{,} 
+                                  \PY{n}{index}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                                  \PY{n}{values}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                                  \PY{n}{aggfunc}\PY{o}{=}\PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n}{pivoted} \PY{o}{=} \PY{n}{pivoted}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+         \PY{n}{pivoted} \PY{o}{=} \PY{n}{pivoted}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{ascending}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+         \PY{n}{pivoted}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Data\PYZus{}Available}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pivoted}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}
+         
+         \PY{n}{world} \PY{o}{=} \PY{n}{gpd}\PY{o}{.}\PY{n}{read\PYZus{}file}\PY{p}{(}\PY{n}{gpd}\PY{o}{.}\PY{n}{datasets}\PY{o}{.}\PY{n}{get\PYZus{}path}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{naturalearth\PYZus{}lowres}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{world} \PY{o}{=} \PY{n}{world}\PY{o}{.}\PY{n}{to\PYZus{}crs}\PY{p}{(}\PY{n}{epsg}\PY{o}{=}\PY{l+m+mi}{3786}\PY{p}{)}
+         
+         \PY{n}{world} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{merge}\PY{p}{(}\PY{n}{world}\PY{p}{,} \PY{n}{pivoted}\PY{p}{,} 
+                          \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{outer}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                          \PY{n}{left\PYZus{}on}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                          \PY{n}{right\PYZus{}on}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Orig\PYZus{}crop}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{coverage}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{,} 
+                                      \PY{l+s}{\PYZsq{}}\PY{l+s}{Found and downloaded}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                                      \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} 
+                                               \PY{l+s}{\PYZsq{}}\PY{l+s}{Found not downloaded}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                                               \PY{l+s}{\PYZsq{}}\PY{l+s}{No data found}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{x} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{pivoted}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{k}{try}\PY{p}{:}
+             \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}aspect}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{equal}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{world}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{column}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{coverage}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Accent}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.7}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{0.1}\PY{p}{)}  \PY{c}{\PYZsh{}cmocean.cm.deep}
+         \PY{k}{except}\PY{p}{:}
+             \PY{k}{pass}
+         
+         \PY{n}{ndf}\PY{p}{,} \PY{n}{fad} \PY{o}{=} \PY{n}{world}\PY{o}{.}\PY{n}{coverage}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}
+         \PY{n}{cmap\PYZus{}} \PY{o}{=} \PY{n}{cmocean}\PY{o}{.}\PY{n}{tools}\PY{o}{.}\PY{n}{get\PYZus{}dict}\PY{p}{(}\PY{n}{cmocean}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{deep}\PY{p}{,} \PY{n}{N}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{)}
+         
+         \PY{n}{p1} \PY{o}{=} \PY{n}{mpl}\PY{o}{.}\PY{n}{lines}\PY{o}{.}\PY{n}{Line2D}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}\PY{p}{,} 
+                                      \PY{n}{color}\PY{o}{=}\PY{p}{[}\PY{n}{x} \PY{o}{/} \PY{l+m+mf}{255.} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{128}\PY{p}{,} \PY{l+m+mi}{128}\PY{p}{,} \PY{l+m+mi}{130}\PY{p}{]}\PY{p}{]}\PY{p}{,}
+                                      \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} 
+                                      \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Data not found (\PYZob{}\PYZcb{})}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{ndf}\PY{p}{)}\PY{p}{)}
+         \PY{n}{p2} \PY{o}{=} \PY{n}{mpl}\PY{o}{.}\PY{n}{lines}\PY{o}{.}\PY{n}{Line2D}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}\PY{p}{,} 
+                                      \PY{n}{color}\PY{o}{=}\PY{p}{[}\PY{n}{x} \PY{o}{/} \PY{l+m+mf}{255.} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{148}\PY{p}{,} \PY{l+m+mi}{207}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{]}\PY{p}{]}\PY{p}{,} 
+                                      \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} 
+                                      \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Found and in database (\PYZob{}\PYZcb{})}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{fad}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{handles} \PY{o}{=} \PY{p}{[}\PY{n}{p1}\PY{p}{,} \PY{n}{p2}\PY{p}{]}
+         \PY{n}{labels} \PY{o}{=} \PY{p}{[}\PY{n}{h}\PY{o}{.}\PY{n}{get\PYZus{}label}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{h} \PY{o+ow}{in} \PY{n}{handles}\PY{p}{]} 
+         
+         \PY{n}{legend} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{handles}\PY{o}{=}\PY{n}{handles}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{n}{labels}\PY{p}{,} \PY{n}{frameon}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} 
+                            \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{,} \PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{lower left}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}frame}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}facecolor}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsh{}ffffff}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Data_Coverage.nb_files/Data_Coverage.nb_13_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Temporal Coverage
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{grouped} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+         \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}
+         \PY{n}{grouped} \PY{o}{=} \PY{n}{grouped}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
+         \PY{n}{sns}\PY{o}{.}\PY{n}{countplot}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{grouped}\PY{o}{.}\PY{n}{year}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsh{}FF5733}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ Median year per country collected }\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{title\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{Year}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{Count of Countries}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{)}
+         \PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{xtick.labelsize}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{x\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}
+         \PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{ytick.labelsize}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Data_Coverage.nb_files/Data_Coverage.nb_15_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Farm size class overlaps
+
+First, I counted the number of records per farm size stratum, then
+plotted each farm size stratum by the amount of records per stratum.
+
+Here is the resulted graph of records per farm size stratum. The x-axis
+is the size of the farm size stratum, where each rectangle's horizontal
+plane represents the range the farm size stratum covers. The y-axis is
+the relative amount of records per farm size stratum; to make the
+overlaps easier to see, each subsequent rectangle starts a little higher
+than the previous (hence, the y-axis is only relative).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{query}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min != [}\PY{l+s}{\PYZsq{}}\PY{l+s}{Total}\PY{l+s}{\PYZsq{}}\PY{l+s}{, }\PY{l+s}{\PYZsq{}}\PY{l+s}{defined}\PY{l+s}{\PYZsq{}}\PY{l+s}{, }\PY{l+s}{\PYZsq{}}\PY{l+s}{landless}\PY{l+s}{\PYZsq{}}\PY{l+s}{, }\PY{l+s}{\PYZsq{}}\PY{l+s}{undefined}\PY{l+s}{\PYZsq{}}\PY{l+s}{] \PYZam{} }\PY{l+s}{\PYZdq{}}
+                       \PY{l+s}{\PYZdq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max != }\PY{l+s}{\PYZsq{}}\PY{l+s}{MORE}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{str}\PY{p}{)}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{u\PYZsq{}}\PY{l+s}{+}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} df[\PYZsq{}fs\PYZus{}class\PYZus{}min\PYZsq{}] = (df[\PYZsq{}fs\PYZus{}class\PYZus{}min\PYZsq{}] * 0.404686).where(df[\PYZsq{}fs\PYZus{}class\PYZus{}unit\PYZsq{}] == \PYZsq{}acre\PYZsq{}) \PYZsh{} not needed in the future}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+         \PY{c}{\PYZsh{} df[\PYZsq{}fs\PYZus{}class\PYZus{}max\PYZsq{}] = (df[\PYZsq{}fs\PYZus{}class\PYZus{}max\PYZsq{}] * 0.404686).where(df[\PYZsq{}fs\PYZus{}class\PYZus{}unit\PYZsq{}] == \PYZsq{}acre\PYZsq{}) \PYZsh{} not needed in the future}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}Range}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{str}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{map}\PY{p}{(}\PY{n+nb}{str}\PY{p}{)} \PY{o}{+} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZus{}}\PY{l+s}{\PYZsq{}} \PY{o}{+} \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{str}\PY{p}{)}
+         
+         \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}Range}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+         
+         \PY{n}{grouped} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}Range}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}
+         \PY{n}{grouped} \PY{o}{=} \PY{n}{grouped}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+         \PY{n}{grouped1} \PY{o}{=} \PY{n}{grouped}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}Range}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+         \PY{n}{grouped2} \PY{o}{=} \PY{n}{grouped1}\PY{o}{.}\PY{n}{fs\PYZus{}Range}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZus{}}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{expand}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+         \PY{n}{grouped} \PY{o}{=} \PY{n}{grouped1}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{grouped2}\PY{p}{)}
+         \PY{n}{grouped}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}Range}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Count}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Low}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Low}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Low}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+         \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+         \PY{n}{grouped} \PY{o}{=} \PY{n}{grouped}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Low}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+         \PY{c}{\PYZsh{} grouped[\PYZsq{}Count\PYZus{}sqrt\PYZsq{}] = np.sqrt(grouped[\PYZsq{}Count\PYZsq{}])}
+         \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Count\PYZus{}sqrt}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Count}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{999}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+         \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{o}{\PYZhy{}}\PY{l+m+mi}{999}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{k}{def} \PY{n+nf}{plt\PYZus{}farmSize\PYZus{}A}\PY{p}{(}\PY{n}{level}\PY{o}{=}\PY{n+nb+bp}{None}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}\PY{p}{:}
+             
+             \PY{n}{color} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Set2}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{c}{\PYZsh{} color2 = cm.rainbow(np.linspace(0,1,len(grouped)))}
+             
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{grouped}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                 
+                 \PY{k}{try}\PY{p}{:}
+                     \PY{n}{verts} \PY{o}{=} \PY{p}{[}
+                         \PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Low}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{c}{\PYZsh{} left, bottom}
+                         \PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Low}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Count\PYZus{}sqrt}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{c}{\PYZsh{} left, top}
+                         \PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Count\PYZus{}sqrt}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{c}{\PYZsh{} right, top}
+                         \PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{c}{\PYZsh{} right, bottom}
+                         \PY{p}{(}\PY{l+m+mf}{0.}\PY{p}{,} \PY{l+m+mf}{0.}\PY{p}{)}\PY{p}{,} \PY{c}{\PYZsh{} ignored}
+                         \PY{p}{]}
+         
+                     \PY{n}{codes} \PY{o}{=} \PY{p}{[}\PY{n}{Path}\PY{o}{.}\PY{n}{MOVETO}\PY{p}{,}
+                              \PY{n}{Path}\PY{o}{.}\PY{n}{LINETO}\PY{p}{,}
+                              \PY{n}{Path}\PY{o}{.}\PY{n}{LINETO}\PY{p}{,}
+                              \PY{n}{Path}\PY{o}{.}\PY{n}{LINETO}\PY{p}{,}
+                              \PY{n}{Path}\PY{o}{.}\PY{n}{CLOSEPOLY}\PY{p}{,}
+                              \PY{p}{]}
+         
+                     \PY{n}{path} \PY{o}{=} \PY{n}{Path}\PY{p}{(}\PY{n}{verts}\PY{p}{,} \PY{n}{codes}\PY{p}{)}
+                     \PY{n}{patch} \PY{o}{=} \PY{n}{patches}\PY{o}{.}\PY{n}{PathPatch}\PY{p}{(}\PY{n}{path}\PY{p}{,} \PY{n}{facecolor}\PY{o}{=}\PY{n}{color}\PY{p}{(}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{)}
+                     \PY{n}{ax}\PY{o}{.}\PY{n}{add\PYZus{}patch}\PY{p}{(}\PY{n}{patch}\PY{p}{)}    
+         
+                 \PY{k}{except}\PY{p}{:}
+                     \PY{k}{pass}
+                 
+             \PY{k}{if} \PY{n}{level}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{level}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{level}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                 
+                 \PY{n}{major\PYZus{}ticks} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{level}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}                                              
+                 \PY{n}{minor\PYZus{}ticks} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{level}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}                                               
+                 
+             \PY{k}{else}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Count\PYZus{}sqrt}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{10}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+                 
+                 \PY{n}{major\PYZus{}ticks} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n+nb}{round}\PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{10}\PY{p}{)}                                             
+                 \PY{n}{minor\PYZus{}ticks} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n+nb}{round}\PY{p}{(}\PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{High}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{10}\PY{p}{)}                                               
+             
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticks}\PY{p}{(}\PY{n}{major\PYZus{}ticks}\PY{p}{)}                                                       
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticks}\PY{p}{(}\PY{n}{minor\PYZus{}ticks}\PY{p}{,} \PY{n}{minor}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ Farm Size Stratum by Frequency of Stratum Used }\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{title\PYZus{}sz}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ Size (ha) }\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{x\PYZus{}lab\PYZus{}label\PYZus{}sz}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ Number of records }\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{x\PYZus{}lab\PYZus{}label\PYZus{}sz}\PY{p}{)}
+             \PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{xtick.labelsize}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{x\PYZus{}lab\PYZus{}tick\PYZus{}sz}
+             \PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{ytick.labelsize}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz}
+         
+             \PY{k}{return} \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+         \PY{n}{plt\PYZus{}farmSize\PYZus{}A}\PY{p}{(}\PY{n}{level}\PY{o}{=}\PY{n+nb+bp}{None}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}
+         \PY{c}{\PYZsh{} ax.set\PYZus{}xlim([0, 9])}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Data_Coverage.nb_files/Data_Coverage.nb_19_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    From the above graph, the larger farm size stratum have less overlap,
+while the smaller farm size stratum contain a lot of overlap. Here is a
+zoomed in plot of the smaller farm size stratum.
+
+\emph{Note: if the acres are all covnerted to hectares, then there is no
+overlap, but if not converted there is a large amount of overlap - at
+this point, they are converted to ha , but I am not certain the data
+needs to be converted or is already in ha form.}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+         \PY{n}{plt\PYZus{}farmSize\PYZus{}A}\PY{p}{(}\PY{n}{level}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{90}\PY{p}{]}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Data_Coverage.nb_files/Data_Coverage.nb_21_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Left Off
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{c}{\PYZsh{} dd = df}
+         \PY{c}{\PYZsh{} grouped.fs\PYZus{}Range.unique()}
+         
+         \PY{c}{\PYZsh{} fig = plt.figure(figsize=(20, 10));}
+         \PY{c}{\PYZsh{} ax = fig.add\PYZus{}subplot(111);}
+         
+         \PY{c}{\PYZsh{} sns.barplot(grouped[\PYZsq{}Count\PYZsq{}], grouped[\PYZsq{}fs\PYZus{}Range\PYZsq{}], }
+         \PY{c}{\PYZsh{}             linewidth=2.5, facecolor=(1, 1, 1, 0), }
+         \PY{c}{\PYZsh{}             errcolor=\PYZsq{}0.2\PYZsq{}, edgecolor=\PYZsq{}0.2\PYZsq{},}
+         \PY{c}{\PYZsh{}             ax=ax);}
+         \PY{c}{\PYZsh{} ax.set\PYZus{}xlabel(\PYZsq{}\PYZsq{});}
+         \PY{c}{\PYZsh{} ax.set\PYZus{}ylabel(\PYZsq{}\PYZsq{});}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}33}]:}         Unnamed: 0                     Crop  Item\_Code        NAME\_0  \textbackslash{}
+         277068      277068                    Maize       56.0  South Africa   
+         517122      517122           Taro (cocoyam)      136.0  South Africa   
+         64575        64575               Beans, dry      176.0  South Africa   
+         356066      356066  Onions, shallots, green      402.0  South Africa   
+         356062      356062  Onions, shallots, green      402.0  South Africa   
+         
+                        NAME\_1 NAME\_2 NAME\_3  es1   shpID data\_unit  fs\_class\_min  \textbackslash{}
+         277068     North West      1      1  ZAF  ZAF006        kg           0.0   
+         517122  KwaZulu-Natal      1      1  ZAF  ZAF003        kg           0.0   
+         64575         Limpopo      1      1  ZAF  ZAF004        kg           0.0   
+         356066  KwaZulu-Natal      1      1  ZAF  ZAF003        kg           0.0   
+         356062     Free State      1      1  ZAF  ZAF008        kg           0.0   
+         
+                 fs\_class\_max cen\_sur  microdata    year  Crop\_area  Cultivated\_area  \textbackslash{}
+         277068           0.5     sur          1  2013.0        NaN              NaN   
+         517122           0.5     sur          1  2013.0        NaN              NaN   
+         64575            0.5     sur          1  2013.0        NaN              NaN   
+         356066           0.5     sur          1  2013.0        NaN              NaN   
+         356062           0.5     sur          1  2013.0        NaN              NaN   
+         
+                 Harvested\_area  Planted\_area     Production  Production\_fix  \textbackslash{}
+         277068             NaN           NaN    3506.214143     3506.214143   
+         517122             NaN           NaN    2752.762018     2752.762018   
+         64575              NaN           NaN  489505.717731   489505.717731   
+         356066             NaN           NaN     608.991577      608.991577   
+         356062             NaN           NaN   23531.608014    23531.608014   
+         
+                 Production\_fix\_dummy  Production\_constant  perc\_Feed  perc\_Food  \textbackslash{}
+         277068                     0                  NaN   0.353458   0.577147   
+         517122                     0                  NaN   0.945150   0.088123   
+         64575                      0                  NaN   0.544437   0.880528   
+         356066                     0                  NaN   0.029214   0.872882   
+         356062                     0                  NaN   0.029214   0.872882   
+         
+                 perc\_Seed  perc\_Waste  perc\_Processing  perc\_Other  production\_Feed  \textbackslash{}
+         277068   0.011652    0.043327     3.134402e-03    0.013312      1239.299599   
+         517122   0.088911    0.032152     6.978855e-01    0.923138      2601.772425   
+         64575    0.095791    0.023681     8.528724e-01    0.742447    266505.189514   
+         356066   0.012694    0.097903     8.622064e-07    0.058187        17.791161   
+         356062   0.012694    0.097903     8.622064e-07    0.058187       687.455531   
+         
+                 production\_Feed\_k  production\_Food  production\_Food\_k  \textbackslash{}
+         277068                NaN      2023.601409                NaN   
+         517122                NaN       242.580561                NaN   
+         64575                 NaN    431023.518971                NaN   
+         356066                NaN       531.578067                NaN   
+         356062                NaN     20540.327921                NaN   
+         
+                 production\_Other  production\_Other\_k  production\_Seed  \textbackslash{}
+         277068         46.673506                 NaN        40.855561   
+         517122       2541.178647                 NaN       244.750116   
+         64575      363432.150132                 NaN     46890.115329   
+         356066         35.435591                 NaN         7.730775   
+         356062       1369.241324                 NaN       298.719354   
+         
+                 production\_Seed\_k  production\_Waste  production\_Waste\_k  \textbackslash{}
+         277068                NaN        151.912037                 NaN   
+         517122                NaN         88.505907                 NaN   
+         64575                 NaN      11592.083431                 NaN   
+         356066                NaN         59.622349                 NaN   
+         356062                NaN       2303.824563                 NaN   
+         
+                 production\_Processing  production\_Processing\_k        kcal       fat  \textbackslash{}
+         277068              10.989885                      NaN  963.666667  8.643333   
+         517122            1921.112714                      NaN    6.785714  0.032621   
+         64575           417485.893937                      NaN    8.666667  0.036667   
+         356066               0.000525                      NaN   27.333333  0.263333   
+         356062               0.020289                      NaN   27.333333  0.263333   
+         
+                   protein  production\_Feed\_kcal  production\_Feed\_k\_kcal  \textbackslash{}
+         277068  24.616667          1.194272e+06                     NaN   
+         517122   0.398929          1.765488e+04                     NaN   
+         64575    0.586667          2.309712e+06                     NaN   
+         356066   1.220000          4.862917e+02                     NaN   
+         356062   1.220000          1.879045e+04                     NaN   
+         
+                 production\_Food\_kcal  production\_Food\_k\_kcal  production\_Other\_kcal  \textbackslash{}
+         277068          1.950077e+06                     NaN           4.497770e+04   
+         517122          1.646082e+03                     NaN           1.724371e+04   
+         64575           3.735537e+06                     NaN           3.149745e+06   
+         356066          1.452980e+04                     NaN           9.685728e+02   
+         356062          5.614356e+05                     NaN           3.742593e+04   
+         
+                 production\_Other\_k\_kcal  production\_Seed\_kcal  production\_Seed\_k\_kcal  \textbackslash{}
+         277068                      NaN          39371.142355                     NaN   
+         517122                      NaN           1660.804360                     NaN   
+         64575                       NaN         406380.999517                     NaN   
+         356066                      NaN            211.307854                     NaN   
+         356062                      NaN           8164.995665                     NaN   
+         
+                 production\_Waste\_kcal  production\_Waste\_k\_kcal  \textbackslash{}
+         277068          146392.566499                      NaN   
+         517122             600.575799                      NaN   
+         64575           100464.723067                      NaN   
+         356066            1629.677549                      NaN   
+         356062           62971.204710                      NaN   
+         
+                 production\_Processing\_kcal  production\_Processing\_k\_kcal  \textbackslash{}
+         277068                1.059059e+04                           NaN   
+         517122                1.303612e+04                           NaN   
+         64575                 3.618211e+06                           NaN   
+         356066                1.435209e-02                           NaN   
+         356062                5.545688e-01                           NaN   
+         
+                 production\_Feed\_fat  production\_Feed\_k\_fat  production\_Food\_fat  \textbackslash{}
+         277068         10711.679531                    NaN         17490.661513   
+         517122            84.872067                    NaN             7.913188   
+         64575           9771.856949                    NaN         15804.195696   
+         356066             4.685006                    NaN           139.982224   
+         356062           181.029956                    NaN          5408.953019   
+         
+                 production\_Food\_k\_fat  production\_Other\_fat  production\_Other\_k\_fat  \textbackslash{}
+         277068                    NaN            403.414668                     NaN   
+         517122                    NaN             82.895446                     NaN   
+         64575                     NaN          13325.845505                     NaN   
+         356066                    NaN              9.331372                     NaN   
+         356062                    NaN            360.566882                     NaN   
+         
+                 production\_Seed\_fat  production\_Seed\_k\_fat  production\_Waste\_fat  \textbackslash{}
+         277068           353.128233                    NaN           1313.026375   
+         517122             7.983961                    NaN              2.887139   
+         64575           1719.304229                    NaN            425.043059   
+         356066             2.035771                    NaN             15.700552   
+         356062            78.662763                    NaN            606.673801   
+         
+                 production\_Waste\_k\_fat  production\_Processing\_fat  \textbackslash{}
+         277068                     NaN                  94.989235   
+         517122                     NaN                  62.668359   
+         64575                      NaN               15307.816111   
+         356066                     NaN                   0.000138   
+         356062                     NaN                   0.005343   
+         
+                 production\_Processing\_k\_fat  production\_Feed\_protein  \textbackslash{}
+         277068                          NaN             30507.425119   
+         517122                          NaN              1037.921357   
+         64575                           NaN            156349.711182   
+         356066                          NaN                21.705216   
+         356062                          NaN               838.695748   
+         
+                 production\_Feed\_k\_protein  production\_Food\_protein  \textbackslash{}
+         277068                        NaN             49814.321356   
+         517122                        NaN                96.772317   
+         64575                         NaN            252867.131130   
+         356066                        NaN               648.525241   
+         356062                        NaN             25059.200063   
+         
+                 production\_Food\_k\_protein  production\_Other\_protein  \textbackslash{}
+         277068                        NaN               1148.946133   
+         517122                        NaN               1013.748767   
+         64575                         NaN             213213.528077   
+         356066                        NaN                 43.231421   
+         356062                        NaN               1670.474416   
+         
+                 production\_Other\_k\_protein  production\_Seed\_protein  \textbackslash{}
+         277068                         NaN              1005.727728   
+         517122                         NaN                97.637814   
+         64575                          NaN             27508.867660   
+         356066                         NaN                 9.431546   
+         356062                         NaN               364.437611   
+         
+                 production\_Seed\_k\_protein  production\_Waste\_protein  \textbackslash{}
+         277068                        NaN               3739.567982   
+         517122                        NaN                 35.307535   
+         64575                         NaN               6800.688946   
+         356066                        NaN                 72.739266   
+         356062                        NaN               2810.665966   
+         
+                 production\_Waste\_k\_protein  production\_Processing\_protein  \textbackslash{}
+         277068                         NaN                     270.534324   
+         517122                         NaN                     766.386751   
+         64575                          NaN                  244925.057776   
+         356066                         NaN                       0.000641   
+         356062                         NaN                       0.024753   
+         
+                 production\_Processing\_k\_protein fs\_Range  
+         277068                              NaN  0.0\_0.5  
+         517122                              NaN  0.0\_0.5  
+         64575                               NaN  0.0\_0.5  
+         356066                              NaN  0.0\_0.5  
+         356062                              NaN  0.0\_0.5  
+\end{Verbatim}
+        
+    To Do: - We will need to see what these overlaps look like once the
+dataset compilation is complete, then determine the farm size classes we
+want to use. - Also plot per farm size range on the y-axis, farm size on
+the x-axis??
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}45}]:} \PY{n}{pivot} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{values}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Production\PYZus{}fix}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{aggfunc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{count}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{pivot} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+         \PY{n}{pivot}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}45}]:}                NAME\_0  fs\_class\_min  fs\_class\_max  Production\_fix
+         0             Albania      0.000000      1.000000             165
+         1             Albania      1.000000      2.000000             143
+         2             Albania      2.000000      5.000000             136
+         3             Albania      5.000000     10.000000              77
+         4             Albania     10.000000     20.000000              43
+         5             Albania     20.000000     50.000000               2
+         6             Albania     50.000000    100.000000               4
+         7             Austria      2.000000      4.000000             840
+         8             Austria      5.000000      9.000000             840
+         9             Austria     10.000000     19.000000             840
+         10            Austria     20.000000     29.000000             840
+         11            Austria     30.000000     49.000000             840
+         12            Austria     50.000000     99.000000             840
+         13            Belgium      2.000000      4.000000            1008
+         14            Belgium      5.000000      9.000000            1008
+         15            Belgium     10.000000     19.000000            1008
+         16            Belgium     20.000000     29.000000            1008
+         17            Belgium     30.000000     49.000000            1008
+         18            Belgium     50.000000     99.000000            1008
+         19   Bosnia and Herz.      0.000000      1.000000              84
+         20   Bosnia and Herz.      1.000000      2.000000              80
+         21   Bosnia and Herz.      2.000000      5.000000              84
+         22   Bosnia and Herz.      5.000000     10.000000              77
+         23   Bosnia and Herz.     10.000000     20.000000              49
+         24   Bosnia and Herz.     20.000000     50.000000              30
+         25   Bosnia and Herz.     50.000000    100.000000              18
+         26   Bosnia and Herz.    100.000000    200.000000              33
+         27   Bosnia and Herz.    200.000000   1000.000000              20
+         28             Brazil      0.100000      0.200000            1288
+         29             Brazil      0.200000      0.500000            1288
+         ..                {\ldots}           {\ldots}           {\ldots}             {\ldots}
+         405            Uganda      2.000000      5.000000              67
+         406            Uganda      5.000000     10.000000              30
+         407            Uganda     10.000000     20.000000              15
+         408            Uganda     20.000000     50.000000              10
+         409    United Kingdom      2.000000      4.000000            3248
+         410    United Kingdom      5.000000      9.000000            3256
+         411    United Kingdom     10.000000     19.000000            3252
+         412    United Kingdom     20.000000     29.000000            3248
+         413    United Kingdom     30.000000     49.000000            3236
+         414    United Kingdom     50.000000     99.000000            3248
+         415     United States      0.404685      4.006381             487
+         416     United States      4.046850     20.193782             664
+         417     United States     20.234250     28.287482             584
+         418     United States     28.327950     40.428032             610
+         419     United States     40.468500     56.251215             634
+         420     United States     56.655900     72.438615             623
+         421     United States     72.843300     88.626015             570
+         422     United States     89.030700    104.813415             573
+         423     United States    105.218100    201.937815             687
+         424     United States    202.342500    404.280315             679
+         425     United States    404.685000    808.965315             644
+         426           Uruguay      1.000000      2.000000             102
+         427           Uruguay      2.000000      5.000000             230
+         428           Uruguay      5.000000     10.000000             288
+         429           Uruguay     10.000000     20.000000             312
+         430           Uruguay     20.000000     50.000000             412
+         431           Uruguay     50.000000    100.000000             330
+         432           Uruguay    100.000000    200.000000             302
+         433           Uruguay    200.000000    500.000000             246
+         434           Uruguay    500.000000   1000.000000             200
+         
+         [435 rows x 4 columns]
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}56}]:} \PY{n}{tmp} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{query}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{NAME\PYZus{}0 == }\PY{l+s}{\PYZsq{}}\PY{l+s}{Albania}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{c}{\PYZsh{} plt.barh(tmp[\PYZsq{}fs\PYZus{}class\PYZus{}min\PYZsq{}], tmp[\PYZsq{}fs\PYZus{}class\PYZus{}max\PYZsq{}])}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}80}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}min}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}80}]:} <Container object of 7 artists>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Data_Coverage.nb_files/Data_Coverage.nb_28_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} 
+\end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
