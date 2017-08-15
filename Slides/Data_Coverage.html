@@ -11913,7 +11913,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
@@ -11960,7 +11960,7 @@ $( document ).ready(code_toggle);
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -12010,16 +12010,6 @@ function showthis(url) {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a name="Top"></a></p>
 <p><center><h1>Data Coverage Overview</h1></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a name="Data"></a></p>
-<p><h2>Data</h2><br></p>
 
 </div>
 </div>
@@ -12078,7 +12068,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/Farm_Size/Data/FarmSize_data_fullyProcessed.csv&#39;</span>
@@ -12089,6 +12079,60 @@ function showthis(url) {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a name="Data"></a></p>
+<p><h2>Data</h2><br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">num_countries</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_crops</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Crop</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_crops_fao</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;production_Food_kcal == production_Food_kcal&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Crop</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_admin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shpID</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_obs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">num_micro</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;microdata == 1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_tab</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;microdata == 0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_sur</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;cen_sur == &#39;sur&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_cen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;cen_sur == &#39;cen&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">avg_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">min_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">max_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>General</p>
+<ul>
+<li>Our dataset caputres the amount of crops produced by farms of different sizes.<br></li>
+<li>We used the World Census of Agriculture's (WCA) farm size categories to be consistent with other studies.</li>
+<li>Our dataset consists of 564134 observations.<br></li>
+<li>58 countries are represented at either the national or subnational level.<br></li>
+<li>In total, there are 2804 national or subnational units.<br></li>
+<li>There are 151 crops, of which we were able to match 127 with the FAO's database to calculate the amount of crops produced by farm size class for food, feed, waste, seed, proccessing, and other in terms of kcal.<br></li>
+<li>We used 37 tabulated datasets, and 21 microdatasets (i.e., data at the household record level)</li>
+<li>41 agricultural  censuses were used. Where census data was not used, nationally or subnationally representative household surveys were used (17 in total).</li>
+<li>On average the data was from 2011, with the oldest datasets from 2001 and the newest from 2013</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12124,7 +12168,7 @@ function showthis(url) {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To do:</p>
 <ul>
-<li>What percentage of global production does our sample represent?</li>
+<li>Map to be replaced with map of sub-national units (and in a better projection!) after we spatially match all admin units</li>
 </ul>
 
 </div>
@@ -13919,8 +13963,12 @@ RU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a name="TemporalCoverage"></a></p>
-<h2>Temporal Coverage</h2>
+<p><a name="LeftOff"></a></p>
+<h3>Left Off</h3><p>To Do:</p>
+<ul>
+<li>Need to put into the global context</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -13929,20 +13977,7 @@ RU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s">&#39;NAME_0&#39;</span><span class="p">)</span>
-<span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">&#39;NAME_0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">grouped</span><span class="p">[</span><span class="s">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">grouped</span><span class="p">[</span><span class="s">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">grouped</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">grouped</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;#FF5733&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s"> Median year per country collected </span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">title_sz</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">Year</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">y_lab_tick_sz</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">Count of Countries</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">y_lab_tick_sz</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">&#39;xtick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_lab_tick_sz</span><span class="o">-</span><span class="mi">8</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">&#39;ytick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_lab_tick_sz</span><span class="o">-</span><span class="mi">8</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -13955,207 +13990,517 @@ RU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Crop</th>
+      <th>Item_Code</th>
+      <th>NAME_0</th>
+      <th>NAME_1</th>
+      <th>NAME_2</th>
+      <th>NAME_3</th>
+      <th>es1</th>
+      <th>shpID</th>
+      <th>data_unit</th>
+      <th>fs_class_min</th>
+      <th>fs_class_max</th>
+      <th>cen_sur</th>
+      <th>microdata</th>
+      <th>year</th>
+      <th>Crop_area</th>
+      <th>Cultivated_area</th>
+      <th>Harvested_area</th>
+      <th>Planted_area</th>
+      <th>Production</th>
+      <th>Production_fix</th>
+      <th>Production_fix_dummy</th>
+      <th>Production_constant</th>
+      <th>perc_Feed</th>
+      <th>perc_Food</th>
+      <th>perc_Seed</th>
+      <th>perc_Waste</th>
+      <th>perc_Processing</th>
+      <th>perc_Other</th>
+      <th>production_Feed</th>
+      <th>production_Feed_k</th>
+      <th>production_Food</th>
+      <th>production_Food_k</th>
+      <th>production_Other</th>
+      <th>production_Other_k</th>
+      <th>production_Seed</th>
+      <th>production_Seed_k</th>
+      <th>production_Waste</th>
+      <th>production_Waste_k</th>
+      <th>production_Processing</th>
+      <th>production_Processing_k</th>
+      <th>kcal</th>
+      <th>fat</th>
+      <th>protein</th>
+      <th>production_Feed_kcal</th>
+      <th>production_Feed_k_kcal</th>
+      <th>production_Food_kcal</th>
+      <th>production_Food_k_kcal</th>
+      <th>production_Other_kcal</th>
+      <th>production_Other_k_kcal</th>
+      <th>production_Seed_kcal</th>
+      <th>production_Seed_k_kcal</th>
+      <th>production_Waste_kcal</th>
+      <th>production_Waste_k_kcal</th>
+      <th>production_Processing_kcal</th>
+      <th>production_Processing_k_kcal</th>
+      <th>production_Feed_fat</th>
+      <th>production_Feed_k_fat</th>
+      <th>production_Food_fat</th>
+      <th>production_Food_k_fat</th>
+      <th>production_Other_fat</th>
+      <th>production_Other_k_fat</th>
+      <th>production_Seed_fat</th>
+      <th>production_Seed_k_fat</th>
+      <th>production_Waste_fat</th>
+      <th>production_Waste_k_fat</th>
+      <th>production_Processing_fat</th>
+      <th>production_Processing_k_fat</th>
+      <th>production_Feed_protein</th>
+      <th>production_Feed_k_protein</th>
+      <th>production_Food_protein</th>
+      <th>production_Food_k_protein</th>
+      <th>production_Other_protein</th>
+      <th>production_Other_k_protein</th>
+      <th>production_Seed_protein</th>
+      <th>production_Seed_k_protein</th>
+      <th>production_Waste_protein</th>
+      <th>production_Waste_k_protein</th>
+      <th>production_Processing_protein</th>
+      <th>production_Processing_k_protein</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Agave fibres nes</td>
+      <td>800.0</td>
+      <td>Mexico</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>MEX</td>
+      <td>MEX</td>
+      <td>t</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>sur</td>
+      <td>1</td>
+      <td>2007.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>37.702929</td>
+      <td>37.702929</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0.255413</td>
+      <td>0.927016</td>
+      <td>0.000674</td>
+      <td>0.087989</td>
+      <td>0.877703</td>
+      <td>1.000000</td>
+      <td>9.629819</td>
+      <td>NaN</td>
+      <td>34.951226</td>
+      <td>NaN</td>
+      <td>37.702929</td>
+      <td>NaN</td>
+      <td>0.025416</td>
+      <td>NaN</td>
+      <td>3.317445</td>
+      <td>NaN</td>
+      <td>33.091975</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Agave fibres nes</td>
+      <td>800.0</td>
+      <td>Mexico</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>MEX</td>
+      <td>MEX</td>
+      <td>t</td>
+      <td>20.0</td>
+      <td>50.0</td>
+      <td>sur</td>
+      <td>1</td>
+      <td>2007.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>37.702929</td>
+      <td>37.702929</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0.255413</td>
+      <td>0.927016</td>
+      <td>0.000674</td>
+      <td>0.087989</td>
+      <td>0.877703</td>
+      <td>1.000000</td>
+      <td>9.629819</td>
+      <td>NaN</td>
+      <td>34.951226</td>
+      <td>NaN</td>
+      <td>37.702929</td>
+      <td>NaN</td>
+      <td>0.025416</td>
+      <td>NaN</td>
+      <td>3.317445</td>
+      <td>NaN</td>
+      <td>33.091975</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Almonds, with shell</td>
+      <td>221.0</td>
+      <td>Colombia</td>
+      <td>Amazonas</td>
+      <td>La Chorrera</td>
+      <td>1</td>
+      <td>COL</td>
+      <td>COL001002</td>
+      <td>ha</td>
+      <td>20.0</td>
+      <td>50.0</td>
+      <td>cen</td>
+      <td>1</td>
+      <td>2013.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.905842</td>
+      <td>1.000000</td>
+      <td>0.135892</td>
+      <td>0.002301</td>
+      <td>0.782199</td>
+      <td>0.089903</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.11</td>
+      <td>0.03</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Almonds, with shell</td>
+      <td>221.0</td>
+      <td>Colombia</td>
+      <td>Amazonas</td>
+      <td>La Chorrera</td>
+      <td>1</td>
+      <td>COL</td>
+      <td>COL001002</td>
+      <td>ha</td>
+      <td>50.0</td>
+      <td>100.0</td>
+      <td>cen</td>
+      <td>1</td>
+      <td>2013.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.905842</td>
+      <td>1.000000</td>
+      <td>0.135892</td>
+      <td>0.002301</td>
+      <td>0.782199</td>
+      <td>0.089903</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.11</td>
+      <td>0.03</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Almonds, with shell</td>
+      <td>221.0</td>
+      <td>Colombia</td>
+      <td>Amazonas</td>
+      <td>La Chorrera</td>
+      <td>1</td>
+      <td>COL</td>
+      <td>COL001002</td>
+      <td>t</td>
+      <td>20.0</td>
+      <td>50.0</td>
+      <td>cen</td>
+      <td>1</td>
+      <td>2013.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0.905842</td>
+      <td>1.000000</td>
+      <td>0.135892</td>
+      <td>0.002301</td>
+      <td>0.782199</td>
+      <td>0.089903</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>0.11</td>
+      <td>0.03</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -14164,18 +14509,98 @@ aiBDoCRJUgMZAiVJkhrIEChJktRAhkBJkqQGMgRKkiQ10P8Hg9QgjzZW7XgAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a name="LeftOff"></a></p>
-<h3>Left Off</h3><p>To Do:</p>
-<ul>
-<li>Need to put into the global context</li>
-</ul>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">fao</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/FaoStat/FAOSTAT/Production_Crops_E_All_Data_(Norm).csv&#39;</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">fao</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">tmp</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;Area harvested&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">tmp1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp1</span><span class="p">,</span> <span class="n">tmp2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="n">indicator</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">tmp1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div></section></section>
 </div>
 </div>
