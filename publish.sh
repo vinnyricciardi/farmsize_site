@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mv /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json
+
 # Generate the Slides and Pages
 jupyter-nbconvert Notebooks/Index.ipynb --reveal-prefix=reveal.js
 mv Notebooks/Index.html  index.html
@@ -55,3 +57,5 @@ git commit -m "Update Slides"
 git push origin master gh-pages
 git checkout master
 rm -rf /tmp/workspace
+
+mv /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json
