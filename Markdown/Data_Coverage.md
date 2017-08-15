@@ -64,9 +64,10 @@ function showthis(url) {
     <a href=#ClassOverlaps>4. Farm size class overlaps</a><br>
     <a href=#YieldLookUpTable>5. Yield look-up table</a><br><br>
 
-    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#Top>Top</a><br>
+    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#LeftOff>Left Off Here</a><br>
+    <a href='https://vinnyricciardi.github.io/farmsize_site/'>Site Index</a><br>
 </div>
 ''')
 ```
@@ -99,27 +100,22 @@ function showthis(url) {
     <a href=#ClassOverlaps>4. Farm size class overlaps</a><br>
     <a href=#YieldLookUpTable>5. Yield look-up table</a><br><br>
 
-    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#Top>Top</a><br>
+    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#LeftOff>Left Off Here</a><br>
+    <a href='https://vinnyricciardi.github.io/farmsize_site/'>Site Index</a><br>
 </div>
 
 
 
 
-# <center>Data Coverage Overview</center>
-## <center>What portion of the global food supply is produced by smallholders?</center>
-### <center>Vinny Ricciardi, Larissa Jarvis, Navin Ramankutty</center>
+<a name="Top"></a>
+<center><h1>Data Coverage Overview</h1>
 
 
 <a name="Data"></a>
 <h2>Data</h2><br>
-1. Harvested area per farm size class
-2. Yield per crop per farm size class
 
-To Dos:
-
-- Update this document with new database codes. This is partially updated, but after the spartial coverage section, it relies on the old data.
 
 
 ```python
@@ -242,7 +238,7 @@ plt.show()
 ```
 
 
-![png](Data_Coverage_files/Data_Coverage_12_0.png)
+![png](Data_Coverage_files/Data_Coverage_11_0.png)
 
 
 <a name="TemporalCoverage"></a>
@@ -267,7 +263,7 @@ plt.show()
 ```
 
 
-![png](Data_Coverage_files/Data_Coverage_14_0.png)
+![png](Data_Coverage_files/Data_Coverage_13_0.png)
 
 
 <a name="LeftOff"></a>
@@ -275,5 +271,3 @@ plt.show()
 
 To Do:
 - Need to put into the global context
-
-

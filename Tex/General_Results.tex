@@ -274,87 +274,92 @@
 
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
-         \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{l+s}{\PYZlt{}script\PYZgt{}}
-         \PY{l+s}{code\PYZus{}show=true; }
-         \PY{l+s}{function code\PYZus{}toggle() \PYZob{}}
-         \PY{l+s}{ if (code\PYZus{}show)\PYZob{}}
-         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).hide();}
-         \PY{l+s}{ \PYZcb{} else \PYZob{}}
-         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).show();}
-         \PY{l+s}{ \PYZcb{}}
-         \PY{l+s}{ code\PYZus{}show = !code\PYZus{}show}
-         \PY{l+s}{\PYZcb{} }
-         \PY{l+s}{\PYZdl{}( document ).ready(code\PYZus{}toggle);}
-         \PY{l+s}{\PYZlt{}/script\PYZgt{}}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
+        \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{l+s}{\PYZlt{}script\PYZgt{}}
+        \PY{l+s}{code\PYZus{}show=true; }
+        \PY{l+s}{function code\PYZus{}toggle() \PYZob{}}
+        \PY{l+s}{ if (code\PYZus{}show)\PYZob{}}
+        \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).hide();}
+        \PY{l+s}{ \PYZcb{} else \PYZob{}}
+        \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).show();}
+        \PY{l+s}{ \PYZcb{}}
+        \PY{l+s}{ code\PYZus{}show = !code\PYZus{}show}
+        \PY{l+s}{\PYZcb{} }
+        \PY{l+s}{\PYZdl{}( document ).ready(code\PYZus{}toggle);}
+        \PY{l+s}{\PYZlt{}/script\PYZgt{}}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}16}]:} <IPython.core.display.HTML object>
+{\color{outcolor}Out[{\color{outcolor}2}]:} <IPython.core.display.HTML object>
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}484}]:} \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
-          \PY{l+s}{\PYZlt{}style\PYZgt{}}
-          \PY{l+s}{    .yourDiv \PYZob{}position: fixed;top: 100px; right: 0px; }
-          \PY{l+s}{              background: white;}
-          \PY{l+s}{              height: 100}\PY{l+s}{\PYZpc{}}\PY{l+s}{;}
-          \PY{l+s}{              width: 175px; }
-          \PY{l+s}{              padding: 10px; }
-          \PY{l+s}{              z\PYZhy{}index: 10000\PYZcb{}}
-          \PY{l+s}{\PYZlt{}/style\PYZgt{}}
-          \PY{l+s}{\PYZlt{}script\PYZgt{}}
-          \PY{l+s}{function showthis(url) \PYZob{}}
-          \PY{l+s}{	window.open(url, }\PY{l+s}{\PYZdq{}}\PY{l+s}{pres}\PY{l+s}{\PYZdq{}}\PY{l+s}{, }
-          \PY{l+s}{                }\PY{l+s}{\PYZdq{}}\PY{l+s}{toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500}\PY{l+s}{\PYZdq{}}\PY{l+s}{);}
-          \PY{l+s}{	return(false);}
-          \PY{l+s}{\PYZcb{}}
-          \PY{l+s}{\PYZlt{}/script\PYZgt{}}
-          
-          \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherAcross\PYZgt{}2. Spatial Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherWithin\PYZgt{}3. Temporal Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
-          
-          \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}LeftOff\PYZgt{}Left Off Here\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{\PYZlt{}/div\PYZgt{}}
-          \PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
+        \PY{l+s}{\PYZlt{}style\PYZgt{}}
+        \PY{l+s}{    .yourDiv \PYZob{}position: fixed;top: 100px; right: 0px; }
+        \PY{l+s}{              background: white;}
+        \PY{l+s}{              height: 100}\PY{l+s}{\PYZpc{}}\PY{l+s}{;}
+        \PY{l+s}{              width: 175px; }
+        \PY{l+s}{              padding: 10px; }
+        \PY{l+s}{              z\PYZhy{}index: 10000\PYZcb{}}
+        \PY{l+s}{\PYZlt{}/style\PYZgt{}}
+        \PY{l+s}{\PYZlt{}script\PYZgt{}}
+        \PY{l+s}{function showthis(url) \PYZob{}}
+        \PY{l+s}{	window.open(url, }\PY{l+s}{\PYZdq{}}\PY{l+s}{pres}\PY{l+s}{\PYZdq{}}\PY{l+s}{, }
+        \PY{l+s}{                }\PY{l+s}{\PYZdq{}}\PY{l+s}{toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500}\PY{l+s}{\PYZdq{}}\PY{l+s}{);}
+        \PY{l+s}{	return(false);}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{\PYZlt{}/script\PYZgt{}}
+        
+        \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherAcross\PYZgt{}2. Food, Feed, Other\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherWithin\PYZgt{}3. Within Farmsizes\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
+        
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}LeftOff\PYZgt{}Left Off Here\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZsq{}}\PY{l+s}{https://vinnyricciardi.github.io/farmsize\PYZus{}site/}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{}Site Index\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{\PYZlt{}/div\PYZgt{}}
+        \PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}484}]:} <IPython.core.display.HTML object>
+{\color{outcolor}Out[{\color{outcolor}4}]:} <IPython.core.display.HTML object>
 \end{Verbatim}
             
-    \subsection{General Results}\label{general-results}
+    General Results
 
-    This page overviews our general results.
+    This page overviews our general results:
 
-The main findings are that in our sample of 58 countries, farms
-\textless{} 2 ha produce 8\% of the total food supply, while farms
-\textless{} 50 ha produce 41\% of the total food supply. The largest
-differences (in terms of effect size) in the amount of food produced
-were between the very large farm and the smallest farm categories in
-terms of how much food each produced. 68\% of all the food came from 20
-to 100 ha and 200 to 1000 ha farm sizes.
-
-This study also measures what percentage of each farm size class's crop
-producion goes towards food, feed, processing, seed, waste, or other.
-The farm size category with the largest percentage of food produced
-compared to other cateogories within thier farm size group, are from 100
-to 1000 ha, where 70\% of thier crop production goes towards food.
-
-55\% of crop production on farms \textless{} 2 ha goes towards food,
-while 16\% goes towards feed, and the remainder either goes towards
-other, waste, processing, or seed (respectively).
-
-The farm size contributing to the largest amount of food waste
-(post-harvest loss, not consumer based food waste) are farms between
-50-100 ha.
+\begin{itemize}
+\item
+  The main findings are that in our sample of 58 countries, farms
+  \textless{} 2 ha produce 8\% of the total food supply, while farms
+  \textless{} 50 ha produce 41\% of the total food supply. The largest
+  differences (in terms of effect size) in the amount of food produced
+  were between the very large farm and the smallest farm categories in
+  terms of how much food each produced. 68\% of all the food came from
+  20 to 100 ha and 200 to 1000 ha farm sizes.
+\item
+  This study also measures what percentage of each farm size class's
+  crop producion goes towards food, feed, processing, seed, waste, or
+  other. The farm size category with the largest percentage of food
+  produced compared to other cateogories within thier farm size group,
+  are from 100 to 1000 ha, where 70\% of thier crop production goes
+  towards food.
+\item
+  55\% of crop production on farms \textless{} 2 ha goes towards food,
+  while 16\% goes towards feed, and the remainder either goes towards
+  other, waste, processing, or seed (respectively).
+\item
+  The farm size contributing to the largest amount of food waste
+  (post-harvest loss, not consumer based food waste) are farms between
+  50-100 ha.
+\end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}50}]:} \PY{k+kn}{import} \PY{n+nn}{warnings}
@@ -449,27 +454,6 @@ The farm size contributing to the largest amount of food waste
 \end{Verbatim}
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}480}]:} \PY{n}{df\PYZus{}within}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}480}]:}                     Feed      Food     Other  Processing      Seed     Waste
-          Farm\_Sizes                                                                  
-          (0, 1]          0.237441  0.557491  0.116235    0.023644  0.016697  0.048493
-          (1, 2]          0.078022  0.528437  0.246586    0.069265  0.024367  0.053323
-          (2, 5]          0.188993  0.505486  0.151104    0.072839  0.030516  0.051062
-          (5, 10]         0.159973  0.484746  0.114886    0.150468  0.037205  0.052721
-          (10, 20]        0.159772  0.480801  0.073849    0.201936  0.035844  0.047798
-          (20, 50]        0.163737  0.459236  0.055698    0.249785  0.033665  0.037880
-          (50, 100]       0.152403  0.472618  0.055224    0.244229  0.033991  0.041535
-          (100, 200]      0.114567  0.643168  0.032773    0.106484  0.037614  0.065394
-          (200, 500]      0.119055  0.710868  0.016772    0.054654  0.055964  0.042686
-          (500, 1000]     0.119546  0.734189  0.011763    0.035401  0.060685  0.038415
-          (1000, 100000]  0.285615  0.279310  0.124086    0.201478  0.028329  0.081183
-\end{Verbatim}
-            
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}481}]:} \PY{k}{def} \PY{n+nf}{plot\PYZus{}stacked\PYZus{}bar}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fig\PYZus{}}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n+nb+bp}{None}\PY{p}{)}\PY{p}{:}
           
@@ -639,7 +623,7 @@ produce 5\% of the total food supply in our sample.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_16_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_15_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -658,7 +642,7 @@ detail.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_18_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_17_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -750,7 +734,7 @@ significance.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_22_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_21_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -924,7 +908,7 @@ production is waste.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_31_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_30_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -936,7 +920,7 @@ production is waste.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_33_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_32_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     

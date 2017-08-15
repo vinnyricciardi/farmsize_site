@@ -56,12 +56,13 @@ function showthis(url) {
 <div class=yourDiv>
     <h4>MENU</h4><br>
     <a href=#Data>1. Data</a><br>
-    <a href=#FoodFeedOtherAcross>2. Spatial Coverage</a><br>
-    <a href=#FoodFeedOtherWithin>3. Temporal Coverage</a><br><br>
+    <a href=#FoodFeedOtherAcross>2. Food, Feed, Other</a><br>
+    <a href=#FoodFeedOtherWithin>3. Within Farmsizes</a><br><br>
 
-    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#Top>Top</a><br>
+    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#LeftOff>Left Off Here</a><br>
+    <a href='https://vinnyricciardi.github.io/farmsize_site/'>Site Index</a><br>
 </div>
 ''')
 ```
@@ -89,31 +90,31 @@ function showthis(url) {
 <div class=yourDiv>
     <h4>MENU</h4><br>
     <a href=#Data>1. Data</a><br>
-    <a href=#FoodFeedOtherAcross>2. Spatial Coverage</a><br>
-    <a href=#FoodFeedOtherWithin>3. Temporal Coverage</a><br><br>
+    <a href=#FoodFeedOtherAcross>2. Food, Feed, Other</a><br>
+    <a href=#FoodFeedOtherWithin>3. Within Farmsizes</a><br><br>
 
-    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#Top>Top</a><br>
+    <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
     <a href=#LeftOff>Left Off Here</a><br>
+    <a href='https://vinnyricciardi.github.io/farmsize_site/'>Site Index</a><br>
 </div>
 
 
 
 
 <a name="Top"></a>
-<center>
-## General Results
+<center><h1>General Results</h1>
 
 
-This page overviews our general results. 
+This page overviews our general results:
 
-The main findings are that in our sample of 58 countries, farms < 2 ha produce 8% of the total food supply, while farms < 50 ha produce 41% of the total food supply. The largest differences (in terms of effect size) in the amount of food produced were between the very large farm and the smallest farm categories in terms of how much food each produced. 68% of all the food came from 20 to 100 ha and 200 to 1000 ha farm sizes.
+- The main findings are that in our sample of 58 countries, farms < 2 ha produce 8% of the total food supply, while farms < 50 ha produce 41% of the total food supply. The largest differences (in terms of effect size) in the amount of food produced were between the very large farm and the smallest farm categories in terms of how much food each produced. 68% of all the food came from 20 to 100 ha and 200 to 1000 ha farm sizes.<br><br>
 
-This study also measures what percentage of each farm size class's crop producion goes towards food, feed, processing, seed, waste, or other. The farm size category with the largest percentage of food produced compared to other cateogories within thier farm size group, are from 100 to 1000 ha, where 70% of thier crop production goes towards food.
+- This study also measures what percentage of each farm size class's crop producion goes towards food, feed, processing, seed, waste, or other. The farm size category with the largest percentage of food produced compared to other cateogories within thier farm size group, are from 100 to 1000 ha, where 70% of thier crop production goes towards food.<br><br>
 
-55% of crop production on farms < 2 ha goes towards food, while 16% goes towards feed, and the remainder either goes towards other, waste, processing, or seed (respectively). 
+- 55% of crop production on farms < 2 ha goes towards food, while 16% goes towards feed, and the remainder either goes towards other, waste, processing, or seed (respectively).<br><br>
 
-The farm size contributing to the largest amount of food waste (post-harvest loss, not consumer based food waste) are farms between 50-100 ha.
+- The farm size contributing to the largest amount of food waste (post-harvest loss, not consumer based food waste) are farms between 50-100 ha.<br>
 
 
 ```python
@@ -208,142 +209,6 @@ def perc(data, how='within'):
 
         print 'Require how argument'
 ```
-
-
-```python
-df_within
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Feed</th>
-      <th>Food</th>
-      <th>Other</th>
-      <th>Processing</th>
-      <th>Seed</th>
-      <th>Waste</th>
-    </tr>
-    <tr>
-      <th>Farm_Sizes</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>(0, 1]</th>
-      <td>0.237441</td>
-      <td>0.557491</td>
-      <td>0.116235</td>
-      <td>0.023644</td>
-      <td>0.016697</td>
-      <td>0.048493</td>
-    </tr>
-    <tr>
-      <th>(1, 2]</th>
-      <td>0.078022</td>
-      <td>0.528437</td>
-      <td>0.246586</td>
-      <td>0.069265</td>
-      <td>0.024367</td>
-      <td>0.053323</td>
-    </tr>
-    <tr>
-      <th>(2, 5]</th>
-      <td>0.188993</td>
-      <td>0.505486</td>
-      <td>0.151104</td>
-      <td>0.072839</td>
-      <td>0.030516</td>
-      <td>0.051062</td>
-    </tr>
-    <tr>
-      <th>(5, 10]</th>
-      <td>0.159973</td>
-      <td>0.484746</td>
-      <td>0.114886</td>
-      <td>0.150468</td>
-      <td>0.037205</td>
-      <td>0.052721</td>
-    </tr>
-    <tr>
-      <th>(10, 20]</th>
-      <td>0.159772</td>
-      <td>0.480801</td>
-      <td>0.073849</td>
-      <td>0.201936</td>
-      <td>0.035844</td>
-      <td>0.047798</td>
-    </tr>
-    <tr>
-      <th>(20, 50]</th>
-      <td>0.163737</td>
-      <td>0.459236</td>
-      <td>0.055698</td>
-      <td>0.249785</td>
-      <td>0.033665</td>
-      <td>0.037880</td>
-    </tr>
-    <tr>
-      <th>(50, 100]</th>
-      <td>0.152403</td>
-      <td>0.472618</td>
-      <td>0.055224</td>
-      <td>0.244229</td>
-      <td>0.033991</td>
-      <td>0.041535</td>
-    </tr>
-    <tr>
-      <th>(100, 200]</th>
-      <td>0.114567</td>
-      <td>0.643168</td>
-      <td>0.032773</td>
-      <td>0.106484</td>
-      <td>0.037614</td>
-      <td>0.065394</td>
-    </tr>
-    <tr>
-      <th>(200, 500]</th>
-      <td>0.119055</td>
-      <td>0.710868</td>
-      <td>0.016772</td>
-      <td>0.054654</td>
-      <td>0.055964</td>
-      <td>0.042686</td>
-    </tr>
-    <tr>
-      <th>(500, 1000]</th>
-      <td>0.119546</td>
-      <td>0.734189</td>
-      <td>0.011763</td>
-      <td>0.035401</td>
-      <td>0.060685</td>
-      <td>0.038415</td>
-    </tr>
-    <tr>
-      <th>(1000, 100000]</th>
-      <td>0.285615</td>
-      <td>0.279310</td>
-      <td>0.124086</td>
-      <td>0.201478</td>
-      <td>0.028329</td>
-      <td>0.081183</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 
 ```python
@@ -505,7 +370,7 @@ plot_stacked_bar(df_across, how='across', fig_=True)
 ```
 
 
-![png](General_Results_files/General_Results_16_0.png)
+![png](General_Results_files/General_Results_15_0.png)
 
 
 This plot also shows the percentage that each farm size contributes to each category but in cumulative percentages. For example, farms under 2 ha produce 8% of the total food supply in our sample and farms 20 ha and under produce 48% of the total food supply in our sample. Again, here is a [link](https://vinnyricciardi.github.io/farmsize_site/Html/pivottablejs) to an interactive pivot table so you can explore the data in more detail.
@@ -516,7 +381,7 @@ plot_stacked_bar(df_cumsum, how='cumsum', fig_=True)
 ```
 
 
-![png](General_Results_files/General_Results_18_0.png)
+![png](General_Results_files/General_Results_17_0.png)
 
 
 
@@ -600,7 +465,7 @@ factor_plot(df, id_var='Farm_Sizes')
 ```
 
 
-![png](General_Results_files/General_Results_22_0.png)
+![png](General_Results_files/General_Results_21_0.png)
 
 
 To circumvent the large dataset issue, the effect size was used to determine differences between farm sizes rather than statistical significance. Cohen's d was calculated via taking the (mean of farmsize 1 - mean of farmsize 2) / (standard deviation of farmsize 1) then taking the absolute value. The relative significance was calculated by thresholds according to [Sullivan and Feinn 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/).
@@ -969,7 +834,7 @@ plot_stacked_bar(df_within, how='within', fig_=True)
 ```
 
 
-![png](General_Results_files/General_Results_31_0.png)
+![png](General_Results_files/General_Results_30_0.png)
 
 
 These plots compare crop production within each farm size class:
@@ -980,7 +845,7 @@ factor_plot(df, id_var='variable')
 ```
 
 
-![png](General_Results_files/General_Results_33_0.png)
+![png](General_Results_files/General_Results_32_0.png)
 
 
 We calculate the effect size for the differences within each farm size group, but across production cateogries (e.g., food, feed, other).
