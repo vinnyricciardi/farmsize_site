@@ -15,8 +15,8 @@
     
     
     \usepackage[T1]{fontenc}
-    % Nicer default font than Computer Modern for most use cases
-    \usepackage{palatino}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
 
     % Basic figure setup, for now with no caption control since it's done
     % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
@@ -62,6 +62,7 @@
     \usepackage{hyperref}
     \usepackage{longtable} % longtable support required by pandoc >1.10
     \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
                                 % normalem makes italics be italics, not underlines
     
@@ -165,13 +166,13 @@
 \expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
 \expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 \expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
 \expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
 \expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 \expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
 \expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
 \expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
@@ -187,36 +188,33 @@
 \expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
 \expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
 \expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
 \expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
 \expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 \expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
-\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
 \expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
 \expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
 \expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
-\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
 \expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
 \expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
 \expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
@@ -277,47 +275,47 @@
     
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}26}]:} \PY{k+kn}{from} \PY{n+nn}{traitlets.config.manager} \PY{k+kn}{import} \PY{n}{BaseJSONConfigManager}
-         \PY{n}{path} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{/home/crackauc/.jupyter/nbconfig}\PY{l+s+s2}{\PYZdq{}}
+         \PY{n}{path} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{/home/crackauc/.jupyter/nbconfig}\PY{l+s}{\PYZdq{}}
          \PY{n}{cm} \PY{o}{=} \PY{n}{BaseJSONConfigManager}\PY{p}{(}\PY{n}{config\PYZus{}dir}\PY{o}{=}\PY{n}{path}\PY{p}{)}
-         \PY{n}{cm}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{livereveal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{p}{\PYZob{}}
-                       \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{theme}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sky}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                       \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{transition}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fade}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                       \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{start\PYZus{}slideshow\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{selected}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                         \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{width}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:} \PY{l+m+mi}{1600}\PY{p}{,}
-                         \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{height}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{900}\PY{p}{,}
-                         \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{scroll}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{True}\PY{p}{,}
-                         \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{slideNumber}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{False}\PY{p}{,}
+         \PY{n}{cm}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{livereveal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{p}{\PYZob{}}
+                       \PY{l+s}{\PYZsq{}}\PY{l+s}{theme}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{l+s}{\PYZsq{}}\PY{l+s}{sky}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                       \PY{l+s}{\PYZsq{}}\PY{l+s}{transition}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{l+s}{\PYZsq{}}\PY{l+s}{fade}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                       \PY{l+s}{\PYZsq{}}\PY{l+s}{start\PYZus{}slideshow\PYZus{}at}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{l+s}{\PYZsq{}}\PY{l+s}{selected}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                         \PY{l+s}{\PYZsq{}}\PY{l+s}{width}\PY{l+s}{\PYZsq{}} \PY{p}{:} \PY{l+m+mi}{1600}\PY{p}{,}
+                         \PY{l+s}{\PYZsq{}}\PY{l+s}{height}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{900}\PY{p}{,}
+                         \PY{l+s}{\PYZsq{}}\PY{l+s}{scroll}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{True}\PY{p}{,}
+                         \PY{l+s}{\PYZsq{}}\PY{l+s}{slideNumber}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{n+nb+bp}{False}\PY{p}{,}
          \PY{p}{\PYZcb{}}\PY{p}{)}
          
-         \PY{c+c1}{\PYZsh{}}
-         \PY{c+c1}{\PYZsh{}from notebook.services.config import ConfigManager}
-         \PY{c+c1}{\PYZsh{}cm = ConfigManager()}
-         \PY{c+c1}{\PYZsh{}cm.update(\PYZsq{}livereveal\PYZsq{}, \PYZob{}}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}width\PYZsq{}: 1600,}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}height\PYZsq{}: 800,}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}scroll\PYZsq{}: True,}
-         \PY{c+c1}{\PYZsh{}\PYZcb{})}
+         \PY{c}{\PYZsh{}}
+         \PY{c}{\PYZsh{}from notebook.services.config import ConfigManager}
+         \PY{c}{\PYZsh{}cm = ConfigManager()}
+         \PY{c}{\PYZsh{}cm.update(\PYZsq{}livereveal\PYZsq{}, \PYZob{}}
+         \PY{c}{\PYZsh{}        \PYZsq{}width\PYZsq{}: 1600,}
+         \PY{c}{\PYZsh{}        \PYZsq{}height\PYZsq{}: 800,}
+         \PY{c}{\PYZsh{}        \PYZsq{}scroll\PYZsq{}: True,}
+         \PY{c}{\PYZsh{}\PYZcb{})}
          
          
          
          
-         \PY{c+c1}{\PYZsh{}}
-         \PY{c+c1}{\PYZsh{}from notebook.services.config import ConfigManager}
-         \PY{c+c1}{\PYZsh{}cm = ConfigManager()}
-         \PY{c+c1}{\PYZsh{}cm.update(\PYZsq{}livereveal\PYZsq{}, \PYZob{}}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}width\PYZsq{}: 1600,}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}height\PYZsq{}: 800,}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}scroll\PYZsq{}: True,}
-         \PY{c+c1}{\PYZsh{}\PYZcb{})}
+         \PY{c}{\PYZsh{}}
+         \PY{c}{\PYZsh{}from notebook.services.config import ConfigManager}
+         \PY{c}{\PYZsh{}cm = ConfigManager()}
+         \PY{c}{\PYZsh{}cm.update(\PYZsq{}livereveal\PYZsq{}, \PYZob{}}
+         \PY{c}{\PYZsh{}        \PYZsq{}width\PYZsq{}: 1600,}
+         \PY{c}{\PYZsh{}        \PYZsq{}height\PYZsq{}: 800,}
+         \PY{c}{\PYZsh{}        \PYZsq{}scroll\PYZsq{}: True,}
+         \PY{c}{\PYZsh{}\PYZcb{})}
          
-         \PY{c+c1}{\PYZsh{}}
-         \PY{c+c1}{\PYZsh{}from notebook.services.config import ConfigManager}
-         \PY{c+c1}{\PYZsh{}cm = ConfigManager()}
-         \PY{c+c1}{\PYZsh{}cm.update(\PYZsq{}livereveal\PYZsq{}, \PYZob{}}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}width\PYZsq{}: 1600,}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}height\PYZsq{}: 800,}
-         \PY{c+c1}{\PYZsh{}        \PYZsq{}scroll\PYZsq{}: True,}
-         \PY{c+c1}{\PYZsh{}\PYZcb{})}
+         \PY{c}{\PYZsh{}}
+         \PY{c}{\PYZsh{}from notebook.services.config import ConfigManager}
+         \PY{c}{\PYZsh{}cm = ConfigManager()}
+         \PY{c}{\PYZsh{}cm.update(\PYZsq{}livereveal\PYZsq{}, \PYZob{}}
+         \PY{c}{\PYZsh{}        \PYZsq{}width\PYZsq{}: 1600,}
+         \PY{c}{\PYZsh{}        \PYZsq{}height\PYZsq{}: 800,}
+         \PY{c}{\PYZsh{}        \PYZsq{}scroll\PYZsq{}: True,}
+         \PY{c}{\PYZsh{}\PYZcb{})}
 \end{Verbatim}
 
             \begin{Verbatim}[commandchars=\\\{\}]
