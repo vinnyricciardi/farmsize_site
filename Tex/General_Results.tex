@@ -1,0 +1,1004 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{General\_Results}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
+         \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{l+s}{\PYZlt{}script\PYZgt{}}
+         \PY{l+s}{code\PYZus{}show=true; }
+         \PY{l+s}{function code\PYZus{}toggle() \PYZob{}}
+         \PY{l+s}{ if (code\PYZus{}show)\PYZob{}}
+         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).hide();}
+         \PY{l+s}{ \PYZcb{} else \PYZob{}}
+         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).show();}
+         \PY{l+s}{ \PYZcb{}}
+         \PY{l+s}{ code\PYZus{}show = !code\PYZus{}show}
+         \PY{l+s}{\PYZcb{} }
+         \PY{l+s}{\PYZdl{}( document ).ready(code\PYZus{}toggle);}
+         \PY{l+s}{\PYZlt{}/script\PYZgt{}}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:} <IPython.core.display.HTML object>
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}484}]:} \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
+          \PY{l+s}{\PYZlt{}style\PYZgt{}}
+          \PY{l+s}{    .yourDiv \PYZob{}position: fixed;top: 100px; right: 0px; }
+          \PY{l+s}{              background: white;}
+          \PY{l+s}{              height: 100}\PY{l+s}{\PYZpc{}}\PY{l+s}{;}
+          \PY{l+s}{              width: 175px; }
+          \PY{l+s}{              padding: 10px; }
+          \PY{l+s}{              z\PYZhy{}index: 10000\PYZcb{}}
+          \PY{l+s}{\PYZlt{}/style\PYZgt{}}
+          \PY{l+s}{\PYZlt{}script\PYZgt{}}
+          \PY{l+s}{function showthis(url) \PYZob{}}
+          \PY{l+s}{	window.open(url, }\PY{l+s}{\PYZdq{}}\PY{l+s}{pres}\PY{l+s}{\PYZdq{}}\PY{l+s}{, }
+          \PY{l+s}{                }\PY{l+s}{\PYZdq{}}\PY{l+s}{toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500}\PY{l+s}{\PYZdq{}}\PY{l+s}{);}
+          \PY{l+s}{	return(false);}
+          \PY{l+s}{\PYZcb{}}
+          \PY{l+s}{\PYZlt{}/script\PYZgt{}}
+          
+          \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
+          \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
+          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherAcross\PYZgt{}2. Spatial Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherWithin\PYZgt{}3. Temporal Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
+          
+          \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}LeftOff\PYZgt{}Left Off Here\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+          \PY{l+s}{\PYZlt{}/div\PYZgt{}}
+          \PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}484}]:} <IPython.core.display.HTML object>
+\end{Verbatim}
+            
+    \subsection{General Results}\label{general-results}
+
+    This page overviews our general results.
+
+The main findings are that in our sample of 58 countries, farms
+\textless{} 2 ha produce 8\% of the total food supply, while farms
+\textless{} 50 ha produce 41\% of the total food supply. The largest
+differences (in terms of effect size) in the amount of food produced
+were between the very large farm and the smallest farm categories in
+terms of how much food each produced. 68\% of all the food came from 20
+to 100 ha and 200 to 1000 ha farm sizes.
+
+This study also measures what percentage of each farm size class's crop
+producion goes towards food, feed, processing, seed, waste, or other.
+The farm size category with the largest percentage of food produced
+compared to other cateogories within thier farm size group, are from 100
+to 1000 ha, where 70\% of thier crop production goes towards food.
+
+55\% of crop production on farms \textless{} 2 ha goes towards food,
+while 16\% goes towards feed, and the remainder either goes towards
+other, waste, processing, or seed (respectively).
+
+The farm size contributing to the largest amount of food waste
+(post-harvest loss, not consumer based food waste) are farms between
+50-100 ha.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}50}]:} \PY{k+kn}{import} \PY{n+nn}{warnings}
+         \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
+         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{cm}
+         \PY{k+kn}{import} \PY{n+nn}{copy}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib.gridspec} \PY{k+kn}{as} \PY{n+nn}{gridspec}
+         \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k+kn}{import} \PY{n}{OrderedDict}
+         \PY{k+kn}{from} \PY{n+nn}{pivottablejs} \PY{k+kn}{import} \PY{n}{pivot\PYZus{}ui}  \PY{c}{\PYZsh{} python setup.py install \PYZhy{}\PYZhy{}user}
+         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}51}]:} \PY{k}{def} \PY{n+nf}{read\PYZus{}data}\PY{p}{(}\PY{n}{path}\PY{p}{)}\PY{p}{:}
+         
+             \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{path}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+             \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{cut}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                         \PY{n}{bins}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,}
+                                               \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{,} \PY{l+m+mi}{100000}\PY{p}{]}\PY{p}{)}
+             
+             \PY{k}{global} \PY{n}{variables}
+             \PY{n}{variables} \PY{o}{=} \PY{n}{OrderedDict}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Food\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Food}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Feed\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Feed}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Seed\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Seed}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Waste\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Waste}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Processing\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Processing}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Other\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Other}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+         
+             \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{variables}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{]}
+             \PY{n}{data}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{n}{variables}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}
+         
+             \PY{k}{return} \PY{n}{data}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}52}]:} \PY{k}{def} \PY{n+nf}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{func}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{nansum}\PY{p}{)}\PY{p}{:}
+         
+             \PY{n}{pivot} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{data}\PY{p}{,}
+                                    \PY{n}{index}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                    \PY{n}{values}\PY{o}{=}\PY{n}{variables}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{,}
+                                    \PY{n}{aggfunc}\PY{o}{=}\PY{n}{func}\PY{p}{)}
+         
+             \PY{k}{return} \PY{n}{pivot}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}53}]:} \PY{k}{def} \PY{n+nf}{perc}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+         
+             \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+                     \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+         
+         
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+         
+                 \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+                     \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pivot}
+         
+         
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+         
+                 \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+                     \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+         
+             \PY{k}{else}\PY{p}{:}
+         
+                 \PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{Require how argument}\PY{l+s}{\PYZsq{}}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}480}]:} \PY{n}{df\PYZus{}within}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}480}]:}                     Feed      Food     Other  Processing      Seed     Waste
+          Farm\_Sizes                                                                  
+          (0, 1]          0.237441  0.557491  0.116235    0.023644  0.016697  0.048493
+          (1, 2]          0.078022  0.528437  0.246586    0.069265  0.024367  0.053323
+          (2, 5]          0.188993  0.505486  0.151104    0.072839  0.030516  0.051062
+          (5, 10]         0.159973  0.484746  0.114886    0.150468  0.037205  0.052721
+          (10, 20]        0.159772  0.480801  0.073849    0.201936  0.035844  0.047798
+          (20, 50]        0.163737  0.459236  0.055698    0.249785  0.033665  0.037880
+          (50, 100]       0.152403  0.472618  0.055224    0.244229  0.033991  0.041535
+          (100, 200]      0.114567  0.643168  0.032773    0.106484  0.037614  0.065394
+          (200, 500]      0.119055  0.710868  0.016772    0.054654  0.055964  0.042686
+          (500, 1000]     0.119546  0.734189  0.011763    0.035401  0.060685  0.038415
+          (1000, 100000]  0.285615  0.279310  0.124086    0.201478  0.028329  0.081183
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}481}]:} \PY{k}{def} \PY{n+nf}{plot\PYZus{}stacked\PYZus{}bar}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fig\PYZus{}}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n+nb+bp}{None}\PY{p}{)}\PY{p}{:}
+          
+              \PY{n}{txt1} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Feed}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Food}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Other}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Processing}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Seed}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Waste}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+              \PY{n}{txt2} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZlt{} 1}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{1 to 2}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{2 to 5}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{5 to 10}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{10 to 20}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                      \PY{l+s}{\PYZsq{}}\PY{l+s}{20 to 50}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{50 to 100}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{100 to 200}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{200 to 500}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                      \PY{l+s}{\PYZsq{}}\PY{l+s}{500 to 1000}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{} 1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+              \PY{n}{txt3} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZlt{} 1}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{2 to 5}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{10 to 20}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{50 to 100}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{200 to 500}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{} 1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          
+              \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+          
+                  \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
+                  \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt2}\PY{p}{)}
+                  \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Set3}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{bar}\PY{l+s}{\PYZsq{}}
+          
+              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+          
+                  \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt2}\PY{p}{)}
+                  \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
+                  \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{YlGnBu}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{bar}\PY{l+s}{\PYZsq{}}
+          
+              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+          
+                  \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
+                  \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt3}\PY{p}{)}
+                  \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Set3}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{area}\PY{l+s}{\PYZsq{}}
+              
+              \PY{k}{else}\PY{p}{:}
+                  \PY{k}{pass}
+              
+              \PY{k}{if} \PY{n}{fig\PYZus{}} \PY{o+ow}{is} \PY{n+nb+bp}{True}\PY{p}{:}
+                  
+                  \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,} \PY{n}{facecolor}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
+              
+              \PY{k}{else}\PY{p}{:}
+                  \PY{k}{pass}
+          
+              \PY{n}{data}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kind}\PY{o}{=}\PY{n}{kind}\PY{p}{,}
+                        \PY{n}{stacked}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,}
+                        \PY{n}{cmap}\PY{o}{=}\PY{n}{cmap}\PY{p}{,}
+                        \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.9}\PY{p}{,}
+                        \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                        \PY{n}{grid}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{,}
+                        \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}
+              
+              \PY{c}{\PYZsh{} Axis main}
+              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}axis\PYZus{}bgcolor}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZsh{}d6d7e5}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}clip\PYZus{}on}\PY{p}{(}\PY{n+nb+bp}{False}\PY{p}{)}
+              \PY{n}{box} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{get\PYZus{}position}\PY{p}{(}\PY{p}{)}
+              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}position}\PY{p}{(}\PY{p}{[}\PY{n}{box}\PY{o}{.}\PY{n}{x0}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{y0}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{width} \PY{o}{*} \PY{l+m+mf}{0.8}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{height}\PY{p}{]}\PY{p}{)}
+          
+              \PY{c}{\PYZsh{} Legend}
+              \PY{n}{legend\PYZus{}txts\PYZus{}r} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{legend\PYZus{}txts}\PY{p}{)}
+              \PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{o}{.}\PY{n}{reverse}\PY{p}{(}\PY{p}{)}
+              \PY{n}{handles}\PY{p}{,} \PY{n}{labels} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{get\PYZus{}legend\PYZus{}handles\PYZus{}labels}\PY{p}{(}\PY{p}{)}
+              \PY{n}{legend} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{handles}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{labels}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
+                                 \PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{center left}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                 \PY{n}{frameon}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}
+                                 \PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{)}
+          
+              \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                  \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}texts}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}text}\PY{p}{(}\PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+          
+              \PY{n}{frame} \PY{o}{=} \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}frame}\PY{p}{(}\PY{p}{)}
+              \PY{n}{frame}\PY{o}{.}\PY{n}{set\PYZus{}color}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          
+              \PY{c}{\PYZsh{} Axis particulars}
+              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{labels\PYZus{}txts}\PY{p}{)}
+              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{get\PYZus{}majorticklabels}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+m+mi}{45}\PY{p}{)}
+          
+              \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm Sizes (ha)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production per farm size}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
+          
+              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Category}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production across farm size}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
+                  
+              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm Sizes (ha)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production per farm size: Cumulative}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
+          
+              \PY{k}{if} \PY{n}{fig\PYZus{}} \PY{o+ow}{is} \PY{n+nb+bp}{True}\PY{p}{:}
+                  \PY{k}{return} \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+          
+              \PY{k}{else}\PY{p}{:}
+                  \PY{k}{return} \PY{n}{ax}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}55}]:} \PY{n}{PATH} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/FarmSize\PYZus{}data\PYZus{}fullyProcessed.csv}\PY{l+s}{\PYZsq{}}
+         \PY{n}{df} \PY{o}{=} \PY{n}{read\PYZus{}data}\PY{p}{(}\PY{n}{PATH}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}466}]:} \PY{n}{df\PYZus{}within} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{df\PYZus{}across} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{df\PYZus{}cumsum} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{df\PYZus{}raw} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{df}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}467}]:} \PY{n}{tmp1} \PY{o}{=} \PY{n}{df\PYZus{}within}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Within}\PY{l+s}{\PYZsq{}}
+          
+          \PY{n}{tmp2} \PY{o}{=} \PY{n}{df\PYZus{}across}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp2} \PY{o}{=} \PY{n}{tmp2}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp2}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Across}\PY{l+s}{\PYZsq{}}
+          
+          \PY{n}{tmp3} \PY{o}{=} \PY{n}{df\PYZus{}cumsum}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp3}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Cumsum}\PY{l+s}{\PYZsq{}}
+          
+          \PY{n}{tmp4} \PY{o}{=} \PY{n}{df\PYZus{}raw}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp4}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Raw}\PY{l+s}{\PYZsq{}}
+          
+          \PY{n}{tmp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{tmp1}\PY{p}{,} \PY{n}{tmp2}\PY{p}{,} \PY{n}{tmp3}\PY{p}{,} \PY{n}{tmp4}\PY{p}{]}\PY{p}{)}
+          \PY{n}{tmp} \PY{o}{=} \PY{n}{tmp}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{(}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    Data
+
+Here is a
+\href{https://vinnyricciardi.github.io/farmsize_site/Html/pivottablejs}{link}
+to an interactive pivot table so you can explore the data. Use 'type' to
+change whether you are looking at the percentage of crop produced for
+each category 'within' a farm size group, 'across' groups, via a
+'cumulative' percentage across groups, or raw kcal produced. Use the
+dropdown labeled 'Food' to recalculate based on another production
+category.
+
+The default setting shows a heatmap for which farm size classes have the
+highest food production (kcal/person) per category. The 500 to 1000 farm
+size class makes up 52\% of all food production in our dataset, which
+accounts for 73\% of this group's total crop production.
+
+The three charts below were derived from the pivot table.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}58}]:} \PY{c}{\PYZsh{} pivot\PYZus{}ui(tmp)  \PYZsh{} Enable for pivot table interactivitity within this Jupyter notebook}
+\end{Verbatim}
+
+
+    Food Feed Other by Farm Size
+
+This plot shows the percentage that each farm size contributes to each
+category (e.g., food, feed, other, etc.) For example, farms under 1 ha
+produce 5\% of the total food supply in our sample.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}482}]:} \PY{n}{plot\PYZus{}stacked\PYZus{}bar}\PY{p}{(}\PY{n}{df\PYZus{}across}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fig\PYZus{}}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_16_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    This plot also shows the percentage that each farm size contributes to
+each category but in cumulative percentages. For example, farms under 2
+ha produce 8\% of the total food supply in our sample and farms 20 ha
+and under produce 48\% of the total food supply in our sample. Again,
+here is a
+\href{https://vinnyricciardi.github.io/farmsize_site/Html/pivottablejs}{link}
+to an interactive pivot table so you can explore the data in more
+detail.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}478}]:} \PY{n}{plot\PYZus{}stacked\PYZus{}bar}\PY{p}{(}\PY{n}{df\PYZus{}cumsum}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fig\PYZus{}}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_18_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}452}]:} \PY{k}{def} \PY{n+nf}{factor\PYZus{}plot}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{id\PYZus{}var}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+              
+              \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{melt}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{id\PYZus{}vars}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{value}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mf}{0.5}\PY{p}{]} 
+              \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{log}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{value}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+              
+              \PY{n}{fs\PYZus{}order} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{(0, 1]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(1, 2]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(2, 5]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(5, 10]}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                          \PY{l+s}{\PYZsq{}}\PY{l+s}{(10, 20]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(20, 50]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(50, 100]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(100, 200]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(200, 500]}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                          \PY{l+s}{\PYZsq{}}\PY{l+s}{(500, 1000]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{(1000, 100000]}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+              
+              \PY{k}{if} \PY{n}{id\PYZus{}var} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                  
+                  \PY{n}{col} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{variable}\PY{l+s}{\PYZsq{}}
+                  \PY{n}{x} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}
+                  \PY{n}{y} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{log}\PY{l+s}{\PYZsq{}}
+                  \PY{n}{order} \PY{o}{=} \PY{n}{fs\PYZus{}order}
+          
+              \PY{k}{else}\PY{p}{:}
+                  
+                  \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Categorical}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{fs\PYZus{}order}\PY{p}{)}
+                  \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  \PY{n}{col} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}
+                  \PY{n}{x} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{variable}\PY{l+s}{\PYZsq{}}
+                  \PY{n}{y} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{log}\PY{l+s}{\PYZsq{}}
+                  \PY{n}{order} \PY{o}{=} \PY{n+nb+bp}{None}
+          
+              \PY{n}{g} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{factorplot}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{o}{=}\PY{n}{y}\PY{p}{,}
+                                 \PY{n}{col}\PY{o}{=}\PY{n}{col}\PY{p}{,} 
+                                 \PY{n}{data}\PY{o}{=}\PY{n}{data}\PY{p}{,}
+                                 \PY{n}{kind}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{box}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                 \PY{n}{col\PYZus{}wrap}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,}
+                                 \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsh{}55a868}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                 \PY{n}{fliersize}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}
+                                 \PY{n}{aspect} \PY{o}{=} \PY{l+m+mf}{1.5}\PY{p}{,}
+                                 \PY{n}{order}\PY{o}{=}\PY{n}{order}\PY{p}{)}
+          
+              \PY{n}{g}\PY{o}{.}\PY{n}{fig}\PY{o}{.}\PY{n}{subplots\PYZus{}adjust}\PY{p}{(}\PY{n}{wspace}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{hspace}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{)}
+          
+              \PY{n}{titles} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{variable}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}
+              
+              \PY{n}{fs\PYZus{}txt} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZlt{} 1}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{1 to 2}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{2 to 5}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{5 to 10}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{10 to 20}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                        \PY{l+s}{\PYZsq{}}\PY{l+s}{20 to 50}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{50 to 100}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{100 to 200}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{200 to 500}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                        \PY{l+s}{\PYZsq{}}\PY{l+s}{500 to 1000}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{} 1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+              
+              \PY{k}{if} \PY{n}{id\PYZus{}var} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                  
+                  \PY{k}{for} \PY{n}{ax}\PY{p}{,} \PY{n}{title} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{g}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{flat}\PY{p}{,} \PY{n}{titles}\PY{p}{)}\PY{p}{:}
+                      
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{title}\PY{p}{)}
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Production }\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ ln (kcal)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{fs\PYZus{}txt}\PY{p}{)}
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{get\PYZus{}majorticklabels}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+m+mi}{45}\PY{p}{)}
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{Farm Sizes (ha)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  
+              \PY{k}{else}\PY{p}{:}
+                  
+                  \PY{k}{for} \PY{n}{ax}\PY{p}{,} \PY{n}{title} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{g}\PY{o}{.}\PY{n}{axes}\PY{o}{.}\PY{n}{flat}\PY{p}{,} \PY{n}{fs\PYZus{}txt}\PY{p}{)}\PY{p}{:}
+                      
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{title}\PY{p}{)}
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Production }\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ ln (kcal)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{get\PYZus{}majorticklabels}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+m+mi}{45}\PY{p}{)}
+                      \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{Poduction Category}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}92}]:} \PY{n}{number\PYZus{}of\PYZus{}records} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{p}{)}
+\end{Verbatim}
+
+
+    In order to better understand whether there are differences between the
+farm size groups, these boxplots show the total amount of crops produced
+(in logged kcal for standardization). Across all production categories
+(e.g., food, feed, other, etc.) there are no visual differences in the
+means and confidence intervals. But, there are (a) a lot of outliers in
+each plot that indicate high variance, and (b) since our sample is very
+large (58 countries which comprise of 564134 total records due to
+subnational units and crop types) we cannot use p-values to determine
+significance.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}424}]:} \PY{n}{factor\PYZus{}plot}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{id\PYZus{}var}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_22_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    To circumvent the large dataset issue, the effect size was used to
+determine differences between farm sizes rather than statistical
+significance. Cohen's d was calculated via taking the (mean of farmsize
+1 - mean of farmsize 2) / (standard deviation of farmsize 1) then taking
+the absolute value. The relative significance was calculated by
+thresholds according to
+\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/}{Sullivan
+and Feinn 2012}.
+
+Where the Cohen d's effect size values correspond to percent
+non-overlapping observations, as in:
+
+\begin{longtable}[]{@{}lccc@{}}
+\toprule
+Relative Size & Effect Size & Percentile & \% of Non-
+overlap\tabularnewline
+\midrule
+\endhead
+& 0 & 50 & 0\tabularnewline
+Small & 0.2 & 58 & 15\tabularnewline
+Medium & 0.5 & 69 & 33\tabularnewline
+Large & 0.8 & 79 & 47\tabularnewline
+& 1.0 & 84 & 55\tabularnewline
+& 1.5 & 93 & 71\tabularnewline
+& 2.0 & 97 & 81\tabularnewline
+\bottomrule
+\end{longtable}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}418}]:} \PY{k}{def} \PY{n+nf}{cohens\PYZus{}d}\PY{p}{(}\PY{n}{data1}\PY{p}{,} \PY{n}{data2}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+          
+              \PY{n}{cols} \PY{o}{=} \PY{n}{data1}\PY{o}{.}\PY{n}{columns}
+              \PY{n}{check} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+              
+              \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{cols}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                  
+                  \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{cols}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                      
+                      \PY{n}{col\PYZus{}name} \PY{o}{=} \PY{n+nb}{str}\PY{p}{(}\PY{n}{cols}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZus{}}\PY{l+s}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{cols}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}
+                      \PY{n}{col\PYZus{}name\PYZus{}r} \PY{o}{=} \PY{n+nb}{str}\PY{p}{(}\PY{n}{cols}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZus{}}\PY{l+s}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{cols}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+          
+                      \PY{k}{if} \PY{n}{col\PYZus{}name} \PY{o+ow}{in} \PY{n}{check}\PY{p}{:}
+                          
+                          \PY{k}{pass}
+          
+                      \PY{k}{elif} \PY{n}{cols}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{is} \PY{n}{cols}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{:}
+                          
+                          \PY{k}{pass}
+          
+                      \PY{k}{else}\PY{p}{:}
+                          
+                          \PY{n}{data1}\PY{p}{[}\PY{n}{col\PYZus{}name}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{data1}\PY{p}{[}\PY{n}{cols}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{data1}\PY{p}{[}\PY{n}{cols}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{]}\PY{p}{)} \PY{o}{/} \PY{n}{data2}\PY{p}{[}\PY{n}{cols}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{p}{)}
+                          \PY{n}{check}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{col\PYZus{}name}\PY{p}{)}
+                          \PY{n}{check}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{col\PYZus{}name\PYZus{}r}\PY{p}{)}
+          
+              \PY{n}{data} \PY{o}{=} \PY{n}{data1}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{cols}\PY{p}{)}\PY{p}{:}\PY{p}{]}
+          
+              \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+          
+              \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                  
+                  \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{melt}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{id\PYZus{}vars}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{value\PYZus{}name}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{cohens\PYZus{}d}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          
+              \PY{k}{else}\PY{p}{:}
+                  
+                  \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{melt}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{id\PYZus{}vars}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{index}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{value\PYZus{}name}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{cohens\PYZus{}d}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                  
+              \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{cohens\PYZus{}d\PYZus{}level}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{cohens\PYZus{}d}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{small}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                                \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{cohens\PYZus{}d}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mf}{0.8}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{large}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                                         \PY{l+s}{\PYZsq{}}\PY{l+s}{medium}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+          
+              \PY{k}{return} \PY{n}{data}
+\end{Verbatim}
+
+
+    Here are the results:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}436}]:} \PY{n}{data} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+          \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{str}\PY{p}{)}
+          \PY{n}{means} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{aggfunc}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{nanmean}\PY{p}{)}
+          \PY{n}{sds} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{aggfunc}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{nanstd}\PY{p}{)}
+          \PY{n}{out} \PY{o}{=} \PY{n}{cohens\PYZus{}d}\PY{p}{(}\PY{n}{means}\PY{p}{,} \PY{n}{sds}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{out} \PY{o}{=} \PY{n}{out}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{cohens\PYZus{}d\PYZus{}level}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{large}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZus{}}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{ and }\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{out}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Category}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm sizes compared}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Cohens d}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Relative effect size}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{out}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Cohens d}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}436}]:}        Category             Farm sizes compared  Cohens d Relative effect size
+          109        Food          (1, 2) and (500, 1000)  0.848607                large
+          157        Food        (10, 20) and (500, 1000)  0.879428                large
+          94         Seed           (1, 2) and (200, 500)  0.911315                large
+          57   Processing          (0, 1) and (500, 1000)  0.987951                large
+          239       Waste  (1000, 100000) and (500, 1000)  1.111736                large
+          292        Seed        (20, 50) and (500, 1000)  1.119664                large
+          160        Seed        (10, 20) and (500, 1000)  1.220897                large
+          58         Seed          (0, 1) and (500, 1000)  1.415773                large
+          108        Feed          (1, 2) and (500, 1000)  1.433436                large
+          51   Processing            (0, 1) and (50, 100)  1.441876                large
+          319        Food         (5, 10) and (500, 1000)  1.622606                large
+          268        Seed          (2, 5) and (500, 1000)  1.692324                large
+          220        Seed   (1000, 100000) and (200, 500)  1.750565                large
+          112        Seed          (1, 2) and (500, 1000)  2.004887                large
+          322        Seed         (5, 10) and (500, 1000)  2.092567                large
+          217        Food   (1000, 100000) and (200, 500)  2.107617                large
+          238        Seed  (1000, 100000) and (500, 1000)  3.869504                large
+          235        Food  (1000, 100000) and (500, 1000)  4.411742                large
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}450}]:} \PY{n}{tmp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{out}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm sizes compared}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{aggfunc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{count}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+          \PY{n}{tmp} \PY{o}{=} \PY{n}{tmp}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm sizes compared}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Count of large effect size}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{tmp}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}450}]:}               Farm sizes compared  Count of large effect size
+          0            (0, 1) and (50, 100)                           1
+          1           (1, 2) and (200, 500)                           1
+          2          (2, 5) and (500, 1000)                           1
+          3        (20, 50) and (500, 1000)                           1
+          4          (0, 1) and (500, 1000)                           2
+          5        (10, 20) and (500, 1000)                           2
+          6   (1000, 100000) and (200, 500)                           2
+          7         (5, 10) and (500, 1000)                           2
+          8          (1, 2) and (500, 1000)                           3
+          9  (1000, 100000) and (500, 1000)                           3
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}451}]:} \PY{n}{tmp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{out}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Category}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{aggfunc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{count}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+          \PY{n}{tmp} \PY{o}{=} \PY{n}{tmp}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+          \PY{n}{tmp}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Category}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Count of large effect size}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{tmp}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}451}]:}      Category  Count of large effect size
+          0        Feed                           1
+          1       Waste                           1
+          2  Processing                           2
+          3        Food                           5
+          4        Seed                           9
+\end{Verbatim}
+            
+    From this we can see that there was the most differences between the (1,
+2) and (500, 1000) farm size classes and (1000, 100000) and (500, 1000)
+farm size classes. For all farm size classes, the majority of
+differences were in the amount of seed and food production.
+
+    Food Feed Other within Farm Size Groups
+
+This plot shows the percentage of Food, Feed, Seed, Waste, Processing,
+and Other for each farm size category. For example, 56\% of crop
+production for farms under 1 ha is food, while 6\% of their crop
+production is waste.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}479}]:} \PY{n}{plot\PYZus{}stacked\PYZus{}bar}\PY{p}{(}\PY{n}{df\PYZus{}within}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fig\PYZus{}}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_31_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    These plots compare crop production within each farm size class:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}453}]:} \PY{n}{factor\PYZus{}plot}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{id\PYZus{}var}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{variable}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{General_Results_files/General_Results_33_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    We calculate the effect size for the differences within each farm size
+group, but across production cateogries (e.g., food, feed, other). There
+were only medium differences in effect size when looking at how each
+farm size group allocated their production.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}457}]:} \PY{n}{means} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{aggfunc}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{nanmean}\PY{p}{)}
+          \PY{n}{sds} \PY{o}{=}  \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{aggfunc}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{nanstd}\PY{p}{)}
+          \PY{n}{out} \PY{o}{=} \PY{n}{cohens\PYZus{}d}\PY{p}{(}\PY{n}{means}\PY{p}{,} \PY{n}{sds}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{out} \PY{o}{=} \PY{n}{out}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{cohens\PYZus{}d\PYZus{}level}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{!=} \PY{l+s}{\PYZsq{}}\PY{l+s}{small}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          
+          \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{variable}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{variable}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZus{}}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{ and }\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{out}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Categories commpared}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Cohens d}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Relative effect size}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{out}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Cohens d}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}457}]:}     Farm sizes Categories commpared  Cohens d Relative effect size
+          1       (1, 2)        Feed and Food  0.200763               medium
+          7   (100, 200)        Feed and Food  0.236428               medium
+          8   (200, 500)        Feed and Food  0.263749               medium
+          9  (500, 1000)        Feed and Food  0.266787               medium
+\end{Verbatim}
+            
+    Global Estimates
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}486}]:} \PY{n}{data} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}487}]:} \PY{n}{data}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}487}]:}   Farm\_Sizes  Food  Feed  Seed  Waste  Processing  Other
+          0     (1, 2]   NaN   NaN   NaN    NaN         NaN    NaN
+          1   (20, 50]   NaN   NaN   NaN    NaN         NaN    NaN
+          2   (20, 50]   0.0   0.0   0.0    0.0         0.0    0.0
+          3  (50, 100]   0.0   0.0   0.0    0.0         0.0    0.0
+          4   (20, 50]   0.0   0.0   0.0    0.0         0.0    0.0
+\end{Verbatim}
+            
+    Left Off
+
+To Do: - Need to calculate bootstraps and jackknife estimates
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} 
+\end{Verbatim}
+
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

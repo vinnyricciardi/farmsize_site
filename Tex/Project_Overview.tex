@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{Data\_Coverage.nb}
+    \title{Project\_Overview}
     
     
     
@@ -297,7 +297,7 @@
     
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
         \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
         \PY{l+s}{\PYZlt{}style\PYZgt{}}
         \PY{l+s}{    .yourDiv \PYZob{}position: fixed;top: 100px; right: 0px; }
@@ -317,11 +317,11 @@
         
         \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
         \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}SpatialCoverage\PYZgt{}2. Spatial Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}TemporalCoverage\PYZgt{}3. Temporal Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}ClassOverlaps\PYZgt{}4. Farm size class overlaps\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}YieldLookUpTable\PYZgt{}5. Yield look\PYZhy{}up table\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}RQs\PYZgt{}1. RQ}\PY{l+s}{\PYZsq{}}\PY{l+s}{s\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Background\PYZgt{}2. Background\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Goals\PYZgt{}3. Goals\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}4. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Analysis\PYZgt{}5. Analysis\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
         
         \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
@@ -332,186 +332,154 @@
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} <IPython.core.display.HTML object>
+{\color{outcolor}Out[{\color{outcolor}2}]:} <IPython.core.display.HTML object>
 \end{Verbatim}
             
-    \#
-
-Data Coverage Overview
-
-\#\#
+    Project Overview
 
 What portion of the global food supply is produced by smallholders?
 
-\#\#\#
+Vinny Ricciardi, Larissa Jarvis, Brenton Chookolingo, and Navin
+Ramankutty Institute for Resources, Environment, and Sustainability
+University of British Columbia
 
-Vinny Ricciardi, Larissa Jarvis, Navin Ramankutty
-
-    Data
-
- 1. Harvested area per farm size class 2. Yield per crop per farm size
-class
-
-    To Dos:
+    RQ's
 
 \begin{itemize}
 \tightlist
 \item
-  Update this document with new database codes. This is partially
-  updated, but after the spartial coverage section, it relies on the old
-  data.
+  What is the contribution of small farms to global food security?
+\item
+  Are smallholders producing a greater diversity of crops than
+  largeholders?
+\item
+  Are smallholders yielding more production than largeholders on the
+  crops they both grow (IR)?
 \end{itemize}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{c}{\PYZsh{} Import dependencies}
-        \PY{k+kn}{import} \PY{n+nn}{warnings}
-        \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
-        \PY{k+kn}{import} \PY{n+nn}{geopandas} \PY{k+kn}{as} \PY{n+nn}{gpd}
-        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
-        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
-        \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
-        \PY{k+kn}{from} \PY{n+nn}{matplotlib.path} \PY{k+kn}{import} \PY{n}{Path}
-        \PY{k+kn}{import} \PY{n+nn}{matplotlib.patches} \PY{k+kn}{as} \PY{n+nn}{patches}
-        \PY{k+kn}{from} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{import} \PY{n}{cm} 
-        \PY{k+kn}{import} \PY{n+nn}{matplotlib} \PY{k+kn}{as} \PY{n+nn}{mpl}
-        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
-        \PY{k+kn}{import} \PY{n+nn}{re}
-        \PY{k+kn}{import} \PY{n+nn}{geopy}
-        \PY{k+kn}{import} \PY{n+nn}{mpld3}
-        \PY{k+kn}{import} \PY{n+nn}{plotly.plotly} \PY{k+kn}{as} \PY{n+nn}{py}
-        \PY{k+kn}{import} \PY{n+nn}{cmocean}
-        
-        \PY{n}{pd}\PY{o}{.}\PY{n}{set\PYZus{}option}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{display.max\PYZus{}columns}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
-        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-\end{Verbatim}
+    Background
 
+During the 2014 United Nations (UN) International Year of the Family
+Farm, food security agencies called for increased support for
+`small-scale farmers', reporting they produce 70-80\% of the world's
+food (1,2) and represent 84\% of farms globally (3), yet are among the
+most food-insecure population (4). Despite the over-arching message of
+the UN's call to support resource strained and often vulnerable
+smallholder farmers in the Global South, the statistics commonly used by
+food security agencies and advocacy groups is highly uncertain.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{c}{\PYZsh{} Set all plotting params:}
-        \PY{n}{title\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{20}
-        \PY{n}{x\PYZus{}lab\PYZus{}tick\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{x\PYZus{}lab\PYZus{}label\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{y\PYZus{}lab\PYZus{}label\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{lengend\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{16}
-\end{Verbatim}
+There have been multiple attempts to quanitify several aspects of
+smallholders globally. 1. Lowder et al. 2015 presented estiamtes of how
+many smallholder farmers there are globally. 2. Greaub et al. 2015
+quantified the number of family farms in the world and their global
+production contrbutions. This study measured family farm impacts, where
+family farms are often associated with smallholders and/or share common
+types of management tactics as smallholders, such as reliance on family
+labor and on shortened supply chains (grow their own food). Then
+estimated production contributions per family versus non-family farms.
+However, while this contribution is helpful to better understand the
+unique challenges of family versus commercial operations, the connection
+between family farms and small farms is not clear cut. For example, many
+family farms in their case study of Brazil and other major producing
+areas, a farm may be family owned but spatially very large. 3. Samberg
+et al. 2016 was the first attempt to place a number on the production
+contributions of smallholders to the global food system. This attempt
+was a first step in understanding how much food smallholders produced,
+but may have resulted in faulty estimates for two main methodological
+reasons. First, this attempt relied on estimating where smallholder
+farmers lived by calculating the mean farm size in a given area (i.e.,
+grid cell), hence they did not capture farm size distributions in a
+given area. Second, their mean farm size metric was then used to assign
+an equal share of the crop production produced by that given area to the
+smallholders and largeholders. This analysis neglects to incorporate
+over 50-years worth of on-farm observations and economic assessments
+that have observed smaller farms are able to have higher yields,
+referred to as the inverse farm-size relationship (IR).
 
+To do: - Explain the most up to date reasoning driving IR
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{PATH} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/FarmSize\PYZus{}data\PYZus{}fullyProcessed.csv}\PY{l+s}{\PYZsq{}}
-        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{PATH}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
-\end{Verbatim}
+    Goals
 
+We compiled a semi-global database that includes crop production
+contributions by farm size in order to move policy debates beyond faulty
+estimates and test the accuracy of the past attempts to measure
+smallholder production contributions. Quantifying the production
+contributions of smallholders allows for: 1) baseline assessment of
+semi-global patterns, 2) regional and cross-national comparisons, and 3)
+linkages with other global datasets (e.g., climate, crop land, water
+availability, etc.).
 
-    Spatial Coverage
+    Data
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{United States of America}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{United States}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Bosnia and Herzegovina}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Bosnia and Herz.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{United Republic of Tanzania}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Tanzania}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Russian Federation}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Russia}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Republic}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Rep.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Republic}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Rep.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-        \PY{n}{df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Republic}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Czech Rep.}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-\end{Verbatim}
+All available national census statistics that report crop production
+and/or harvest area by farm size were compiled into a single dataset
+(\href{https://vinnyricciardi.github.io/farmsize_site/Html/Data_Coverage}{see
+data coverage python notebook for details}). Since many sub-national
+level datasets do not report production by farm size, our main dataset
+captures harvested area by farm size per crop. A second dataset was
+compiled and used as a yield look up table per crop per farm size class.
+Due to the IR, this yield look up table will be necessary to calculate a
+more accurate estimate of production contributions by farm size stratum
+than previous attempts (5,8).
 
+    Analysis
 
-    To do: - What percentage of global production does our sample represent?
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What is the contribution of small farms to global food security?
+\end{enumerate}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{pivoted} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{df}\PY{p}{,} 
-                                 \PY{n}{index}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                                 \PY{n}{values}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                                 \PY{n}{aggfunc}\PY{o}{=}\PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-        \PY{n}{pivoted} \PY{o}{=} \PY{n}{pivoted}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
-        \PY{n}{pivoted} \PY{o}{=} \PY{n}{pivoted}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{ascending}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
-        \PY{n}{pivoted}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Data\PYZus{}Available}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pivoted}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}
-        
-        \PY{n}{world} \PY{o}{=} \PY{n}{gpd}\PY{o}{.}\PY{n}{read\PYZus{}file}\PY{p}{(}\PY{n}{gpd}\PY{o}{.}\PY{n}{datasets}\PY{o}{.}\PY{n}{get\PYZus{}path}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{naturalearth\PYZus{}lowres}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-        
-        \PY{n}{world} \PY{o}{=} \PY{n}{world}\PY{o}{.}\PY{n}{to\PYZus{}crs}\PY{p}{(}\PY{n}{epsg}\PY{o}{=}\PY{l+m+mi}{3786}\PY{p}{)}
-        
-        \PY{n}{world} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{merge}\PY{p}{(}\PY{n}{world}\PY{p}{,} \PY{n}{pivoted}\PY{p}{,} 
-                         \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{outer}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                         \PY{n}{left\PYZus{}on}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                         \PY{n}{right\PYZus{}on}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Orig\PYZus{}crop}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
-        \PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{coverage}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{,} 
-                                     \PY{l+s}{\PYZsq{}}\PY{l+s}{Found and downloaded}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                                     \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{world}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} 
-                                              \PY{l+s}{\PYZsq{}}\PY{l+s}{Found not downloaded}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                                              \PY{l+s}{\PYZsq{}}\PY{l+s}{No data found}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-        
-        \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{x} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{pivoted}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-        
-        \PY{k}{try}\PY{p}{:}
-            \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
-            \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}aspect}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{equal}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-            \PY{n}{world}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{column}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{coverage}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Accent}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.7}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{0.1}\PY{p}{)}  \PY{c}{\PYZsh{}cmocean.cm.deep}
-        \PY{k}{except}\PY{p}{:}
-            \PY{k}{pass}
-        
-        \PY{n}{ndf}\PY{p}{,} \PY{n}{fad} \PY{o}{=} \PY{n}{world}\PY{o}{.}\PY{n}{coverage}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}
-        \PY{n}{cmap\PYZus{}} \PY{o}{=} \PY{n}{cmocean}\PY{o}{.}\PY{n}{tools}\PY{o}{.}\PY{n}{get\PYZus{}dict}\PY{p}{(}\PY{n}{cmocean}\PY{o}{.}\PY{n}{cm}\PY{o}{.}\PY{n}{deep}\PY{p}{,} \PY{n}{N}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{)}
-        
-        \PY{n}{p1} \PY{o}{=} \PY{n}{mpl}\PY{o}{.}\PY{n}{lines}\PY{o}{.}\PY{n}{Line2D}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}\PY{p}{,} 
-                                     \PY{n}{color}\PY{o}{=}\PY{p}{[}\PY{n}{x} \PY{o}{/} \PY{l+m+mf}{255.} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{128}\PY{p}{,} \PY{l+m+mi}{128}\PY{p}{,} \PY{l+m+mi}{130}\PY{p}{]}\PY{p}{]}\PY{p}{,}
-                                     \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} 
-                                     \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Data not found (\PYZob{}\PYZcb{})}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{ndf}\PY{p}{)}\PY{p}{)}
-        \PY{n}{p2} \PY{o}{=} \PY{n}{mpl}\PY{o}{.}\PY{n}{lines}\PY{o}{.}\PY{n}{Line2D}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}\PY{p}{,} 
-                                     \PY{n}{color}\PY{o}{=}\PY{p}{[}\PY{n}{x} \PY{o}{/} \PY{l+m+mf}{255.} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{148}\PY{p}{,} \PY{l+m+mi}{207}\PY{p}{,} \PY{l+m+mi}{150}\PY{p}{]}\PY{p}{]}\PY{p}{,} 
-                                     \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} 
-                                     \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Found and in database (\PYZob{}\PYZcb{})}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{fad}\PY{p}{)}\PY{p}{)}
-        
-        \PY{n}{handles} \PY{o}{=} \PY{p}{[}\PY{n}{p1}\PY{p}{,} \PY{n}{p2}\PY{p}{]}
-        \PY{n}{labels} \PY{o}{=} \PY{p}{[}\PY{n}{h}\PY{o}{.}\PY{n}{get\PYZus{}label}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{h} \PY{o+ow}{in} \PY{n}{handles}\PY{p}{]} 
-        
-        \PY{n}{legend} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{handles}\PY{o}{=}\PY{n}{handles}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{n}{labels}\PY{p}{,} \PY{n}{frameon}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} 
-                           \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{14}\PY{p}{,} \PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{lower left}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}frame}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}facecolor}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsh{}ffffff}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  What percentage of smallholders' production is grown for food versus
+  other (based on FAO definitions)?
+\item
+  How does this compare to largeholders' production?
+\end{enumerate}
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Are smallholders producing a greater diversity of crops than
+  largeholders?
+\end{enumerate}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Data_Coverage.nb_files/Data_Coverage.nb_12_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  We will test the relationship between farm size and contribution to
+  diverse crop production using the Shannon-Weaver and Simpson's
+  indices, which are commonly used in ecology to represent biological
+  diversity (9).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Are smallholders yielding more production than largeholders on the
+  crops they both grow (IR)?
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  This can be per crop and net yield, since net yield may be a better
+  indication of food availability for smallholders, often reliant on
+  short supply chains to local markets and subsistence-surplus
+  production.
+\end{enumerate}
+
     
-    Temporal Coverage
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{grouped} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
-        \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{grouped}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}
-        \PY{n}{grouped} \PY{o}{=} \PY{n}{grouped}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
-        \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
-        \PY{n}{sns}\PY{o}{.}\PY{n}{countplot}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{grouped}\PY{o}{.}\PY{n}{year}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsh{}FF5733}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ Median year per country collected }\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{title\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{Year}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{Count of Countries}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{)}
-        \PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{xtick.labelsize}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{x\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}
-        \PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{ytick.labelsize}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Data_Coverage.nb_files/Data_Coverage.nb_14_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    Left Off
-
-To Do: - Need to put into the global context
 
     
 
