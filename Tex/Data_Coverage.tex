@@ -317,11 +317,8 @@
         
         \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
         \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}SpatialCoverage\PYZgt{}2. Spatial Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}TemporalCoverage\PYZgt{}3. Temporal Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}ClassOverlaps\PYZgt{}4. Farm size class overlaps\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}YieldLookUpTable\PYZgt{}5. Yield look\PYZhy{}up table\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1.Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+        \PY{l+s}{    \PYZlt{}a href=\PYZsh{}SpatialCoverage\PYZgt{}2. Spatial Coverage\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
         
         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
         \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
@@ -339,7 +336,7 @@
     Data Coverage Overview
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{c}{\PYZsh{} Import dependencies}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c}{\PYZsh{} Import dependencies}
         \PY{k+kn}{import} \PY{n+nn}{warnings}
         \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
@@ -364,30 +361,55 @@
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{c}{\PYZsh{} Set all plotting params:}
-        \PY{n}{title\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{20}
-        \PY{n}{x\PYZus{}lab\PYZus{}tick\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{y\PYZus{}lab\PYZus{}tick\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{x\PYZus{}lab\PYZus{}label\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{y\PYZus{}lab\PYZus{}label\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{18}
-        \PY{n}{lengend\PYZus{}sz} \PY{o}{=} \PY{l+m+mi}{16}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{PATH1} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/FarmSize\PYZus{}data\PYZus{}fullyProcessed.csv}\PY{l+s}{\PYZsq{}}
+        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{PATH1}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+        \PY{n}{PATH2} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/FaoStat/FAOSTAT/Production\PYZus{}Crops\PYZus{}E\PYZus{}All\PYZus{}Data\PYZus{}(Norm).csv}\PY{l+s}{\PYZsq{}}
+        \PY{n}{fao} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{PATH2}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{PATH} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/FarmSize\PYZus{}data\PYZus{}fullyProcessed.csv}\PY{l+s}{\PYZsq{}}
-        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{PATH}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{def} \PY{n+nf}{perc\PYZus{}global}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{area}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+            
+            \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{area}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                \PY{n}{element} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Area harvested}\PY{l+s}{\PYZsq{}}
+            
+            \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{production}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                \PY{n}{element} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Production}\PY{l+s}{\PYZsq{}}
+            
+            \PY{n}{tmp} \PY{o}{=} \PY{n}{fao}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+            \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{p}{(}\PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Element}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{n}{element}\PY{p}{)}\PY{p}{]}
+            \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp1}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Country}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Item Code}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        
+            \PY{n}{multi\PYZus{}index} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{MultiIndex}\PY{o}{.}\PY{n}{from\PYZus{}product}\PY{p}{(}\PY{p}{[}\PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Country}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{,}
+                                                      \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Item Code}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{,}
+                                                      \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+                                                     \PY{n}{names}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Country}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Item Code}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        
+            \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp1}\PY{o}{.}\PY{n}{set\PYZus{}index}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Country}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Item Code}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{reindex}\PY{p}{(}\PY{n}{multi\PYZus{}index}\PY{p}{)}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+            \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp1}\PY{o}{.}\PY{n}{set\PYZus{}index}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Country}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Item Code}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp1}\PY{o}{.}\PY{n}{interpolate}\PY{p}{(}\PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{linear}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                      \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                                      \PY{n}{limit\PYZus{}direction}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{both}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp1}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+            \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp1}\PY{p}{[}\PY{p}{(}\PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Year}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{n+nb}{float}\PY{p}{(}\PY{n}{avg\PYZus{}year}\PY{p}{)}\PY{p}{)}\PY{p}{]}
+            \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{overlap1}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{in1d}\PY{p}{(}\PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Country}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+            \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{overlap2}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{in1d}\PY{p}{(}\PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Item Code}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df}\PY{o}{.}\PY{n}{Item\PYZus{}Code}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+        
+            \PY{n}{data\PYZus{}in} \PY{o}{=} \PY{n}{tmp1}\PY{o}{.}\PY{n}{query}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{overlap1 == True \PYZam{} overlap2 == True}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Value}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+            \PY{n}{data\PYZus{}out} \PY{o}{=} \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Value}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+            \PY{n}{perc\PYZus{}rep} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{l+m+mi}{100} \PY{o}{*} \PY{p}{(}\PY{n}{data\PYZus{}in} \PY{o}{/} \PY{n}{data\PYZus{}out}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
+            
+            \PY{k}{return} \PY{n}{perc\PYZus{}rep}
 \end{Verbatim}
 
 
-    Data
-
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{num\PYZus{}countries} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{num\PYZus{}countries} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
         \PY{n}{num\PYZus{}crops} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Crop}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
         \PY{n}{num\PYZus{}crops\PYZus{}fao} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{query}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{production\PYZus{}Food\PYZus{}kcal == production\PYZus{}Food\PYZus{}kcal}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{Crop}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
         \PY{n}{num\PYZus{}admin} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{shpID}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-        \PY{n}{num\PYZus{}obs} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{p}{)}
+        \PY{c}{\PYZsh{} num\PYZus{}obs = len(df)}
         \PY{n}{num\PYZus{}micro} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{query}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{microdata == 1}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
         \PY{n}{num\PYZus{}tab} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{query}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{microdata == 0}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
         \PY{n}{num\PYZus{}sur} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{query}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{cen\PYZus{}sur == }\PY{l+s}{\PYZsq{}}\PY{l+s}{sur}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
@@ -395,23 +417,30 @@
         \PY{n}{avg\PYZus{}year} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{round}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{year}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}
         \PY{n}{min\PYZus{}year} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{year}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}
         \PY{n}{max\PYZus{}year} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{year}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}
+        \PY{n}{perc\PYZus{}area} \PY{o}{=} \PY{n}{perc\PYZus{}global}\PY{p}{(}\PY{n}{fao}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{area}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{perc\PYZus{}prod} \PY{o}{=} \PY{n}{perc\PYZus{}global}\PY{p}{(}\PY{n}{fao}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{production}\PY{l+s}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
-    General - Our dataset caputres the amount of crops produced by farms of
-different sizes. - We used the World Census of Agriculture's (WCA) farm
-size categories to be consistent with other studies. - Our dataset
-consists of 564134 observations. - 58 countries are represented at
-either the national or subnational level. - In total, there are 2804
-national or subnational units. - There are 151 crops, of which we were
-able to match 127 with the FAO's database to calculate the amount of
-crops produced by farm size class for food, feed, waste, seed,
-proccessing, and other in terms of kcal. - We used 37 tabulated
-datasets, and 21 microdatasets (i.e., data at the household record
-level) - 41 agricultural censuses were used. Where census data was not
-used, nationally or subnationally representative household surveys were
-used (17 in total). - On average the data was from 2011, with the oldest
-datasets from 2001 and the newest from 2013
+    Data
+
+    General - Our dataset caputres the amount crop production by farms size
+- 58 countries are represented at either the national or subnational
+level. - In total, there are 2804 national or subnational units. - This
+captures 16.35\% of global harvest area and 20.73\% of global crop
+production - There are 151 crops, of which we were able to match 114
+with the FAO's database to calculate the amount of crops produced by
+farm size class for food, feed, waste, seed, proccessing, and other in
+terms of kcal. - We used 37 tabulated datasets, and 21 microdatasets
+(i.e., data at the household record level) - 41 agricultural censuses
+were used. Where census data was not used, nationally or subnationally
+representative household surveys were used (17 in total). - On average
+the data was from 2011, with the oldest datasets from 2001 and the
+newest from 2013 - We used the World Census of Agriculture's (WCA) farm
+size categories to be consistent with other studies.
+
+\href{https://vinnyricciardi.github.io/farmsize_site/Html/General_Results}{Click
+here to see our main findings}
 
     Spatial Coverage
 
@@ -430,7 +459,15 @@ datasets from 2001 and the newest from 2013
 better projection!) after we spatially match all admin units
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{pivoted} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{df}\PY{p}{,} 
+{\color{incolor}In [{\color{incolor}8}]:} \PY{c}{\PYZsh{} Set all plotting params:}
+        \PY{c}{\PYZsh{} title\PYZus{}sz = 20}
+        \PY{c}{\PYZsh{} x\PYZus{}lab\PYZus{}tick\PYZus{}sz = 18}
+        \PY{c}{\PYZsh{} y\PYZus{}lab\PYZus{}tick\PYZus{}sz = 18}
+        \PY{c}{\PYZsh{} x\PYZus{}lab\PYZus{}label\PYZus{}sz = 18}
+        \PY{c}{\PYZsh{} y\PYZus{}lab\PYZus{}label\PYZus{}sz = 18}
+        \PY{c}{\PYZsh{} lengend\PYZus{}sz = 16}
+        
+        \PY{n}{pivoted} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{df}\PY{p}{,} 
                                  \PY{n}{index}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
                                  \PY{n}{values}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Crop}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
                                  \PY{n}{aggfunc}\PY{o}{=}\PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
@@ -494,219 +531,9 @@ better projection!) after we spatially match all admin units
     \end{center}
     { \hspace*{\fill} \\}
     
-    Left Off
-
-To Do: - Need to put into the global context
-
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:}    Unnamed: 0                 Crop  Item\_Code    NAME\_0    NAME\_1  \textbackslash{}
-        0           0     Agave fibres nes      800.0    Mexico         1   
-        1           1     Agave fibres nes      800.0    Mexico         1   
-        2           2  Almonds, with shell      221.0  Colombia  Amazonas   
-        3           3  Almonds, with shell      221.0  Colombia  Amazonas   
-        4           4  Almonds, with shell      221.0  Colombia  Amazonas   
-        
-                NAME\_2 NAME\_3  es1      shpID data\_unit  fs\_class\_min  fs\_class\_max  \textbackslash{}
-        0            1      1  MEX        MEX         t           1.0           2.0   
-        1            1      1  MEX        MEX         t          20.0          50.0   
-        2  La Chorrera      1  COL  COL001002        ha          20.0          50.0   
-        3  La Chorrera      1  COL  COL001002        ha          50.0         100.0   
-        4  La Chorrera      1  COL  COL001002         t          20.0          50.0   
-        
-          cen\_sur  microdata    year  Crop\_area  Cultivated\_area  Harvested\_area  \textbackslash{}
-        0     sur          1  2007.0        NaN              NaN             NaN   
-        1     sur          1  2007.0        NaN              NaN             NaN   
-        2     cen          1  2013.0        NaN              NaN             0.0   
-        3     cen          1  2013.0        NaN              NaN             0.0   
-        4     cen          1  2013.0        NaN              NaN             NaN   
-        
-           Planted\_area  Production  Production\_fix  Production\_fix\_dummy  \textbackslash{}
-        0           NaN   37.702929       37.702929                     0   
-        1           NaN   37.702929       37.702929                     0   
-        2           NaN         NaN        0.000000                     1   
-        3           NaN         NaN        0.000000                     1   
-        4           NaN    0.000000        0.000000                     0   
-        
-           Production\_constant  perc\_Feed  perc\_Food  perc\_Seed  perc\_Waste  \textbackslash{}
-        0                  NaN   0.255413   0.927016   0.000674    0.087989   
-        1                  NaN   0.255413   0.927016   0.000674    0.087989   
-        2                  0.0   0.905842   1.000000   0.135892    0.002301   
-        3                  0.0   0.905842   1.000000   0.135892    0.002301   
-        4                  NaN   0.905842   1.000000   0.135892    0.002301   
-        
-           perc\_Processing  perc\_Other  production\_Feed  production\_Feed\_k  \textbackslash{}
-        0         0.877703    1.000000         9.629819                NaN   
-        1         0.877703    1.000000         9.629819                NaN   
-        2         0.782199    0.089903         0.000000                0.0   
-        3         0.782199    0.089903         0.000000                0.0   
-        4         0.782199    0.089903         0.000000                NaN   
-        
-           production\_Food  production\_Food\_k  production\_Other  production\_Other\_k  \textbackslash{}
-        0        34.951226                NaN         37.702929                 NaN   
-        1        34.951226                NaN         37.702929                 NaN   
-        2         0.000000                0.0          0.000000                 0.0   
-        3         0.000000                0.0          0.000000                 0.0   
-        4         0.000000                NaN          0.000000                 NaN   
-        
-           production\_Seed  production\_Seed\_k  production\_Waste  production\_Waste\_k  \textbackslash{}
-        0         0.025416                NaN          3.317445                 NaN   
-        1         0.025416                NaN          3.317445                 NaN   
-        2         0.000000                0.0          0.000000                 0.0   
-        3         0.000000                0.0          0.000000                 0.0   
-        4         0.000000                NaN          0.000000                 NaN   
-        
-           production\_Processing  production\_Processing\_k  kcal   fat  protein  \textbackslash{}
-        0              33.091975                      NaN   NaN   NaN      NaN   
-        1              33.091975                      NaN   NaN   NaN      NaN   
-        2               0.000000                      0.0   1.0  0.11     0.03   
-        3               0.000000                      0.0   1.0  0.11     0.03   
-        4               0.000000                      NaN   1.0  0.11     0.03   
-        
-           production\_Feed\_kcal  production\_Feed\_k\_kcal  production\_Food\_kcal  \textbackslash{}
-        0                   NaN                     NaN                   NaN   
-        1                   NaN                     NaN                   NaN   
-        2                   0.0                     0.0                   0.0   
-        3                   0.0                     0.0                   0.0   
-        4                   0.0                     NaN                   0.0   
-        
-           production\_Food\_k\_kcal  production\_Other\_kcal  production\_Other\_k\_kcal  \textbackslash{}
-        0                     NaN                    NaN                      NaN   
-        1                     NaN                    NaN                      NaN   
-        2                     0.0                    0.0                      0.0   
-        3                     0.0                    0.0                      0.0   
-        4                     NaN                    0.0                      NaN   
-        
-           production\_Seed\_kcal  production\_Seed\_k\_kcal  production\_Waste\_kcal  \textbackslash{}
-        0                   NaN                     NaN                    NaN   
-        1                   NaN                     NaN                    NaN   
-        2                   0.0                     0.0                    0.0   
-        3                   0.0                     0.0                    0.0   
-        4                   0.0                     NaN                    0.0   
-        
-           production\_Waste\_k\_kcal  production\_Processing\_kcal  \textbackslash{}
-        0                      NaN                         NaN   
-        1                      NaN                         NaN   
-        2                      0.0                         0.0   
-        3                      0.0                         0.0   
-        4                      NaN                         0.0   
-        
-           production\_Processing\_k\_kcal  production\_Feed\_fat  production\_Feed\_k\_fat  \textbackslash{}
-        0                           NaN                  NaN                    NaN   
-        1                           NaN                  NaN                    NaN   
-        2                           0.0                  0.0                    0.0   
-        3                           0.0                  0.0                    0.0   
-        4                           NaN                  0.0                    NaN   
-        
-           production\_Food\_fat  production\_Food\_k\_fat  production\_Other\_fat  \textbackslash{}
-        0                  NaN                    NaN                   NaN   
-        1                  NaN                    NaN                   NaN   
-        2                  0.0                    0.0                   0.0   
-        3                  0.0                    0.0                   0.0   
-        4                  0.0                    NaN                   0.0   
-        
-           production\_Other\_k\_fat  production\_Seed\_fat  production\_Seed\_k\_fat  \textbackslash{}
-        0                     NaN                  NaN                    NaN   
-        1                     NaN                  NaN                    NaN   
-        2                     0.0                  0.0                    0.0   
-        3                     0.0                  0.0                    0.0   
-        4                     NaN                  0.0                    NaN   
-        
-           production\_Waste\_fat  production\_Waste\_k\_fat  production\_Processing\_fat  \textbackslash{}
-        0                   NaN                     NaN                        NaN   
-        1                   NaN                     NaN                        NaN   
-        2                   0.0                     0.0                        0.0   
-        3                   0.0                     0.0                        0.0   
-        4                   0.0                     NaN                        0.0   
-        
-           production\_Processing\_k\_fat  production\_Feed\_protein  \textbackslash{}
-        0                          NaN                      NaN   
-        1                          NaN                      NaN   
-        2                          0.0                      0.0   
-        3                          0.0                      0.0   
-        4                          NaN                      0.0   
-        
-           production\_Feed\_k\_protein  production\_Food\_protein  \textbackslash{}
-        0                        NaN                      NaN   
-        1                        NaN                      NaN   
-        2                        0.0                      0.0   
-        3                        0.0                      0.0   
-        4                        NaN                      0.0   
-        
-           production\_Food\_k\_protein  production\_Other\_protein  \textbackslash{}
-        0                        NaN                       NaN   
-        1                        NaN                       NaN   
-        2                        0.0                       0.0   
-        3                        0.0                       0.0   
-        4                        NaN                       0.0   
-        
-           production\_Other\_k\_protein  production\_Seed\_protein  \textbackslash{}
-        0                         NaN                      NaN   
-        1                         NaN                      NaN   
-        2                         0.0                      0.0   
-        3                         0.0                      0.0   
-        4                         NaN                      0.0   
-        
-           production\_Seed\_k\_protein  production\_Waste\_protein  \textbackslash{}
-        0                        NaN                       NaN   
-        1                        NaN                       NaN   
-        2                        0.0                       0.0   
-        3                        0.0                       0.0   
-        4                        NaN                       0.0   
-        
-           production\_Waste\_k\_protein  production\_Processing\_protein  \textbackslash{}
-        0                         NaN                            NaN   
-        1                         NaN                            NaN   
-        2                         0.0                            0.0   
-        3                         0.0                            0.0   
-        4                         NaN                            0.0   
-        
-           production\_Processing\_k\_protein  
-        0                              NaN  
-        1                              NaN  
-        2                              0.0  
-        3                              0.0  
-        4                              NaN  
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{n}{fao} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/FaoStat/FAOSTAT/Production\PYZus{}Crops\PYZus{}E\PYZus{}All\PYZus{}Data\PYZus{}(Norm).csv}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{n}{fao}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{n}{tmp} \PY{o}{=} \PY{n}{fao}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
-        \PY{n}{tmp2} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{n}{tmp1} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Element}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{Area harvested}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{n}{tmp1} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{merge}\PY{p}{(}\PY{n}{tmp1}\PY{p}{,} \PY{n}{tmp2}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{inner}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{left\PYZus{}on}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Country}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{right\PYZus{}on}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{NAME\PYZus{}0}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{indicator}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
-        \PY{n}{tmp1}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}40}]:} 
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} 
+{\color{incolor}In [{\color{incolor}106}]:} \PY{c}{\PYZsh{} \PYZlt{}a name=\PYZdq{}LeftOff\PYZdq{}\PYZgt{}\PYZlt{}/a\PYZgt{}}
+          \PY{c}{\PYZsh{} \PYZlt{}h3\PYZgt{}Left Off\PYZlt{}/h3\PYZgt{}}
 \end{Verbatim}
 
 

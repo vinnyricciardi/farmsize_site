@@ -11936,11 +11936,8 @@ $( document ).ready(code_toggle);
 
 <span class="s">&lt;div class=yourDiv&gt;</span>
 <span class="s">    &lt;h4&gt;MENU&lt;/h4&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#Data&gt;1. Data&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#SpatialCoverage&gt;2. Spatial Coverage&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#TemporalCoverage&gt;3. Temporal Coverage&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#ClassOverlaps&gt;4. Farm size class overlaps&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#YieldLookUpTable&gt;5. Yield look-up table&lt;/a&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="s">    &lt;a href=#Data&gt;1.Data&lt;/a&gt;&lt;br&gt;</span>
+<span class="s">    &lt;a href=#SpatialCoverage&gt;2. Spatial Coverage&lt;/a&gt;&lt;br&gt;&lt;br&gt;</span>
 
 <span class="s">    &lt;a href=#Top&gt;Top&lt;/a&gt;&lt;br&gt;</span>
 <span class="s">    &lt;a href=&quot;javascript:code_toggle()&quot;&gt;Toggle Code On/Off&lt;/a&gt;&lt;br&gt;</span>
@@ -11984,11 +11981,8 @@ function showthis(url) {
 
 <div class=yourDiv>
     <h4>MENU</h4><br>
-    <a href=#Data>1. Data</a><br>
-    <a href=#SpatialCoverage>2. Spatial Coverage</a><br>
-    <a href=#TemporalCoverage>3. Temporal Coverage</a><br>
-    <a href=#ClassOverlaps>4. Farm size class overlaps</a><br>
-    <a href=#YieldLookUpTable>5. Yield look-up table</a><br><br>
+    <a href=#Data>1.Data</a><br>
+    <a href=#SpatialCoverage>2. Spatial Coverage</a><br><br>
 
     <a href=#Top>Top</a><br>
     <a href="javascript:code_toggle()">Toggle Code On/Off</a><br>
@@ -12016,7 +12010,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import dependencies</span>
@@ -12049,16 +12043,13 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Set all plotting params:</span>
-<span class="n">title_sz</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">x_lab_tick_sz</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">y_lab_tick_sz</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">x_lab_label_sz</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">y_lab_label_sz</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">lengend_sz</span> <span class="o">=</span> <span class="mi">16</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">PATH1</span> <span class="o">=</span> <span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/Farm_Size/Data/FarmSize_data_fullyProcessed.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PATH1</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">PATH2</span> <span class="o">=</span> <span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/FaoStat/FAOSTAT/Production_Crops_E_All_Data_(Norm).csv&#39;</span>
+<span class="n">fao</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PATH2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12068,11 +12059,67 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/Farm_Size/Data/FarmSize_data_fullyProcessed.csv&#39;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PATH</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">perc_global</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;area&#39;</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">how</span> <span class="ow">is</span> <span class="s">&#39;area&#39;</span><span class="p">:</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="s">&#39;Area harvested&#39;</span>
+    
+    <span class="k">elif</span> <span class="n">how</span> <span class="ow">is</span> <span class="s">&#39;production&#39;</span><span class="p">:</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+    
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">)]</span>
+    <span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Item Code&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span>
+
+    <span class="n">multi_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([</span><span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span>
+                                              <span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;Item Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span>
+                                              <span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
+                                             <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Item Code&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span>
+
+    <span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp1</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Item Code&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">multi_index</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp1</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Item Code&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span>
+    <span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp1</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span>
+                              <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                              <span class="n">limit_direction</span><span class="o">=</span><span class="s">&#39;both&#39;</span><span class="p">)</span>
+    <span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp1</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp1</span><span class="p">[(</span><span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="n">avg_year</span><span class="p">))]</span>
+    <span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;overlap1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;overlap2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;Item Code&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">Item_Code</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+    <span class="n">data_in</span> <span class="o">=</span> <span class="n">tmp1</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;overlap1 == True &amp; overlap2 == True&quot;</span><span class="p">)[</span><span class="s">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">data_out</span> <span class="o">=</span> <span class="n">tmp1</span><span class="p">[</span><span class="s">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">perc_rep</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">data_in</span> <span class="o">/</span> <span class="n">data_out</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">perc_rep</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">num_countries</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_crops</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Crop</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_crops_fao</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;production_Food_kcal == production_Food_kcal&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Crop</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_admin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shpID</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="c"># num_obs = len(df)</span>
+<span class="n">num_micro</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;microdata == 1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_tab</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;microdata == 0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_sur</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;cen_sur == &#39;sur&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_cen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;cen_sur == &#39;cen&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">avg_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">min_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">max_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">perc_area</span> <span class="o">=</span> <span class="n">perc_global</span><span class="p">(</span><span class="n">fao</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;area&#39;</span><span class="p">)</span>
+<span class="n">perc_prod</span> <span class="o">=</span> <span class="n">perc_global</span><span class="p">(</span><span class="n">fao</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;production&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12090,46 +12137,23 @@ function showthis(url) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">num_countries</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_crops</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Crop</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_crops_fao</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;production_Food_kcal == production_Food_kcal&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Crop</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_admin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shpID</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_obs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="n">num_micro</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;microdata == 1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_tab</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;microdata == 0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_sur</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;cen_sur == &#39;sur&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_cen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;cen_sur == &#39;cen&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">avg_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
-<span class="n">min_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">max_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>General</p>
 <ul>
-<li>Our dataset caputres the amount of crops produced by farms of different sizes.<br></li>
-<li>We used the World Census of Agriculture's (WCA) farm size categories to be consistent with other studies.</li>
-<li>Our dataset consists of 564134 observations.<br></li>
+<li>Our dataset caputres the amount crop production by farms size<br></li>
 <li>58 countries are represented at either the national or subnational level.<br></li>
 <li>In total, there are 2804 national or subnational units.<br></li>
-<li>There are 151 crops, of which we were able to match 127 with the FAO's database to calculate the amount of crops produced by farm size class for food, feed, waste, seed, proccessing, and other in terms of kcal.<br></li>
+<li>This captures 16.35% of global harvest area and 20.73% of global crop production<br></li>
+<li>There are 151 crops, of which we were able to match 114 with the FAO's database to calculate the amount of crops produced by farm size class for food, feed, waste, seed, proccessing, and other in terms of kcal.<br></li>
 <li>We used 37 tabulated datasets, and 21 microdatasets (i.e., data at the household record level)</li>
 <li>41 agricultural  censuses were used. Where census data was not used, nationally or subnationally representative household surveys were used (17 in total).</li>
-<li>On average the data was from 2011, with the oldest datasets from 2001 and the newest from 2013</li>
+<li>On average the data was from 2011, with the oldest datasets from 2001 and the newest from 2013<br></li>
+<li>We used the World Census of Agriculture's (WCA) farm size categories to be consistent with other studies.<br><br></li>
 </ul>
+<p><a href="https://vinnyricciardi.github.io/farmsize_site/Html/General_Results">Click here to see our main findings</a></p>
 
 </div>
 </div>
@@ -12179,7 +12203,15 @@ function showthis(url) {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pivoted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> 
+<div class=" highlight hl-ipython2"><pre><span class="c"># Set all plotting params:</span>
+<span class="c"># title_sz = 20</span>
+<span class="c"># x_lab_tick_sz = 18</span>
+<span class="c"># y_lab_tick_sz = 18</span>
+<span class="c"># x_lab_label_sz = 18</span>
+<span class="c"># y_lab_label_sz = 18</span>
+<span class="c"># lengend_sz = 16</span>
+
+<span class="n">pivoted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> 
                          <span class="n">index</span><span class="o">=</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> 
                          <span class="n">values</span><span class="o">=</span><span class="s">&#39;Crop&#39;</span><span class="p">,</span> 
                          <span class="n">aggfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
@@ -13959,642 +13991,13 @@ RU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a name="LeftOff"></a></p>
-<h3>Left Off</h3><p>To Do:</p>
-<ul>
-<li>Need to put into the global context</li>
-</ul>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>Crop</th>
-      <th>Item_Code</th>
-      <th>NAME_0</th>
-      <th>NAME_1</th>
-      <th>NAME_2</th>
-      <th>NAME_3</th>
-      <th>es1</th>
-      <th>shpID</th>
-      <th>data_unit</th>
-      <th>fs_class_min</th>
-      <th>fs_class_max</th>
-      <th>cen_sur</th>
-      <th>microdata</th>
-      <th>year</th>
-      <th>Crop_area</th>
-      <th>Cultivated_area</th>
-      <th>Harvested_area</th>
-      <th>Planted_area</th>
-      <th>Production</th>
-      <th>Production_fix</th>
-      <th>Production_fix_dummy</th>
-      <th>Production_constant</th>
-      <th>perc_Feed</th>
-      <th>perc_Food</th>
-      <th>perc_Seed</th>
-      <th>perc_Waste</th>
-      <th>perc_Processing</th>
-      <th>perc_Other</th>
-      <th>production_Feed</th>
-      <th>production_Feed_k</th>
-      <th>production_Food</th>
-      <th>production_Food_k</th>
-      <th>production_Other</th>
-      <th>production_Other_k</th>
-      <th>production_Seed</th>
-      <th>production_Seed_k</th>
-      <th>production_Waste</th>
-      <th>production_Waste_k</th>
-      <th>production_Processing</th>
-      <th>production_Processing_k</th>
-      <th>kcal</th>
-      <th>fat</th>
-      <th>protein</th>
-      <th>production_Feed_kcal</th>
-      <th>production_Feed_k_kcal</th>
-      <th>production_Food_kcal</th>
-      <th>production_Food_k_kcal</th>
-      <th>production_Other_kcal</th>
-      <th>production_Other_k_kcal</th>
-      <th>production_Seed_kcal</th>
-      <th>production_Seed_k_kcal</th>
-      <th>production_Waste_kcal</th>
-      <th>production_Waste_k_kcal</th>
-      <th>production_Processing_kcal</th>
-      <th>production_Processing_k_kcal</th>
-      <th>production_Feed_fat</th>
-      <th>production_Feed_k_fat</th>
-      <th>production_Food_fat</th>
-      <th>production_Food_k_fat</th>
-      <th>production_Other_fat</th>
-      <th>production_Other_k_fat</th>
-      <th>production_Seed_fat</th>
-      <th>production_Seed_k_fat</th>
-      <th>production_Waste_fat</th>
-      <th>production_Waste_k_fat</th>
-      <th>production_Processing_fat</th>
-      <th>production_Processing_k_fat</th>
-      <th>production_Feed_protein</th>
-      <th>production_Feed_k_protein</th>
-      <th>production_Food_protein</th>
-      <th>production_Food_k_protein</th>
-      <th>production_Other_protein</th>
-      <th>production_Other_k_protein</th>
-      <th>production_Seed_protein</th>
-      <th>production_Seed_k_protein</th>
-      <th>production_Waste_protein</th>
-      <th>production_Waste_k_protein</th>
-      <th>production_Processing_protein</th>
-      <th>production_Processing_k_protein</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>Agave fibres nes</td>
-      <td>800.0</td>
-      <td>Mexico</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>MEX</td>
-      <td>MEX</td>
-      <td>t</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>sur</td>
-      <td>1</td>
-      <td>2007.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>37.702929</td>
-      <td>37.702929</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>0.255413</td>
-      <td>0.927016</td>
-      <td>0.000674</td>
-      <td>0.087989</td>
-      <td>0.877703</td>
-      <td>1.000000</td>
-      <td>9.629819</td>
-      <td>NaN</td>
-      <td>34.951226</td>
-      <td>NaN</td>
-      <td>37.702929</td>
-      <td>NaN</td>
-      <td>0.025416</td>
-      <td>NaN</td>
-      <td>3.317445</td>
-      <td>NaN</td>
-      <td>33.091975</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>Agave fibres nes</td>
-      <td>800.0</td>
-      <td>Mexico</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>MEX</td>
-      <td>MEX</td>
-      <td>t</td>
-      <td>20.0</td>
-      <td>50.0</td>
-      <td>sur</td>
-      <td>1</td>
-      <td>2007.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>37.702929</td>
-      <td>37.702929</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>0.255413</td>
-      <td>0.927016</td>
-      <td>0.000674</td>
-      <td>0.087989</td>
-      <td>0.877703</td>
-      <td>1.000000</td>
-      <td>9.629819</td>
-      <td>NaN</td>
-      <td>34.951226</td>
-      <td>NaN</td>
-      <td>37.702929</td>
-      <td>NaN</td>
-      <td>0.025416</td>
-      <td>NaN</td>
-      <td>3.317445</td>
-      <td>NaN</td>
-      <td>33.091975</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>Almonds, with shell</td>
-      <td>221.0</td>
-      <td>Colombia</td>
-      <td>Amazonas</td>
-      <td>La Chorrera</td>
-      <td>1</td>
-      <td>COL</td>
-      <td>COL001002</td>
-      <td>ha</td>
-      <td>20.0</td>
-      <td>50.0</td>
-      <td>cen</td>
-      <td>1</td>
-      <td>2013.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.905842</td>
-      <td>1.000000</td>
-      <td>0.135892</td>
-      <td>0.002301</td>
-      <td>0.782199</td>
-      <td>0.089903</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.11</td>
-      <td>0.03</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>Almonds, with shell</td>
-      <td>221.0</td>
-      <td>Colombia</td>
-      <td>Amazonas</td>
-      <td>La Chorrera</td>
-      <td>1</td>
-      <td>COL</td>
-      <td>COL001002</td>
-      <td>ha</td>
-      <td>50.0</td>
-      <td>100.0</td>
-      <td>cen</td>
-      <td>1</td>
-      <td>2013.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.905842</td>
-      <td>1.000000</td>
-      <td>0.135892</td>
-      <td>0.002301</td>
-      <td>0.782199</td>
-      <td>0.089903</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.11</td>
-      <td>0.03</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>Almonds, with shell</td>
-      <td>221.0</td>
-      <td>Colombia</td>
-      <td>Amazonas</td>
-      <td>La Chorrera</td>
-      <td>1</td>
-      <td>COL</td>
-      <td>COL001002</td>
-      <td>t</td>
-      <td>20.0</td>
-      <td>50.0</td>
-      <td>cen</td>
-      <td>1</td>
-      <td>2013.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>0.905842</td>
-      <td>1.000000</td>
-      <td>0.135892</td>
-      <td>0.002301</td>
-      <td>0.782199</td>
-      <td>0.089903</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>0.11</td>
-      <td>0.03</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fao</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/FaoStat/FAOSTAT/Production_Crops_E_All_Data_(Norm).csv&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fao</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp</span> <span class="o">=</span> <span class="n">fao</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">tmp2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp1</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;Area harvested&#39;</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp1</span><span class="p">,</span> <span class="n">tmp2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;inner&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="n">indicator</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">tmp1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
+<div class=" highlight hl-ipython2"><pre><span class="c"># &lt;a name=&quot;LeftOff&quot;&gt;&lt;/a&gt;</span>
+<span class="c"># &lt;h3&gt;Left Off&lt;/h3&gt;</span>
 </pre></div>
 
 </div>
