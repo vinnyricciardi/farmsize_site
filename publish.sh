@@ -41,7 +41,7 @@ for f in "${arr[@]}"; do
    #jupyter-nbconvert --to pdf "$filename".ipynb
    # Move to the html directory
    #mv "$filename".pdf  ../Pdfs/"$filename".pdf
-   #rm "$filename".ipynb
+   rm "$filename".ipynb
    #cd ..
 done
 
@@ -53,11 +53,11 @@ cp -r * /tmp/workspace/
 git add -A .
 git commit -m "Update Slides"
 git checkout -B gh-pages
-cp -r /tmp/workspace/* .
 git add -A .
 git commit -m "Update Slides"
 git push origin master gh-pages --force
 git checkout master
+cp -r /tmp/workspace/* .
 rm -rf /tmp/workspace
 
 mv /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json
