@@ -370,33 +370,18 @@ Here is a [link](https://vinnyricciardi.github.io/farmsize_site/Html/pivottablej
 
 
 ```python
-pivot_ui(tmp, 
-         rows=['Farm_Sizes'], 
-         cols=['Type'], 
-         aggregatorName='Sum', 
-         vals=['Food'],
-         rendererName='Col Heatmap',
-        )
+# pivot_ui(tmp, 
+#          rows=['Farm_Sizes'], 
+#          cols=['Type'], 
+#          aggregatorName='Sum', 
+#          vals=['Food'],
+#          rendererName='Col Heatmap', 
+#          colOrder= "value_a_to_z",)
 
 # Enable for pivot table interactivitity within this Jupyter notebook
 # Here's a nice example of how to change the html output file for prettier output: 
 # https://pivottable.js.org/examples/montreal_2014.html
 ```
-
-
-
-
-
-        <iframe
-            width="100%"
-            height="500"
-            src="pivottablejs.html"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-        
-
-
 
 <a name="FoodFeedOtherAcross"></a>
 <h2>Food Feed Other by Farm Size</h2><br>

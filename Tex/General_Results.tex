@@ -274,61 +274,61 @@
 
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
-        \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{l+s}{\PYZlt{}script\PYZgt{}}
-        \PY{l+s}{code\PYZus{}show=true; }
-        \PY{l+s}{function code\PYZus{}toggle() \PYZob{}}
-        \PY{l+s}{ if (code\PYZus{}show)\PYZob{}}
-        \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).hide();}
-        \PY{l+s}{ \PYZcb{} else \PYZob{}}
-        \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).show();}
-        \PY{l+s}{ \PYZcb{}}
-        \PY{l+s}{ code\PYZus{}show = !code\PYZus{}show}
-        \PY{l+s}{\PYZcb{} }
-        \PY{l+s}{\PYZdl{}( document ).ready(code\PYZus{}toggle);}
-        \PY{l+s}{\PYZlt{}/script\PYZgt{}}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k+kn}{from} \PY{n+nn}{IPython.display} \PY{k+kn}{import} \PY{n}{HTML}
+         \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{l+s}{\PYZlt{}script\PYZgt{}}
+         \PY{l+s}{code\PYZus{}show=true; }
+         \PY{l+s}{function code\PYZus{}toggle() \PYZob{}}
+         \PY{l+s}{ if (code\PYZus{}show)\PYZob{}}
+         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).hide();}
+         \PY{l+s}{ \PYZcb{} else \PYZob{}}
+         \PY{l+s}{ \PYZdl{}(}\PY{l+s}{\PYZsq{}}\PY{l+s}{div.input}\PY{l+s}{\PYZsq{}}\PY{l+s}{).show();}
+         \PY{l+s}{ \PYZcb{}}
+         \PY{l+s}{ code\PYZus{}show = !code\PYZus{}show}
+         \PY{l+s}{\PYZcb{} }
+         \PY{l+s}{\PYZdl{}( document ).ready(code\PYZus{}toggle);}
+         \PY{l+s}{\PYZlt{}/script\PYZgt{}}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} <IPython.core.display.HTML object>
+{\color{outcolor}Out[{\color{outcolor}15}]:} <IPython.core.display.HTML object>
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}208}]:} \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
-          \PY{l+s}{\PYZlt{}style\PYZgt{}}
-          \PY{l+s}{    .yourDiv \PYZob{}position: fixed;top: 100px; right: 0px; }
-          \PY{l+s}{              background: white;}
-          \PY{l+s}{              height: 100}\PY{l+s}{\PYZpc{}}\PY{l+s}{;}
-          \PY{l+s}{              width: 175px; }
-          \PY{l+s}{              padding: 10px; }
-          \PY{l+s}{              z\PYZhy{}index: 10000\PYZcb{}}
-          \PY{l+s}{\PYZlt{}/style\PYZgt{}}
-          \PY{l+s}{\PYZlt{}script\PYZgt{}}
-          \PY{l+s}{function showthis(url) \PYZob{}}
-          \PY{l+s}{	window.open(url, }\PY{l+s}{\PYZdq{}}\PY{l+s}{pres}\PY{l+s}{\PYZdq{}}\PY{l+s}{, }
-          \PY{l+s}{                }\PY{l+s}{\PYZdq{}}\PY{l+s}{toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500}\PY{l+s}{\PYZdq{}}\PY{l+s}{);}
-          \PY{l+s}{	return(false);}
-          \PY{l+s}{\PYZcb{}}
-          \PY{l+s}{\PYZlt{}/script\PYZgt{}}
-          
-          \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherAcross\PYZgt{}2. Across Farm Sizes\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherWithin\PYZgt{}3. Within Farm Sizes\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
-          
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=\PYZsh{}LeftOff\PYZgt{}Left Off Here\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZsq{}}\PY{l+s}{https://vinnyricciardi.github.io/farmsize\PYZus{}site/}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{}Site Index\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
-          \PY{l+s}{\PYZlt{}/div\PYZgt{}}
-          \PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{HTML}\PY{p}{(}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
+         \PY{l+s}{\PYZlt{}style\PYZgt{}}
+         \PY{l+s}{    .yourDiv \PYZob{}position: fixed;top: 100px; right: 0px; }
+         \PY{l+s}{              background: white;}
+         \PY{l+s}{              height: 100}\PY{l+s}{\PYZpc{}}\PY{l+s}{;}
+         \PY{l+s}{              width: 175px; }
+         \PY{l+s}{              padding: 10px; }
+         \PY{l+s}{              z\PYZhy{}index: 10000\PYZcb{}}
+         \PY{l+s}{\PYZlt{}/style\PYZgt{}}
+         \PY{l+s}{\PYZlt{}script\PYZgt{}}
+         \PY{l+s}{function showthis(url) \PYZob{}}
+         \PY{l+s}{	window.open(url, }\PY{l+s}{\PYZdq{}}\PY{l+s}{pres}\PY{l+s}{\PYZdq{}}\PY{l+s}{, }
+         \PY{l+s}{                }\PY{l+s}{\PYZdq{}}\PY{l+s}{toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500}\PY{l+s}{\PYZdq{}}\PY{l+s}{);}
+         \PY{l+s}{	return(false);}
+         \PY{l+s}{\PYZcb{}}
+         \PY{l+s}{\PYZlt{}/script\PYZgt{}}
+         
+         \PY{l+s}{\PYZlt{}div class=yourDiv\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}h4\PYZgt{}MENU\PYZlt{}/h4\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Data\PYZgt{}1. Data\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherAcross\PYZgt{}2. Across Farm Sizes\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}FoodFeedOtherWithin\PYZgt{}3. Within Farm Sizes\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}\PYZlt{}br\PYZgt{}}
+         
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}Top\PYZgt{}Top\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZdq{}}\PY{l+s}{javascript:code\PYZus{}toggle()}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZgt{}Toggle Code On/Off\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=\PYZsh{}LeftOff\PYZgt{}Left Off Here\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{    \PYZlt{}a href=}\PY{l+s}{\PYZsq{}}\PY{l+s}{https://vinnyricciardi.github.io/farmsize\PYZus{}site/}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{}Site Index\PYZlt{}/a\PYZgt{}\PYZlt{}br\PYZgt{}}
+         \PY{l+s}{\PYZlt{}/div\PYZgt{}}
+         \PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}208}]:} <IPython.core.display.HTML object>
+{\color{outcolor}Out[{\color{outcolor}16}]:} <IPython.core.display.HTML object>
 \end{Verbatim}
             
     General Results
@@ -361,246 +361,246 @@
 \end{itemize}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}183}]:} \PY{k+kn}{import} \PY{n+nn}{warnings}
-          \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-          \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
-          \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
-          \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
-          \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
-          \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{cm}
-          \PY{k+kn}{import} \PY{n+nn}{copy}
-          \PY{k+kn}{import} \PY{n+nn}{matplotlib.gridspec} \PY{k+kn}{as} \PY{n+nn}{gridspec}
-          \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k+kn}{import} \PY{n}{OrderedDict}
-          \PY{k+kn}{from} \PY{n+nn}{pivottablejs} \PY{k+kn}{import} \PY{n}{pivot\PYZus{}ui}  \PY{c}{\PYZsh{} python setup.py install \PYZhy{}\PYZhy{}user}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{seaborn\PYZhy{}muted}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-          \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+{\color{incolor}In [{\color{incolor}17}]:} \PY{k+kn}{import} \PY{n+nn}{warnings}
+         \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ignore}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k+kn}{as} \PY{n+nn}{sns}
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
+         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k+kn}{import} \PY{n}{cm}
+         \PY{k+kn}{import} \PY{n+nn}{copy}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib.gridspec} \PY{k+kn}{as} \PY{n+nn}{gridspec}
+         \PY{k+kn}{from} \PY{n+nn}{collections} \PY{k+kn}{import} \PY{n}{OrderedDict}
+         \PY{k+kn}{from} \PY{n+nn}{pivottablejs} \PY{k+kn}{import} \PY{n}{pivot\PYZus{}ui}  \PY{c}{\PYZsh{} python setup.py install \PYZhy{}\PYZhy{}user}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{seaborn\PYZhy{}muted}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}119}]:} \PY{k}{def} \PY{n+nf}{read\PYZus{}data}\PY{p}{(}\PY{n}{path}\PY{p}{)}\PY{p}{:}
-          
-              \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{path}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
-              \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{data\PYZus{}unit}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{t}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-              \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{cut}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
-                                          \PY{n}{bins}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,}
-                                                \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{,} \PY{l+m+mi}{100000}\PY{p}{]}\PY{p}{)}
-              
-              \PY{k}{global} \PY{n}{variables}
-              \PY{n}{variables} \PY{o}{=} \PY{n}{OrderedDict}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
-                                       \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Food\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Food}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
-                                       \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Feed\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Feed}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
-                                       \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Seed\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Seed}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
-                                       \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Waste\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Waste}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
-                                       \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Processing\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Processing}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
-                                       \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Other\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Other}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
-          
-              \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{variables}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{]}
-              \PY{n}{data}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{n}{variables}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}
-              
-              \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{)}  \PY{c}{\PYZsh{} there were many zero values}
-          
-              \PY{k}{return} \PY{n}{data}
+{\color{incolor}In [{\color{incolor}18}]:} \PY{k}{def} \PY{n+nf}{read\PYZus{}data}\PY{p}{(}\PY{n}{path}\PY{p}{)}\PY{p}{:}
+         
+             \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{path}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+             \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{data\PYZus{}unit}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{t}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+             \PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{cut}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{fs\PYZus{}class\PYZus{}max}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                         \PY{n}{bins}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,}
+                                               \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{,} \PY{l+m+mi}{100000}\PY{p}{]}\PY{p}{)}
+             
+             \PY{k}{global} \PY{n}{variables}
+             \PY{n}{variables} \PY{o}{=} \PY{n}{OrderedDict}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Food\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Food}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Feed\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Feed}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Seed\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Seed}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Waste\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Waste}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Processing\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Processing}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
+                                      \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{production\PYZus{}Other\PYZus{}kcal}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Other}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+         
+             \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{variables}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{]}
+             \PY{n}{data}\PY{o}{.}\PY{n}{columns} \PY{o}{=} \PY{n}{variables}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}
+             
+             \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{nan}\PY{p}{)}  \PY{c}{\PYZsh{} there were many zero values}
+         
+             \PY{k}{return} \PY{n}{data}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}120}]:} \PY{k}{def} \PY{n+nf}{data\PYZus{}stats}\PY{p}{(}\PY{n}{path}\PY{p}{)}\PY{p}{:}
-              
-              \PY{n}{path} \PY{o}{=} \PY{n}{PATH}
-              \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{path}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
-              \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{data\PYZus{}unit}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{t}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-              \PY{n}{number\PYZus{}records} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{data}\PY{p}{)}
-              \PY{n}{number\PYZus{}countries} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{data}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-              
-              \PY{k}{return} \PY{n}{number\PYZus{}records}\PY{p}{,} \PY{n}{number\PYZus{}countries}
+{\color{incolor}In [{\color{incolor}19}]:} \PY{k}{def} \PY{n+nf}{data\PYZus{}stats}\PY{p}{(}\PY{n}{path}\PY{p}{)}\PY{p}{:}
+             
+             \PY{n}{path} \PY{o}{=} \PY{n}{PATH}
+             \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{path}\PY{p}{,} \PY{n}{low\PYZus{}memory}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+             \PY{n}{data} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{data}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{data\PYZus{}unit}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{t}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+             \PY{n}{number\PYZus{}records} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+             \PY{n}{number\PYZus{}countries} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{data}\PY{o}{.}\PY{n}{NAME\PYZus{}0}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+             
+             \PY{k}{return} \PY{n}{number\PYZus{}records}\PY{p}{,} \PY{n}{number\PYZus{}countries}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}121}]:} \PY{k}{def} \PY{n+nf}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{func}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{nansum}\PY{p}{)}\PY{p}{:}
-          
-              \PY{n}{pivot} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{data}\PY{p}{,}
-                                     \PY{n}{index}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
-                                     \PY{n}{values}\PY{o}{=}\PY{n}{variables}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{,}
-                                     \PY{n}{aggfunc}\PY{o}{=}\PY{n}{func}\PY{p}{)}
-          
-              \PY{k}{return} \PY{n}{pivot}
+{\color{incolor}In [{\color{incolor}20}]:} \PY{k}{def} \PY{n+nf}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{func}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{nansum}\PY{p}{)}\PY{p}{:}
+         
+             \PY{n}{pivot} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{pivot\PYZus{}table}\PY{p}{(}\PY{n}{data}\PY{p}{,}
+                                    \PY{n}{index}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                                    \PY{n}{values}\PY{o}{=}\PY{n}{variables}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{,}
+                                    \PY{n}{aggfunc}\PY{o}{=}\PY{n}{func}\PY{p}{)}
+         
+             \PY{k}{return} \PY{n}{pivot}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}122}]:} \PY{k}{def} \PY{n+nf}{perc}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
-          
-              \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-          
-                  \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
-                  \PY{n}{pivot} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
-          
-                  \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
-                      \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
-          
-                  \PY{k}{return} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
-          
-          
-              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-          
-                  \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
-          
-                  \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
-                      \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
-          
-                  \PY{n}{pivot} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
-          
-                  \PY{k}{return} \PY{n}{pivot}
-          
-          
-              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-          
-                  \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
-          
-                  \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
-                      \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
-          
-                  \PY{k}{return} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
-          
-              \PY{k}{else}\PY{p}{:}
-          
-                  \PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{Require how argument}\PY{l+s}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}21}]:} \PY{k}{def} \PY{n+nf}{perc}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+         
+             \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+                     \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+         
+         
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+         
+                 \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+                     \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{pivot}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pivot}
+         
+         
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{pivot} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+         
+                 \PY{k}{for} \PY{n}{variable} \PY{o+ow}{in} \PY{n}{pivot}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+                     \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{=} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]} \PY{o}{/} \PY{n}{pivot}\PY{p}{[}\PY{n}{variable}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+         
+                 \PY{k}{return} \PY{n}{pivot}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+         
+             \PY{k}{else}\PY{p}{:}
+         
+                 \PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{Require how argument}\PY{l+s}{\PYZsq{}}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}123}]:} \PY{k}{def} \PY{n+nf}{plot\PYZus{}stacked\PYZus{}bar}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fig\PYZus{}}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n+nb+bp}{None}\PY{p}{)}\PY{p}{:}
-          
-              \PY{n}{txt1} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Feed}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Food}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Other}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Processing}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Seed}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Waste}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-              \PY{n}{txt2} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZlt{} 1}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{1 to 2}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{2 to 5}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{5 to 10}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{10 to 20}\PY{l+s}{\PYZsq{}}\PY{p}{,}
-                      \PY{l+s}{\PYZsq{}}\PY{l+s}{20 to 50}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{50 to 100}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{100 to 200}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{200 to 500}\PY{l+s}{\PYZsq{}}\PY{p}{,}
-                      \PY{l+s}{\PYZsq{}}\PY{l+s}{500 to 1000}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{} 1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-              \PY{n}{txt3} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZlt{} 1}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{2 to 5}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{10 to 20}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{50 to 100}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{200 to 500}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{} 1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-          
-              \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-          
-                  \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
-                  \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt2}\PY{p}{)}
-                  \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Set3}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{bar}\PY{l+s}{\PYZsq{}}
-          
-              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-          
-                  \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt2}\PY{p}{)}
-                  \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
-                  \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{YlGnBu}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{bar}\PY{l+s}{\PYZsq{}}
-          
-              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-          
-                  \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
-                  \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt3}\PY{p}{)}
-                  \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Set3}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{area}\PY{l+s}{\PYZsq{}}
-              
-              \PY{k}{else}\PY{p}{:}
-                  \PY{k}{pass}
-              
-              \PY{k}{if} \PY{n}{fig\PYZus{}} \PY{o+ow}{is} \PY{n+nb+bp}{True}\PY{p}{:}
-                  
-                  \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,} \PY{n}{facecolor}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
-              
-              \PY{k}{else}\PY{p}{:}
-                  \PY{k}{pass}
-          
-              \PY{n}{data}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kind}\PY{o}{=}\PY{n}{kind}\PY{p}{,}
-                        \PY{n}{stacked}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,}
-                        \PY{n}{cmap}\PY{o}{=}\PY{n}{cmap}\PY{p}{,}
-                        \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.9}\PY{p}{,}
-                        \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
-                        \PY{n}{grid}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{,}
-                        \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}
-              
-              \PY{c}{\PYZsh{} Axis main}
-              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}axis\PYZus{}bgcolor}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZsh{}d6d7e5}\PY{l+s}{\PYZdq{}}\PY{p}{)}
-              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}clip\PYZus{}on}\PY{p}{(}\PY{n+nb+bp}{False}\PY{p}{)}
-              \PY{n}{box} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{get\PYZus{}position}\PY{p}{(}\PY{p}{)}
-              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}position}\PY{p}{(}\PY{p}{[}\PY{n}{box}\PY{o}{.}\PY{n}{x0}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{y0}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{width} \PY{o}{*} \PY{l+m+mf}{0.8}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{height}\PY{p}{]}\PY{p}{)}
-          
-              \PY{c}{\PYZsh{} Legend}
-              \PY{n}{legend\PYZus{}txts\PYZus{}r} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{legend\PYZus{}txts}\PY{p}{)}
-              \PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{o}{.}\PY{n}{reverse}\PY{p}{(}\PY{p}{)}
-              \PY{n}{handles}\PY{p}{,} \PY{n}{labels} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{get\PYZus{}legend\PYZus{}handles\PYZus{}labels}\PY{p}{(}\PY{p}{)}
-              \PY{n}{legend} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{handles}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{labels}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
-                                 \PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{center left}\PY{l+s}{\PYZsq{}}\PY{p}{,}
-                                 \PY{n}{frameon}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}
-                                 \PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{)}
-          
-              \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-                  \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}texts}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}text}\PY{p}{(}\PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-          
-              \PY{n}{frame} \PY{o}{=} \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}frame}\PY{p}{(}\PY{p}{)}
-              \PY{n}{frame}\PY{o}{.}\PY{n}{set\PYZus{}color}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-          
-              \PY{c}{\PYZsh{} Axis particulars}
-              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{labels\PYZus{}txts}\PY{p}{)}
-              \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{get\PYZus{}majorticklabels}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+m+mi}{45}\PY{p}{)}
-          
-              \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm Sizes (ha)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production per farm size}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
-          
-              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Category}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production across farm size}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
-                  
-              \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm Sizes (ha)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-                  \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production per farm size: Cumulative}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
-          
-              \PY{k}{if} \PY{n}{fig\PYZus{}} \PY{o+ow}{is} \PY{n+nb+bp}{True}\PY{p}{:}
-                  \PY{k}{return} \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-          
-              \PY{k}{else}\PY{p}{:}
-                  \PY{k}{return} \PY{n}{ax}
+{\color{incolor}In [{\color{incolor}22}]:} \PY{k}{def} \PY{n+nf}{plot\PYZus{}stacked\PYZus{}bar}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fig\PYZus{}}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n+nb+bp}{None}\PY{p}{)}\PY{p}{:}
+         
+             \PY{n}{txt1} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Feed}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Food}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Other}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Processing}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Seed}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Waste}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+             \PY{n}{txt2} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZlt{} 1}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{1 to 2}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{2 to 5}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{5 to 10}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{10 to 20}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                     \PY{l+s}{\PYZsq{}}\PY{l+s}{20 to 50}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{50 to 100}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{100 to 200}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{200 to 500}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                     \PY{l+s}{\PYZsq{}}\PY{l+s}{500 to 1000}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{} 1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+             \PY{n}{txt3} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZlt{} 1}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{2 to 5}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{10 to 20}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{50 to 100}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{200 to 500}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZgt{} 1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+         
+             \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
+                 \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt2}\PY{p}{)}
+                 \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Set3}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{bar}\PY{l+s}{\PYZsq{}}
+         
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt2}\PY{p}{)}
+                 \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
+                 \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{YlGnBu}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{bar}\PY{l+s}{\PYZsq{}}
+         
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+         
+                 \PY{n}{legend\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt1}\PY{p}{)}
+                 \PY{n}{labels\PYZus{}txts} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{n}{txt3}\PY{p}{)}
+                 \PY{n}{cmap} \PY{o}{=} \PY{n}{cm}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Set3}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{kind} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{area}\PY{l+s}{\PYZsq{}}
+             
+             \PY{k}{else}\PY{p}{:}
+                 \PY{k}{pass}
+             
+             \PY{k}{if} \PY{n}{fig\PYZus{}} \PY{o+ow}{is} \PY{n+nb+bp}{True}\PY{p}{:}
+                 
+                 \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,} \PY{n}{facecolor}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
+             
+             \PY{k}{else}\PY{p}{:}
+                 \PY{k}{pass}
+         
+             \PY{n}{data}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kind}\PY{o}{=}\PY{n}{kind}\PY{p}{,}
+                       \PY{n}{stacked}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,}
+                       \PY{n}{cmap}\PY{o}{=}\PY{n}{cmap}\PY{p}{,}
+                       \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.9}\PY{p}{,}
+                       \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}
+                       \PY{n}{grid}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{,}
+                       \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{)}
+             
+             \PY{c}{\PYZsh{} Axis main}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}axis\PYZus{}bgcolor}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZsh{}d6d7e5}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}clip\PYZus{}on}\PY{p}{(}\PY{n+nb+bp}{False}\PY{p}{)}
+             \PY{n}{box} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{get\PYZus{}position}\PY{p}{(}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}position}\PY{p}{(}\PY{p}{[}\PY{n}{box}\PY{o}{.}\PY{n}{x0}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{y0}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{width} \PY{o}{*} \PY{l+m+mf}{0.8}\PY{p}{,} \PY{n}{box}\PY{o}{.}\PY{n}{height}\PY{p}{]}\PY{p}{)}
+         
+             \PY{c}{\PYZsh{} Legend}
+             \PY{n}{legend\PYZus{}txts\PYZus{}r} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{legend\PYZus{}txts}\PY{p}{)}
+             \PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{o}{.}\PY{n}{reverse}\PY{p}{(}\PY{p}{)}
+             \PY{n}{handles}\PY{p}{,} \PY{n}{labels} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{get\PYZus{}legend\PYZus{}handles\PYZus{}labels}\PY{p}{(}\PY{p}{)}
+             \PY{n}{legend} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{handles}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{labels}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}
+                                \PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{center left}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                \PY{n}{frameon}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}
+                                \PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{)}
+         
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{xrange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}texts}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}text}\PY{p}{(}\PY{n}{legend\PYZus{}txts\PYZus{}r}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+         
+             \PY{n}{frame} \PY{o}{=} \PY{n}{legend}\PY{o}{.}\PY{n}{get\PYZus{}frame}\PY{p}{(}\PY{p}{)}
+             \PY{n}{frame}\PY{o}{.}\PY{n}{set\PYZus{}color}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+             \PY{c}{\PYZsh{} Axis particulars}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{labels\PYZus{}txts}\PY{p}{)}
+             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{get\PYZus{}majorticklabels}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{rotation}\PY{o}{=}\PY{l+m+mi}{45}\PY{p}{)}
+         
+             \PY{k}{if} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm Sizes (ha)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production per farm size}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
+         
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Category}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production across farm size}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
+                 
+             \PY{k}{elif} \PY{n}{how} \PY{o+ow}{is} \PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm Sizes (ha)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Percentage}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type of production per farm size: Cumulative}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{12}\PY{p}{)}
+         
+             \PY{k}{if} \PY{n}{fig\PYZus{}} \PY{o+ow}{is} \PY{n+nb+bp}{True}\PY{p}{:}
+                 \PY{k}{return} \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         
+             \PY{k}{else}\PY{p}{:}
+                 \PY{k}{return} \PY{n}{ax}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}124}]:} \PY{n}{PATH} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/FarmSize\PYZus{}data\PYZus{}fullyProcessed.csv}\PY{l+s}{\PYZsq{}}
-          \PY{n}{df} \PY{o}{=} \PY{n}{read\PYZus{}data}\PY{p}{(}\PY{n}{PATH}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{PATH} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/Vinny\PYZus{}Ricciardi/Documents/Data\PYZus{}Library\PYZus{}Big/Survey/Global/Farm\PYZus{}Size/Data/FarmSize\PYZus{}data\PYZus{}fullyProcessed.csv}\PY{l+s}{\PYZsq{}}
+         \PY{n}{df} \PY{o}{=} \PY{n}{read\PYZus{}data}\PY{p}{(}\PY{n}{PATH}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}125}]:} \PY{n}{df\PYZus{}within} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-          \PY{n}{df\PYZus{}across} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-          \PY{n}{df\PYZus{}cumsum} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-          \PY{n}{df\PYZus{}raw} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{df}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{df\PYZus{}within} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{within}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{df\PYZus{}across} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{across}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{df\PYZus{}cumsum} \PY{o}{=} \PY{n}{perc}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{how}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{cumsum}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{df\PYZus{}raw} \PY{o}{=} \PY{n}{piv}\PY{p}{(}\PY{n}{df}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}126}]:} \PY{n}{tmp1} \PY{o}{=} \PY{n}{df\PYZus{}within}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
-          \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Within}\PY{l+s}{\PYZsq{}}
-          
-          \PY{n}{tmp2} \PY{o}{=} \PY{n}{df\PYZus{}across}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
-          \PY{n}{tmp2} \PY{o}{=} \PY{n}{tmp2}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
-          \PY{n}{tmp2}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Across}\PY{l+s}{\PYZsq{}}
-          
-          \PY{n}{tmp3} \PY{o}{=} \PY{n}{df\PYZus{}cumsum}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
-          \PY{n}{tmp3}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Cumsum}\PY{l+s}{\PYZsq{}}
-          
-          \PY{n}{tmp4} \PY{o}{=} \PY{n}{df\PYZus{}raw}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
-          \PY{n}{tmp4}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Raw}\PY{l+s}{\PYZsq{}}
-          
-          \PY{n}{tmp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{tmp1}\PY{p}{,} \PY{n}{tmp2}\PY{p}{,} \PY{n}{tmp3}\PY{p}{,} \PY{n}{tmp4}\PY{p}{]}\PY{p}{)}
-          \PY{n}{tmp} \PY{o}{=} \PY{n}{tmp}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
-          \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{(}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
-          \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{tmp1} \PY{o}{=} \PY{n}{df\PYZus{}within}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{tmp1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Within}\PY{l+s}{\PYZsq{}}
+         
+         \PY{n}{tmp2} \PY{o}{=} \PY{n}{df\PYZus{}across}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{tmp2} \PY{o}{=} \PY{n}{tmp2}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{p}{)}
+         \PY{n}{tmp2}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Across}\PY{l+s}{\PYZsq{}}
+         
+         \PY{n}{tmp3} \PY{o}{=} \PY{n}{df\PYZus{}cumsum}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{tmp3}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Cumsum}\PY{l+s}{\PYZsq{}}
+         
+         \PY{n}{tmp4} \PY{o}{=} \PY{n}{df\PYZus{}raw}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{tmp4}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Raw}\PY{l+s}{\PYZsq{}}
+         
+         \PY{n}{tmp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{tmp1}\PY{p}{,} \PY{n}{tmp2}\PY{p}{,} \PY{n}{tmp3}\PY{p}{,} \PY{n}{tmp4}\PY{p}{]}\PY{p}{)}
+         \PY{n}{tmp} \PY{o}{=} \PY{n}{tmp}\PY{o}{.}\PY{n}{reset\PYZus{}index}\PY{p}{(}\PY{p}{)}
+         \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{(}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tmp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{str}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{]}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -618,24 +618,20 @@ dropdown labeled 'Food' to recalculate based on another production
 category.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}127}]:} \PY{n}{pivot\PYZus{}ui}\PY{p}{(}\PY{n}{tmp}\PY{p}{,} 
-                   \PY{n}{rows}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Farm\PYZus{}Sizes}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} 
-                   \PY{n}{cols}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} 
-                   \PY{n}{aggregatorName}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Sum}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
-                   \PY{n}{vals}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Food}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
-                   \PY{n}{rendererName}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Col Heatmap}\PY{l+s}{\PYZsq{}}\PY{p}{,}
-                  \PY{p}{)}
-          
-          \PY{c}{\PYZsh{} Enable for pivot table interactivitity within this Jupyter notebook}
-          \PY{c}{\PYZsh{} Here\PYZsq{}s a nice example of how to change the html output file for prettier output: }
-          \PY{c}{\PYZsh{} https://pivottable.js.org/examples/montreal\PYZus{}2014.html}
+{\color{incolor}In [{\color{incolor}84}]:} \PY{c}{\PYZsh{} pivot\PYZus{}ui(tmp, }
+         \PY{c}{\PYZsh{}          rows=[\PYZsq{}Farm\PYZus{}Sizes\PYZsq{}], }
+         \PY{c}{\PYZsh{}          cols=[\PYZsq{}Type\PYZsq{}], }
+         \PY{c}{\PYZsh{}          aggregatorName=\PYZsq{}Sum\PYZsq{}, }
+         \PY{c}{\PYZsh{}          vals=[\PYZsq{}Food\PYZsq{}],}
+         \PY{c}{\PYZsh{}          rendererName=\PYZsq{}Col Heatmap\PYZsq{}, }
+         \PY{c}{\PYZsh{}          colOrder= \PYZdq{}value\PYZus{}a\PYZus{}to\PYZus{}z\PYZdq{},)}
+         
+         \PY{c}{\PYZsh{} Enable for pivot table interactivitity within this Jupyter notebook}
+         \PY{c}{\PYZsh{} Here\PYZsq{}s a nice example of how to change the html output file for prettier output: }
+         \PY{c}{\PYZsh{} https://pivottable.js.org/examples/montreal\PYZus{}2014.html}
 \end{Verbatim}
 
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}127}]:} <IPython.lib.display.IFrame at 0x1120601d0>
-\end{Verbatim}
-            
     Food Feed Other by Farm Size
 
     This plot shows the percentage that each farm size contributes to each
