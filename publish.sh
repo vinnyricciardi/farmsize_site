@@ -16,33 +16,33 @@ for f in "${arr[@]}"; do
    filename="${filename%.*}"
 
    # Convert the Notebook to HTML
-   jupyter-nbconvert --to html Notebooks/"$filename".ipynb
+   #jupyter-nbconvert --to html Notebooks/"$filename".ipynb
    # Move to the Html directory
-   mv Notebooks/"$filename".html  Html/"$filename".html
+   #mv Notebooks/"$filename".html  Html/"$filename".html
 
    # Convert the Notebook to slides
-   jupyter-nbconvert --to slides Notebooks/"$filename".ipynb --reveal-prefix=reveal.js
+   #jupyter-nbconvert --to slides Notebooks/"$filename".ipynb --reveal-prefix=reveal.js
    # Move to the Slides directory
-   mv Notebooks/"$filename".slides.html  Slides/"$filename".html
+   #mv Notebooks/"$filename".slides.html  Slides/"$filename".html
 
    # Convert the Notebook to Markdown
-   jupyter-nbconvert --to markdown Notebooks/"$filename".ipynb
+   #jupyter-nbconvert --to markdown Notebooks/"$filename".ipynb
    # Move to the Markdown directory
-   mv Notebooks/"$filename".md  Markdown/"$filename".md
+   #mv Notebooks/"$filename".md  Markdown/"$filename".md
 
    # Convert the Notebook to Latex
-   jupyter-nbconvert --to latex Notebooks/"$filename".ipynb
+   #jupyter-nbconvert --to latex Notebooks/"$filename".ipynb
    # Move to the Tex directory
-   mv Notebooks/"$filename".tex  Tex/"$filename".tex
+   #mv Notebooks/"$filename".tex  Tex/"$filename".tex
 
    # Convert the Notebook to Pdf
-   cp Notebooks/"$filename".ipynb src/"$filename".ipynb
-   cd src
-   jupyter-nbconvert --to pdf "$filename".ipynb
+   #cp Notebooks/"$filename".ipynb src/"$filename".ipynb
+   #cd src
+   #jupyter-nbconvert --to pdf "$filename".ipynb
    # Move to the html directory
-   mv "$filename".pdf  ../Pdfs/"$filename".pdf
-   rm "$filename".ipynb
-   cd ..
+   #mv "$filename".pdf  ../Pdfs/"$filename".pdf
+   #rm "$filename".ipynb
+   #cd ..
 done
 
 # Push the updates to gh-pages
@@ -50,12 +50,12 @@ mkdir -p /tmp/workspace
 cp -r * /tmp/workspace/
 git add -A .
 git commit -m "Update Slides"
-git checkout -B gh-pages
-cp -r /tmp/workspace/* .
-git add -A .
-git commit -m "Update Slides"
-git push origin master gh-pages
-git checkout master
+#git checkout -B gh-pages
+#cp -r /tmp/workspace/* .
+#git add -A .
+#git commit -m "Update Slides"
+git push --force origin master gh-pages
+#git checkout master
 rm -rf /tmp/workspace
 
 mv /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json
