@@ -49,14 +49,13 @@ done
 mkdir -p /tmp/workspace
 cp -r * /tmp/workspace/
 git add -A .
-#git commit -m "Update Slides"
-#git push --force origin master gh-pages
-#git checkout -B gh-pages
-#cp -r /tmp/workspace/* .
-#git add -A .
 git commit -m "Update Slides"
-git push --force origin gh-pages
-#git checkout master
+git checkout -B gh-pages
+cp -r /tmp/workspace/* .
+git add -A .
+git commit -m "Update Slides"
+git push origin master gh-pages
+git checkout master
 rm -rf /tmp/workspace
 
 mv /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json
