@@ -16,9 +16,9 @@ for f in "${arr[@]}"; do
    filename="${filename%.*}"
 
    # Convert the Notebook to HTML
-   #jupyter-nbconvert --to html Notebooks/"$filename".ipynb
+   jupyter-nbconvert --to html Notebooks/"$filename".ipynb
    # Move to the Html directory
-   #mv Notebooks/"$filename".html  Html/"$filename".html
+   mv Notebooks/"$filename".html  Html/"$filename".html
 
    # Convert the Notebook to slides
    #jupyter-nbconvert --to slides Notebooks/"$filename".ipynb --reveal-prefix=reveal.js
@@ -54,8 +54,8 @@ git push --force origin master gh-pages
 #git checkout -B gh-pages
 #cp -r /tmp/workspace/* .
 #git add -A .
-git commit -m "Update Slides"
-git push --force origin gh-pages
+#git commit -m "Update Slides"
+#git push --force origin gh-pages
 #git checkout master
 rm -rf /tmp/workspace
 
