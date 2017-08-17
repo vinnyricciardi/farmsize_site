@@ -45,6 +45,8 @@ for f in "${arr[@]}"; do
    #cd ..
 done
 
+cp Notebooks/pivottablejs.html Html/pivottablejs.html 
+
 # Push the updates to gh-pages
 #mkdir -p /tmp/workspace
 #cp -r * /tmp/workspace/
