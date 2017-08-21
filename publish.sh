@@ -41,7 +41,7 @@ for f in "${arr[@]}"; do
    #jupyter-nbconvert --to pdf "$filename".ipynb
    # Move to the html directory
    #mv "$filename".pdf  ../Pdfs/"$filename".pdf
-   rm "$filename".ipynb
+   #rm "$filename".ipynb
    #cd ..
 done
 
