@@ -48,8 +48,8 @@ done
 cp Notebooks/pivottablejs.html Html/pivottablejs.html 
 
 # Push the updates to gh-pages
-mkdir -p /tmp/workspace
-cp -r * /tmp/workspace/
+#mkdir -p /tmp/workspace
+#cp -r * /tmp/workspace/
 git add -A .
 git commit -m "Update Slides"
 git checkout -B gh-pages
@@ -57,7 +57,7 @@ git add -A .
 git commit -m "Update Slides"
 git push origin master gh-pages --force
 git checkout master
-cp -r /tmp/workspace/* .
-rm -rf /tmp/workspace
+#cp -r /tmp/workspace/* .
+#rm -rf /tmp/workspace
 
 mv /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json
