@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mv /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json
+#mv /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json
 
 # Generate the Slides and Pages
 jupyter-nbconvert Notebooks/Index.ipynb --reveal-prefix=reveal.js
@@ -60,4 +60,4 @@ git checkout master
 #cp -r /tmp/workspace/* .
 #rm -rf /tmp/workspace
 
-mv /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json
+#mv /Users/Vinny_Ricciardi/.jupyter/tmp_jupyter_nbconvert_config.json /Users/Vinny_Ricciardi/.jupyter/jupyter_nbconvert_config.json
