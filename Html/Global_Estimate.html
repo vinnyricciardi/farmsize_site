@@ -11611,8 +11611,10 @@ ul.typeahead-list > li > a {
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -11647,12 +11649,15 @@ ul.typeahead-list > li > a {
 .highlight .nv { color: #19177C } /* Name.Variable */
 .highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11663,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11706,9 +11713,6 @@ ul.typeahead-list > li > a {
 
 .ansi-bold { font-weight: bold; }
 
-    </style>
-<style type="text/css">
-    
     </style>
 
 
@@ -11772,19 +11776,19 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;&lt;script&gt;</span>
-<span class="s">code_show=true; </span>
-<span class="s">function code_toggle() {</span>
-<span class="s"> if (code_show){</span>
-<span class="s"> $(&#39;div.input&#39;).hide();</span>
-<span class="s"> } else {</span>
-<span class="s"> $(&#39;div.input&#39;).show();</span>
-<span class="s"> }</span>
-<span class="s"> code_show = !code_show</span>
-<span class="s">} </span>
-<span class="s">$( document ).ready(code_toggle);</span>
-<span class="s">&lt;/script&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11827,43 +11831,43 @@ $( document ).ready(code_toggle);
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">HTML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span>
-<span class="s">&lt;style&gt;</span>
-<span class="s">    .yourDiv {position: fixed;top: 100px; right: 0px; </span>
-<span class="s">              background: white;</span>
-<span class="s">              height: 100%;</span>
-<span class="s">              width: 175px; </span>
-<span class="s">              padding: 10px; </span>
-<span class="s">              z-index: 10000}</span>
-<span class="s">&lt;/style&gt;</span>
-<span class="s">&lt;script&gt;</span>
-<span class="s">function showthis(url) {</span>
-<span class="s">	window.open(url, &quot;pres&quot;, </span>
-<span class="s">                &quot;toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500&quot;);</span>
-<span class="s">	return(false);</span>
-<span class="s">}</span>
-<span class="s">&lt;/script&gt;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;style&gt;</span>
+<span class="s1">    .yourDiv {position: fixed;top: 100px; right: 0px; </span>
+<span class="s1">              background: white;</span>
+<span class="s1">              height: 100%;</span>
+<span class="s1">              width: 175px; </span>
+<span class="s1">              padding: 10px; </span>
+<span class="s1">              z-index: 10000}</span>
+<span class="s1">&lt;/style&gt;</span>
+<span class="s1">&lt;script&gt;</span>
+<span class="s1">function showthis(url) {</span>
+<span class="s1">	window.open(url, &quot;pres&quot;, </span>
+<span class="s1">                &quot;toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500&quot;);</span>
+<span class="s1">	return(false);</span>
+<span class="s1">}</span>
+<span class="s1">&lt;/script&gt;</span>
 
-<span class="s">&lt;div class=yourDiv&gt;</span>
-<span class="s">    &lt;h4&gt;MENU&lt;/h4&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#Data&gt;1. Data&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#FoodFeedOtherAcross&gt;2. Across Farm Sizes&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#FoodFeedOtherWithin&gt;3. Within Farm Sizes&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=#GlobalEstimates&gt;3. Global Estimates&lt;/a&gt;&lt;br&gt;&lt;br&gt;</span>
+<span class="s1">&lt;div class=yourDiv&gt;</span>
+<span class="s1">    &lt;h4&gt;MENU&lt;/h4&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=#Data&gt;1. Data&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=#FoodFeedOtherAcross&gt;2. Across Farm Sizes&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=#FoodFeedOtherWithin&gt;3. Within Farm Sizes&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=#GlobalEstimates&gt;3. Global Estimates&lt;/a&gt;&lt;br&gt;&lt;br&gt;</span>
 
-<span class="s">    &lt;a href=#Top&gt;Top&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&quot;javascript:code_toggle()&quot;&gt;Toggle Code On/Off&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=#Top&gt;Top&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&quot;javascript:code_toggle()&quot;&gt;Toggle Code On/Off&lt;/a&gt;&lt;br&gt;</span>
 
-<span class="s">    &lt;h4&gt;PROJECT NOTEBOOKS&lt;/h4&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Project_Overview&#39;&gt;Project Overview&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Data_Coverage&#39;&gt;Data Coverage&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/General_Results&#39;&gt;General Results&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Global_Estimate&#39;&gt;Global Estimates&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Crop_Diversity&#39;&gt;Crop Diversity&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Sensitivity_Analyses&#39;&gt;Sensitivity Analyses&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/&#39;&gt;Site Index&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">&lt;/div&gt;</span>
-<span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="s1">    &lt;h4&gt;PROJECT NOTEBOOKS&lt;/h4&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Project_Overview&#39;&gt;Project Overview&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Data_Coverage&#39;&gt;Data Coverage&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/General_Results&#39;&gt;General Results&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Global_Estimate&#39;&gt;Global Estimates&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Crop_Diversity&#39;&gt;Crop Diversity&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Sensitivity_Analyses&#39;&gt;Sensitivity Analyses&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/&#39;&gt;Site Index&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">&lt;/div&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11941,8 +11945,8 @@ function showthis(url) {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">&#39;ignore&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -11953,22 +11957,22 @@ function showthis(url) {
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
-<span class="kn">from</span> <span class="nn">pivottablejs</span> <span class="kn">import</span> <span class="n">pivot_ui</span>  <span class="c"># may have to use: python setup.py install --user</span>
+<span class="kn">from</span> <span class="nn">pivottablejs</span> <span class="kn">import</span> <span class="n">pivot_ui</span>  <span class="c1"># may have to use: python setup.py install --user</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="kn">as</span> <span class="nn">st</span>
 <span class="kn">import</span> <span class="nn">statsmodels.stats.api</span> <span class="kn">as</span> <span class="nn">sms</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="kn">as</span> <span class="nn">patches</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
-<span class="c"># import statsmodels.api as sm</span>
+<span class="c1"># import statsmodels.api as sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">as</span> <span class="nn">smf</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="kn">as</span> <span class="nn">stats</span>
-<span class="c"># from __future__ import print_function</span>
+<span class="c1"># from __future__ import print_function</span>
 <span class="kn">from</span> <span class="nn">statsmodels.iolib.table</span> <span class="kn">import</span> <span class="p">(</span><span class="n">SimpleTable</span><span class="p">,</span> <span class="n">default_txt_fmt</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&#39;seaborn-muted&#39;</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-muted&#39;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -11983,15 +11987,15 @@ function showthis(url) {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">read_data_init</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">read_data_init</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     
     <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-    <span class="n">data</span><span class="p">[</span><span class="s">&#39;fs_class_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;fs_class_max&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;fs_class_max&#39;</span><span class="p">])</span>
-    <span class="n">data</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;fs_class_max&#39;</span><span class="p">],</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;fs_class_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fs_class_max&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;fs_class_max&#39;</span><span class="p">])</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fs_class_max&#39;</span><span class="p">],</span>
                                 <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span>
                                       <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">])</span>
     
-    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>  <span class="c"># there were many zero values</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>  <span class="c1"># there were many zero values</span>
     
     <span class="k">return</span> <span class="n">data</span>
 </pre></div>
@@ -12006,12 +12010,12 @@ function showthis(url) {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">PATH_our_data</span> <span class="o">=</span> <span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/Farm_Size/Data/FarmSize_data_fullyProcessed.csv&#39;</span>
-<span class="n">PATH_lowder</span> <span class="o">=</span> <span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/Farm_Size/External_Datasets/Lowder_Supp_cleaned.csv&#39;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">PATH_our_data</span> <span class="o">=</span> <span class="s1">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/Farm_Size/Data/FarmSize_data_fullyProcessed.csv&#39;</span>
+<span class="n">PATH_lowder</span> <span class="o">=</span> <span class="s1">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/Farm_Size/External_Datasets/Lowder_Supp_cleaned.csv&#39;</span>
 <span class="n">data_orig</span> <span class="o">=</span> <span class="n">read_data_init</span><span class="p">(</span><span class="n">PATH_our_data</span><span class="p">)</span>
 <span class="n">lowder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PATH_lowder</span><span class="p">)</span>
-<span class="n">lowder</span> <span class="o">=</span> <span class="n">lowder</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lowder</span><span class="p">[</span><span class="s">&#39;Holdings/ agricultural area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;Holdings&#39;</span><span class="p">]</span>
-<span class="n">lowder</span> <span class="o">=</span> <span class="n">lowder</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">lowder</span><span class="p">[[</span><span class="s">u&#39;year&#39;</span><span class="p">,</span> <span class="s">u&#39;Region&#39;</span><span class="p">,</span> <span class="s">u&#39;Holdings/ agricultural area&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lowder</span> <span class="o">=</span> <span class="n">lowder</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lowder</span><span class="p">[</span><span class="s1">&#39;Holdings/ agricultural area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Holdings&#39;</span><span class="p">]</span>
+<span class="n">lowder</span> <span class="o">=</span> <span class="n">lowder</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">lowder</span><span class="p">[[</span><span class="sa">u</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Region&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Holdings/ agricultural area&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12024,7 +12028,7 @@ function showthis(url) {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mf">75.</span><span class="p">,</span> <span class="mf">150.</span><span class="p">,</span> <span class="mf">350.</span><span class="p">,</span> <span class="mf">750.</span><span class="p">,</span> <span class="mf">1500.</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mf">75.</span><span class="p">,</span> <span class="mf">150.</span><span class="p">,</span> <span class="mf">350.</span><span class="p">,</span> <span class="mf">750.</span><span class="p">,</span> <span class="mf">1500.</span><span class="p">]</span>
 <span class="n">c</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">lowder</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">b</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
@@ -12041,12 +12045,12 @@ function showthis(url) {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">has</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lowder</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">])</span>
-<span class="n">ours</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_orig</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;production_Food_kcal == production_Food_kcal&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> 
-                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">])</span>
-<span class="n">together</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">has</span><span class="p">,</span> <span class="n">ours</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">&#39;NAME_0&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">has</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lowder</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">])</span>
+<span class="n">ours</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_orig</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;production_Food_kcal == production_Food_kcal&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> 
+                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">])</span>
+<span class="n">together</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">has</span><span class="p">,</span> <span class="n">ours</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">)</span>
 <span class="n">num_tog</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">together</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="n">num_subnational</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_orig</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;production_Food_kcal == production_Food_kcal &amp; NAME_1 != &#39;1&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">num_subnational</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_orig</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;production_Food_kcal == production_Food_kcal &amp; NAME_1 != &#39;1&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">NAME_0</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12091,15 +12095,15 @@ Note: percent area would be better, but China and other large countries do not h
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp</span> <span class="o">=</span> <span class="n">data_orig</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">tmp</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Production_fix&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;kcal&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">data_orig</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Production_fix&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;kcal&#39;</span><span class="p">]</span>
 
-<span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Area_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Yield_FAO&#39;</span><span class="p">]</span>
-<span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;kcal&#39;</span><span class="p">]</span>
+<span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Area_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Yield_FAO&#39;</span><span class="p">]</span>
+<span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;kcal&#39;</span><span class="p">]</span>
 
 <span class="n">pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> 
-                       <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s">&#39;NAME_1&#39;</span><span class="p">,</span> <span class="s">&#39;NAME_2&#39;</span><span class="p">,</span> <span class="s">&#39;NAME_3&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">],</span>
-                       <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="s">&#39;production_kcal&#39;</span><span class="p">],</span>
+                       <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s1">&#39;NAME_1&#39;</span><span class="p">,</span> <span class="s1">&#39;NAME_2&#39;</span><span class="p">,</span> <span class="s1">&#39;NAME_3&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span>
+                       <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="s1">&#39;production_kcal&#39;</span><span class="p">],</span>
                        <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">)</span>
 
 <span class="n">pivot1</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -12115,60 +12119,60 @@ Note: percent area would be better, but China and other large countries do not h
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">plot_all_fao_v_ours</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">plot_all_fao_v_ours</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
 
     <span class="n">tmp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">])</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">])</span>
-    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">]))]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">])</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">])</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">]))]</span>
 
-<span class="c">#     fig = plt.figure(figsize=[5,5])</span>
-<span class="c">#     ax = fig.add_subplot(111)</span>
+<span class="c1">#     fig = plt.figure(figsize=[5,5])</span>
+<span class="c1">#     ax = fig.add_subplot(111)</span>
 
-    <span class="n">x</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">]</span>
 
     <span class="n">X</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="c"># Fit line using all data</span>
+    <span class="c1"># Fit line using all data</span>
     <span class="n">lr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-    <span class="c"># Robustly fit linear model with RANSAC algorithm</span>
+    <span class="c1"># Robustly fit linear model with RANSAC algorithm</span>
     <span class="n">ransac</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">RANSACRegressor</span><span class="p">()</span>
     <span class="n">ransac</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">inlier_mask</span> <span class="o">=</span> <span class="n">ransac</span><span class="o">.</span><span class="n">inlier_mask_</span>
     <span class="n">outlier_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">inlier_mask</span><span class="p">)</span>
 
-    <span class="c"># Predict data of estimated models</span>
+    <span class="c1"># Predict data of estimated models</span>
     <span class="n">line_X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">())[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
     <span class="n">line_y</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">line_X</span><span class="p">)</span>
     <span class="n">line_y_ransac</span> <span class="o">=</span> <span class="n">ransac</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">line_X</span><span class="p">)</span>
 
     <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;yellowgreen&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span>
-                <span class="n">label</span><span class="o">=</span><span class="s">&#39;Inliers&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;gold&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span>
-                <span class="n">label</span><span class="o">=</span><span class="s">&#39;Potential Outliers&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;navy&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Linear regressor&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y_ransac</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s">&#39;RANSAC regressor&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;lower right&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&quot;FAO data produced </span><span class="se">\n</span><span class="s">(log kcal)&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&quot;Our data food produced </span><span class="se">\n</span><span class="s">(log kcal)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellowgreen&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inliers&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Potential Outliers&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear regressor&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y_ransac</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RANSAC regressor&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;FAO data produced </span><span class="se">\n</span><span class="s2">(log kcal)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Our data food produced </span><span class="se">\n</span><span class="s2">(log kcal)&quot;</span><span class="p">)</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">{} </span><span class="se">\n</span><span class="s">&#39;</span>
-                 <span class="s">&#39;OLS R^2: {} </span><span class="se">\n</span><span class="s">&#39;</span>
-                 <span class="s">&#39;RANSAC coeff: {} </span><span class="se">\n</span><span class="s"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;All farms&#39;</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">{} </span><span class="se">\n</span><span class="s1">&#39;</span>
+                 <span class="s1">&#39;OLS R^2: {} </span><span class="se">\n</span><span class="s1">&#39;</span>
+                 <span class="s1">&#39;RANSAC coeff: {} </span><span class="se">\n</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;All farms&#39;</span><span class="p">,</span>
                                                <span class="nb">round</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> 
                                                <span class="nb">round</span><span class="p">(</span><span class="n">ransac</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
                 <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 
-<span class="c">#     fig.tight_layout()</span>
-<span class="c">#     plt.show()</span>
+<span class="c1">#     fig.tight_layout()</span>
+<span class="c1">#     plt.show()</span>
     
     <span class="n">ceff_ln</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">coeff_rn</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">ransac</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -12186,7 +12190,7 @@ Note: percent area would be better, but China and other large countries do not h
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># tmp[&#39;production_fix_kcal&#39;].corr(tmp[&#39;Prod_FAO_kcal&#39;], method=&#39;spearman&#39;)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># tmp[&#39;production_fix_kcal&#39;].corr(tmp[&#39;Prod_FAO_kcal&#39;], method=&#39;spearman&#39;)</span>
 </pre></div>
 
 </div>
@@ -12199,51 +12203,51 @@ Note: percent area would be better, but China and other large countries do not h
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">prep_plot</span><span class="p">():</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">prep_plot</span><span class="p">():</span>
     
     <span class="n">tmp</span> <span class="o">=</span> <span class="n">data_orig</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Area_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Yield_FAO&#39;</span><span class="p">]</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;kcal&#39;</span><span class="p">]</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Production_fix&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;kcal&#39;</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Area_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Yield_FAO&#39;</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;kcal&#39;</span><span class="p">]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Production_fix&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;kcal&#39;</span><span class="p">]</span>
 
-    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span>
-                      <span class="s">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">,</span> <span class="s">&#39;production_kcal&#39;</span><span class="p">,</span> 
-                      <span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">]]</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;production_kcal&#39;</span><span class="p">,</span> 
+                      <span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">]]</span>
     <span class="n">pivot1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> 
-                           <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">],</span>
-                           <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">],</span>
+                           <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span>
+                           <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">],</span>
                            <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">)</span>
     <span class="n">pivot1</span> <span class="o">=</span> <span class="n">pivot1</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
     <span class="n">pivot2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> 
-                           <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">],</span>
-                           <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">],</span>
+                           <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span>
+                           <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">],</span>
                            <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">)</span>
     <span class="n">pivot2</span> <span class="o">=</span> <span class="n">pivot2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pivot1</span><span class="p">,</span> <span class="n">pivot2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">,</span> <span class="s">&#39;Farm_Sizes&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;outer&#39;</span><span class="p">)</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pivot1</span><span class="p">,</span> <span class="n">pivot2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
     <span class="n">pivot</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
     <span class="n">tmp</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">])</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">])</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">])</span>
-    <span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">])</span>
-    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">]))]</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">])</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">])</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">])</span>
+    <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">])</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">]))]</span>
 
     <span class="k">return</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">pivot</span>
     
     
 <span class="k">def</span> <span class="nf">plot_fao_ours_fs</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> 
-                     <span class="n">x_var</span><span class="o">=</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> 
-                     <span class="n">y_var</span><span class="o">=</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">,</span>
-                     <span class="n">x_lab</span><span class="o">=</span><span class="s">&#39;FAO data food produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">,</span>
-                     <span class="n">y_lab</span><span class="o">=</span><span class="s">&#39;Our data food produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">):</span>
+                     <span class="n">x_var</span><span class="o">=</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> 
+                     <span class="n">y_var</span><span class="o">=</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">,</span>
+                     <span class="n">x_lab</span><span class="o">=</span><span class="s1">&#39;FAO data food produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">,</span>
+                     <span class="n">y_lab</span><span class="o">=</span><span class="s1">&#39;Our data food produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">):</span>
     
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
-    <span class="n">fs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;(0, 1]&#39;</span><span class="p">,</span> <span class="s">&#39;(1, 2]&#39;</span><span class="p">,</span> <span class="s">&#39;(2, 5]&#39;</span><span class="p">,</span> <span class="s">&#39;(5, 10]&#39;</span><span class="p">,</span> 
-          <span class="s">&#39;(10, 20]&#39;</span><span class="p">,</span> <span class="s">&#39;(20, 50]&#39;</span><span class="p">,</span> <span class="s">&#39;(50, 100]&#39;</span><span class="p">,</span> <span class="s">&#39;(100, 200]&#39;</span><span class="p">,</span> <span class="s">&#39;(200, 500]&#39;</span><span class="p">,</span>
-          <span class="s">&#39;(500, 1000]&#39;</span><span class="p">,</span> <span class="s">&#39;(1000, 100000]&#39;</span><span class="p">]</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;(0, 1]&#39;</span><span class="p">,</span> <span class="s1">&#39;(1, 2]&#39;</span><span class="p">,</span> <span class="s1">&#39;(2, 5]&#39;</span><span class="p">,</span> <span class="s1">&#39;(5, 10]&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;(10, 20]&#39;</span><span class="p">,</span> <span class="s1">&#39;(20, 50]&#39;</span><span class="p">,</span> <span class="s1">&#39;(50, 100]&#39;</span><span class="p">,</span> <span class="s1">&#39;(100, 200]&#39;</span><span class="p">,</span> <span class="s1">&#39;(200, 500]&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;(500, 1000]&#39;</span><span class="p">,</span> <span class="s1">&#39;(1000, 100000]&#39;</span><span class="p">]</span>
     
     <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">plot_all_fao_v_ours</span><span class="p">(</span><span class="n">pivot1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
@@ -12252,7 +12256,7 @@ Note: percent area would be better, but China and other large countries do not h
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">tmp2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+            <span class="n">tmp2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">tmp2</span><span class="p">[</span><span class="n">x_var</span><span class="p">]</span>
             <span class="n">y</span> <span class="o">=</span> <span class="n">tmp2</span><span class="p">[</span><span class="n">y_var</span><span class="p">]</span>
             <span class="n">l</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -12264,40 +12268,40 @@ Note: percent area would be better, but China and other large countries do not h
             <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-            <span class="c"># Fit line using all data</span>
+            <span class="c1"># Fit line using all data</span>
             <span class="n">lr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
             <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-            <span class="c"># Robustly fit linear model with RANSAC algorithm</span>
+            <span class="c1"># Robustly fit linear model with RANSAC algorithm</span>
             <span class="n">ransac</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">RANSACRegressor</span><span class="p">()</span>
             <span class="n">ransac</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
             <span class="n">inlier_mask</span> <span class="o">=</span> <span class="n">ransac</span><span class="o">.</span><span class="n">inlier_mask_</span>
             <span class="n">outlier_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">inlier_mask</span><span class="p">)</span>
 
-            <span class="c"># Predict data of estimated models</span>
+            <span class="c1"># Predict data of estimated models</span>
             <span class="n">line_X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">())[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
             <span class="n">line_y</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">line_X</span><span class="p">)</span>
             <span class="n">line_y_ransac</span> <span class="o">=</span> <span class="n">ransac</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">line_X</span><span class="p">)</span>
 
-            <span class="c"># # Compare estimated coefficients</span>
-        <span class="c">#     print(&quot;Estimated coefficients (true, linear regression, RANSAC):&quot;)</span>
-        <span class="c">#     print(lr.coef_, ransac.estimator_.coef_)</span>
+            <span class="c1"># # Compare estimated coefficients</span>
+        <span class="c1">#     print(&quot;Estimated coefficients (true, linear regression, RANSAC):&quot;)</span>
+        <span class="c1">#     print(lr.coef_, ransac.estimator_.coef_)</span>
 
             <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;yellowgreen&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span>
-                        <span class="n">label</span><span class="o">=</span><span class="s">&#39;Inliers&#39;</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;gold&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span>
-                        <span class="n">label</span><span class="o">=</span><span class="s">&#39;Outliers&#39;</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;navy&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Linear regressor&#39;</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y_ransac</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
-                     <span class="n">label</span><span class="o">=</span><span class="s">&#39;RANSAC regressor&#39;</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;lower right&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellowgreen&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+                        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inliers&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+                        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Outliers&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear regressor&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y_ransac</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+                     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RANSAC regressor&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">x_lab</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">y_lab</span><span class="p">)</span>
 
-            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">{} ha</span><span class="se">\n</span><span class="s">&#39;</span>
-                         <span class="s">&#39;Linear coeff: {} </span><span class="se">\n</span><span class="s">&#39;</span>
-                         <span class="s">&#39;RANSAC coeff: {} </span><span class="se">\n</span><span class="s"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">{} ha</span><span class="se">\n</span><span class="s1">&#39;</span>
+                         <span class="s1">&#39;Linear coeff: {} </span><span class="se">\n</span><span class="s1">&#39;</span>
+                         <span class="s1">&#39;RANSAC coeff: {} </span><span class="se">\n</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
                                                        <span class="nb">round</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
                                                        <span class="nb">round</span><span class="p">(</span><span class="n">ransac</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
                         <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
@@ -12319,8 +12323,8 @@ Note: percent area would be better, but China and other large countries do not h
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">prep_plot</span><span class="p">()</span>
-<span class="n">plot_fao_ours_fs</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">x_var</span><span class="o">=</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="n">y_var</span><span class="o">=</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tmp</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">prep_plot</span><span class="p">()</span>
+<span class="n">plot_fao_ours_fs</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">x_var</span><span class="o">=</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="n">y_var</span><span class="o">=</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -16043,19 +16047,19 @@ RERERCpEA8wiIiIiIiIiIiIiUiEaYBYRERERERERERGRCtEAs4iIiIiIiIiIiIhUyP8H75vdjTyH
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;(1000, 100000]&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;(1000, 100000]&#39;</span><span class="p">]</span>
 <span class="n">pivot</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">lowder2</span> <span class="o">=</span> <span class="n">lowder</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">lowder</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span>
-    <span class="n">lowder2</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">lowder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">/</span> <span class="n">lowder</span><span class="p">[</span><span class="s">&#39;Total&#39;</span><span class="p">]</span>
+    <span class="n">lowder2</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">lowder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">/</span> <span class="n">lowder</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span>
 
-<span class="n">lowder2</span> <span class="o">=</span> <span class="n">lowder2</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;Total&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">lowder2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">lowder2</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s">&#39;Perc_Farms&#39;</span><span class="p">)</span>
-<span class="n">pivot</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-<span class="n">pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pivot</span><span class="p">,</span> <span class="n">lowder2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s">&#39;NAME_0&#39;</span><span class="p">])</span>
-<span class="n">pivot</span><span class="p">[</span><span class="s">&#39;Proxy_fs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">pivot</span><span class="p">[</span><span class="s">&#39;Perc_Farms&#39;</span><span class="p">]</span>
-<span class="n">pivot</span><span class="p">[</span><span class="s">&#39;log_Proxy_fs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">pivot</span><span class="p">[</span><span class="s">&#39;Proxy_fs&#39;</span><span class="p">])</span>
+<span class="n">lowder2</span> <span class="o">=</span> <span class="n">lowder2</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Total&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lowder2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">lowder2</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Perc_Farms&#39;</span><span class="p">)</span>
+<span class="n">pivot</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pivot</span><span class="p">,</span> <span class="n">lowder2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">,</span> <span class="s1">&#39;NAME_0&#39;</span><span class="p">])</span>
+<span class="n">pivot</span><span class="p">[</span><span class="s1">&#39;Proxy_fs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">pivot</span><span class="p">[</span><span class="s1">&#39;Perc_Farms&#39;</span><span class="p">]</span>
+<span class="n">pivot</span><span class="p">[</span><span class="s1">&#39;log_Proxy_fs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">pivot</span><span class="p">[</span><span class="s1">&#39;Proxy_fs&#39;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -16068,11 +16072,11 @@ RERERCpEA8wiIiIiIiIiIiIiUiEaYBYRERERERERERGRCtEAs4iIiIiIiIiIiIhUyP8H75vdjTyH
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="n">fs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;(0, 1]&#39;</span><span class="p">,</span> <span class="s">&#39;(1, 2]&#39;</span><span class="p">,</span> <span class="s">&#39;(2, 5]&#39;</span><span class="p">,</span> <span class="s">&#39;(5, 10]&#39;</span><span class="p">,</span> 
-          <span class="s">&#39;(10, 20]&#39;</span><span class="p">,</span> <span class="s">&#39;(20, 50]&#39;</span><span class="p">,</span> <span class="s">&#39;(50, 100]&#39;</span><span class="p">,</span> <span class="s">&#39;(100, 200]&#39;</span><span class="p">,</span> <span class="s">&#39;(200, 500]&#39;</span><span class="p">,</span>
-          <span class="s">&#39;(500, 1000]&#39;</span><span class="p">]</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;(0, 1]&#39;</span><span class="p">,</span> <span class="s1">&#39;(1, 2]&#39;</span><span class="p">,</span> <span class="s1">&#39;(2, 5]&#39;</span><span class="p">,</span> <span class="s1">&#39;(5, 10]&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;(10, 20]&#39;</span><span class="p">,</span> <span class="s1">&#39;(20, 50]&#39;</span><span class="p">,</span> <span class="s1">&#39;(50, 100]&#39;</span><span class="p">,</span> <span class="s1">&#39;(100, 200]&#39;</span><span class="p">,</span> <span class="s1">&#39;(200, 500]&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;(500, 1000]&#39;</span><span class="p">]</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
@@ -16081,42 +16085,42 @@ RERERCpEA8wiIiIiIiIiIiIiUiEaYBYRERERERERERGRCtEAs4iIiIiIiIiIiIhUyP8H75vdjTyH
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="p">[:])):</span>
 
-    <span class="n">tmp2</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
-    <span class="n">est</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s">&quot;log_production_kcal ~ log_Proxy_fs&quot;</span><span class="p">,</span> 
+    <span class="n">tmp2</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">est</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;log_production_kcal ~ log_Proxy_fs&quot;</span><span class="p">,</span> 
                   <span class="n">data</span><span class="o">=</span><span class="n">tmp2</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="c">#     est = est.get_robustcov_results()</span>
+<span class="c1">#     est = est.get_robustcov_results()</span>
     <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">dv_plotagainst</span> <span class="o">=</span> <span class="n">tmp2</span><span class="p">[</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">]</span>
-    <span class="n">iv_plotagainst</span> <span class="o">=</span> <span class="n">tmp2</span><span class="p">[</span><span class="s">&#39;log_Proxy_fs&#39;</span><span class="p">]</span>
+    <span class="n">dv_plotagainst</span> <span class="o">=</span> <span class="n">tmp2</span><span class="p">[</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">]</span>
+    <span class="n">iv_plotagainst</span> <span class="o">=</span> <span class="n">tmp2</span><span class="p">[</span><span class="s1">&#39;log_Proxy_fs&#39;</span><span class="p">]</span>
     <span class="n">var_linspace</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">iv_plotagainst</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">iv_plotagainst</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iv_plotagainst</span><span class="p">,</span> <span class="n">dv_plotagainst</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Countries&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;FAO data total produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Our data total produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
-    <span class="c"># est.params[0] is intercept</span>
-    <span class="c"># est.params[1] is coefficeint 1.. and so on</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">var_linspace</span><span class="p">,</span> <span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">var_linspace</span> <span class="o">+</span> <span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> 
-            <span class="n">label</span><span class="o">=</span><span class="s">&#39;Linear fit, coeff = {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">)))</span>  
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;{} ha, Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">round</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;upper left&#39;</span><span class="p">,</span> 
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iv_plotagainst</span><span class="p">,</span> <span class="n">dv_plotagainst</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Countries&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;FAO data total produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Our data total produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
+    <span class="c1"># est.params[0] is intercept</span>
+    <span class="c1"># est.params[1] is coefficeint 1.. and so on</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">var_linspace</span><span class="p">,</span> <span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">var_linspace</span> <span class="o">+</span> <span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear fit, coeff = {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">)))</span>  
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;{} ha, Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">round</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> 
                        <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
                        <span class="n">frameon</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">frame</span> <span class="o">=</span> <span class="n">legend</span><span class="o">.</span><span class="n">get_frame</span><span class="p">()</span>
-    <span class="n">frame</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">frame</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">fs</span><span class="p">[:][</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-<span class="n">est</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s">&quot;log_production_kcal ~ log_Proxy_fs&quot;</span><span class="p">,</span> 
+<span class="n">est</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;log_production_kcal ~ log_Proxy_fs&quot;</span><span class="p">,</span> 
                   <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">,</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">,</span> 
            <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">,</span>
            <span class="n">truncate</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;FAO data total produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Our data total produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;FAO data total produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Our data total produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Farm Sizes Pooled, Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Farm Sizes Pooled, Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -18441,8 +18445,8 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># %load_ext rpy2.ipython</span>
-<span class="c"># %R require(ggplot2); require(tidyr); require(lme4); require(multcomp); require(plotrix);</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># %load_ext rpy2.ipython</span>
+<span class="c1"># %R require(ggplot2); require(tidyr); require(lme4); require(multcomp); require(plotrix);</span>
 </pre></div>
 
 </div>
@@ -18455,12 +18459,12 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># %%R -i tmp</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># %%R -i tmp</span>
 
-<span class="c"># m1 &lt;- lm(log_production_kcal ~ log_Proxy_fs, data=tmp)  # log_Prod_FAO_kcal, log_Proxy_fs</span>
-<span class="c"># print(summary(m1))</span>
-<span class="c"># plot(m1)</span>
-<span class="c"># hist(m1$residuals, breaks=20)</span>
+<span class="c1"># m1 &lt;- lm(log_production_kcal ~ log_Proxy_fs, data=tmp)  # log_Prod_FAO_kcal, log_Proxy_fs</span>
+<span class="c1"># print(summary(m1))</span>
+<span class="c1"># plot(m1)</span>
+<span class="c1"># hist(m1$residuals, breaks=20)</span>
 </pre></div>
 
 </div>
@@ -18482,7 +18486,7 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">PATH_FAO_GDP</span> <span class="o">=</span> <span class="s">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/FaoStat/FAOSTAT/Macro-Statistics_Key_Indicators_E_All_Data_(Norm).csv&#39;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">PATH_FAO_GDP</span> <span class="o">=</span> <span class="s1">&#39;/Users/Vinny_Ricciardi/Documents/Data_Library_Big/Survey/Global/FaoStat/FAOSTAT/Macro-Statistics_Key_Indicators_E_All_Data_(Norm).csv&#39;</span>
 <span class="n">df_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PATH_FAO_GDP</span><span class="p">)</span>
 </pre></div>
 
@@ -18496,34 +18500,34 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">df_gdp</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">tmp_gdp</span><span class="p">[</span><span class="s">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;Value US$, 2005 prices&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
-                      <span class="p">(</span><span class="n">tmp_gdp</span><span class="p">[</span><span class="s">&#39;Item&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;Gross Fixed Capital Formation&#39;</span><span class="p">),</span> 
-                     <span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">,</span> <span class="s">&#39;Item&#39;</span><span class="p">,</span> <span class="s">&#39;Value&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">df_gdp</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">tmp_gdp</span><span class="p">[</span><span class="s1">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Value US$, 2005 prices&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
+                      <span class="p">(</span><span class="n">tmp_gdp</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Gross Fixed Capital Formation&#39;</span><span class="p">),</span> 
+                     <span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">]]</span>
 
-<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">tmp_gdp</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Item&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="s">&#39;Value&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span>
+<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">tmp_gdp</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
 
-<span class="n">multi_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([</span><span class="n">tmp_gdp</span><span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span>
-                                          <span class="n">tmp_gdp</span><span class="p">[</span><span class="s">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
-                                         <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span>
+<span class="n">multi_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([</span><span class="n">tmp_gdp</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span>
+                                          <span class="n">tmp_gdp</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span>
+                                         <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
 
-<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">multi_index</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">multi_index</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">])</span>
-<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span>
+<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
+<span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span>
                               <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                              <span class="n">limit_direction</span><span class="o">=</span><span class="s">&#39;both&#39;</span><span class="p">)</span>
+                              <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
 <span class="n">tmp_gdp</span> <span class="o">=</span> <span class="n">tmp_gdp</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
 <span class="n">tmp2</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">tmp2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp2</span><span class="p">,</span> <span class="n">tmp_gdp</span><span class="p">,</span> 
-                <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">],</span> 
-                <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Country&#39;</span><span class="p">,</span> <span class="s">&#39;Year&#39;</span><span class="p">],</span>
-                <span class="n">how</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">)</span>
-<span class="n">tmp2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="p">),</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">tmp2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">),</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+                <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">],</span>
+                <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tmp2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">),</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">tmp2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -18536,25 +18540,25 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">std_column</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">std_column</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
     
     <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
     <span class="n">xbar</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="n">std_</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-    <span class="n">data</span><span class="p">[</span><span class="n">column</span> <span class="o">+</span> <span class="s">&#39;_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span> <span class="o">/</span> <span class="n">std_</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">column</span> <span class="o">+</span> <span class="s1">&#39;_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xbar</span><span class="p">)</span> <span class="o">/</span> <span class="n">std_</span>
     
     <span class="k">return</span> <span class="n">data</span>
 
-<span class="n">vars_to_std</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">,</span> 
-               <span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">,</span> 
-               <span class="s">&#39;Proxy_fs&#39;</span><span class="p">,</span>
-               <span class="s">&#39;Gross_Domestic_Product&#39;</span><span class="p">,</span> 
-               <span class="s">&#39;Gross_Domestic_Product_per_capita&#39;</span><span class="p">,</span> 
-               <span class="s">&#39;Value_Added_Agriculture_Forestry_and_Fishing&#39;</span><span class="p">]</span>
+<span class="n">vars_to_std</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;Proxy_fs&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;Gross_Domestic_Product&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;Gross_Domestic_Product_per_capita&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;Value_Added_Agriculture_Forestry_and_Fishing&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vars_to_std</span><span class="p">:</span>
     <span class="n">tmp2</span> <span class="o">=</span> <span class="n">std_column</span><span class="p">(</span><span class="n">tmp2</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-    <span class="n">tmp2</span><span class="p">[</span><span class="s">&#39;log_&#39;</span> <span class="o">+</span> <span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp2</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+    <span class="n">tmp2</span><span class="p">[</span><span class="s1">&#39;log_&#39;</span> <span class="o">+</span> <span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tmp2</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -18567,7 +18571,7 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">plot_regression_pandas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dv</span><span class="o">=</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">,</span> <span class="n">iv</span><span class="o">=</span><span class="s">&#39;log_Proxy_fs&#39;</span><span class="p">,</span> <span class="n">est_parm</span><span class="o">=-</span><span class="mi">4</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">plot_regression_pandas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dv</span><span class="o">=</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">,</span> <span class="n">iv</span><span class="o">=</span><span class="s1">&#39;log_Proxy_fs&#39;</span><span class="p">,</span> <span class="n">est_parm</span><span class="o">=-</span><span class="mi">4</span><span class="p">):</span>
 
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
@@ -18576,36 +18580,36 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
     <span class="n">iv_plotagainst</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">iv</span><span class="p">]</span>
     
     <span class="n">var_linspace</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">iv_plotagainst</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">iv_plotagainst</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iv_plotagainst</span><span class="p">,</span> <span class="n">dv_plotagainst</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Countries&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">var_linspace</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">est_parm</span><span class="p">]</span> <span class="o">*</span> <span class="n">var_linspace</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">est_parm</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> 
-            <span class="n">label</span><span class="o">=</span><span class="s">&#39;Linear fit, coeff = {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">est_parm</span><span class="p">],</span> <span class="mi">2</span><span class="p">)))</span>  
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iv_plotagainst</span><span class="p">,</span> <span class="n">dv_plotagainst</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Countries&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">var_linspace</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">est_parm</span><span class="p">]</span> <span class="o">*</span> <span class="n">var_linspace</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">est_parm</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear fit, coeff = {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">est_parm</span><span class="p">],</span> <span class="mi">2</span><span class="p">)))</span>  
     
         
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;FAO data food produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Our data food produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;All farms with farm sizes as dummies</span><span class="se">\n</span><span class="s">Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> 
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;FAO data food produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Our data food produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;All farms with farm sizes as dummies</span><span class="se">\n</span><span class="s1">Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> 
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-    <span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;upper left&#39;</span><span class="p">,</span> 
+    <span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> 
                        <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
                        <span class="n">frameon</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">frame</span> <span class="o">=</span> <span class="n">legend</span><span class="o">.</span><span class="n">get_frame</span><span class="p">()</span>
-    <span class="n">frame</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">frame</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 
     <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
-    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Density Plot&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Density Plot&#39;</span><span class="p">)</span>
 
     <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Fitted&#39;</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Residuals&#39;</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Fitted vs. Residuals&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fitted vs. Residuals&#39;</span><span class="p">)</span>
 
     <span class="n">ax4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
-    <span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s">&quot;norm&quot;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">ax4</span><span class="p">);</span>
-    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_marker</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
-    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
-    <span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Q-Q Plot&#39;</span><span class="p">)</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&quot;norm&quot;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">ax4</span><span class="p">);</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_marker</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Q-Q Plot&#39;</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     
     <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -18613,10 +18617,10 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 
 <span class="k">def</span> <span class="nf">check_nonconstant_variance</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
     
-    <span class="n">est_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;resid&#39;</span><span class="p">]),</span> 
-                        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;fitted&#39;</span><span class="p">])],</span>
+    <span class="n">est_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;resid&#39;</span><span class="p">]),</span> 
+                        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;fitted&#39;</span><span class="p">])],</span>
                       <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">est_check1</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s">&quot;&quot;&quot;resid ~ fitted&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">est_df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">est_check1</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;resid ~ fitted&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">est_df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
     
     <span class="k">print</span><span class="p">(</span><span class="n">est_check1</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </pre></div>
@@ -18631,16 +18635,16 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># fig = plt.figure(figsize=[10,10])</span>
-<span class="c"># ax = fig.add_subplot(111)</span>
-<span class="c"># sns.corrplot(tmp2.loc[:, [&#39;log_production_kcal&#39;,</span>
-<span class="c">#                           &#39;log_Prod_FAO_kcal&#39;,</span>
-<span class="c">#                           &#39;Perc_Farms&#39;,</span>
-<span class="c">#                           &#39;Proxy_fs&#39;, </span>
-<span class="c">#                           &#39;Gross_Domestic_Product_per_capita_std&#39;,</span>
-<span class="c">#                           &#39;Gross_Domestic_Product_std&#39;, </span>
-<span class="c">#                           &#39;Value_Added_Agriculture_Forestry_and_Fishing_std&#39;]],</span>
-<span class="c">#             diag_names=False, ax=ax);</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># fig = plt.figure(figsize=[10,10])</span>
+<span class="c1"># ax = fig.add_subplot(111)</span>
+<span class="c1"># sns.corrplot(tmp2.loc[:, [&#39;log_production_kcal&#39;,</span>
+<span class="c1">#                           &#39;log_Prod_FAO_kcal&#39;,</span>
+<span class="c1">#                           &#39;Perc_Farms&#39;,</span>
+<span class="c1">#                           &#39;Proxy_fs&#39;, </span>
+<span class="c1">#                           &#39;Gross_Domestic_Product_per_capita_std&#39;,</span>
+<span class="c1">#                           &#39;Gross_Domestic_Product_std&#39;, </span>
+<span class="c1">#                           &#39;Value_Added_Agriculture_Forestry_and_Fishing_std&#39;]],</span>
+<span class="c1">#             diag_names=False, ax=ax);</span>
 </pre></div>
 
 </div>
@@ -18653,27 +18657,27 @@ SZIkSZKklhgwS5IkSZIkSZJaYsAsSZIkSZIkSWrJ/wc4tTwKYMD3QQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">tmp4</span> <span class="o">=</span> <span class="n">tmp2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">tmp4</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">tmp4</span> <span class="o">=</span> <span class="n">tmp4</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp4</span><span class="p">[</span><span class="s">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">fs</span><span class="p">[</span><span class="mi">9</span><span class="p">]]</span>  <span class="c">#0, 1, 2, 3, 4, 5</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tmp4</span> <span class="o">=</span> <span class="n">tmp2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">tmp4</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">tmp4</span> <span class="o">=</span> <span class="n">tmp4</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp4</span><span class="p">[</span><span class="s1">&#39;Farm_Sizes&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">fs</span><span class="p">[</span><span class="mi">9</span><span class="p">]]</span>  <span class="c1">#0, 1, 2, 3, 4, 5</span>
 
-<span class="n">est</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s">&quot;&quot;&quot;log_production_kcal ~ </span>
-<span class="s">                         log_Prod_FAO_kcal + </span>
-<span class="s">                         Perc_Farms +</span>
-<span class="s">                         np.log(Prod_FAO_kcal * Perc_Farms) +</span>
-<span class="s">                         Gross_Domestic_Product_std +</span>
-<span class="s">                         Gross_Domestic_Product_per_capita_std +</span>
-<span class="s">                         Value_Added_Agriculture_Forestry_and_Fishing_std&quot;&quot;&quot;</span><span class="p">,</span> 
+<span class="n">est</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;log_production_kcal ~ </span>
+<span class="s2">                         log_Prod_FAO_kcal + </span>
+<span class="s2">                         Perc_Farms +</span>
+<span class="s2">                         np.log(Prod_FAO_kcal * Perc_Farms) +</span>
+<span class="s2">                         Gross_Domestic_Product_std +</span>
+<span class="s2">                         Gross_Domestic_Product_per_capita_std +</span>
+<span class="s2">                         Value_Added_Agriculture_Forestry_and_Fishing_std&quot;&quot;&quot;</span><span class="p">,</span> 
               <span class="n">data</span><span class="o">=</span><span class="n">tmp4</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
 <span class="n">est</span> <span class="o">=</span> <span class="n">est</span><span class="o">.</span><span class="n">get_robustcov_results</span><span class="p">()</span>
 <span class="k">print</span> <span class="n">est</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
-<span class="c"># tmp4.dropna()[&#39;log_Value_Added_Agriculture_Forestry_and_Fishing&#39;].corr(est.resid)  # check each IV against resid</span>
-<span class="c"># plot_regression_pandas(tmp4, est, dv=&#39;log_production_kcal&#39;, iv=&#39;log_Prod_FAO_kcal&#39;, est_parm=-1)</span>
-<span class="c"># Note: high Jarque_Bera, low p = results non-normal</span>
-<span class="c"># Note: Durbin-Watson close to zero means positive autocorrelation, close to 4 is negative autocorrelation. </span>
-<span class="c">#       2 is non-correlated. (calculated by: value of the error minus the previous error are calculated and squared)</span>
-<span class="c"># check_nonconstant_variance(est)  # A basic test for heteroskedasticity (null hypothesis = no relationship)</span>
+<span class="c1"># tmp4.dropna()[&#39;log_Value_Added_Agriculture_Forestry_and_Fishing&#39;].corr(est.resid)  # check each IV against resid</span>
+<span class="c1"># plot_regression_pandas(tmp4, est, dv=&#39;log_production_kcal&#39;, iv=&#39;log_Prod_FAO_kcal&#39;, est_parm=-1)</span>
+<span class="c1"># Note: high Jarque_Bera, low p = results non-normal</span>
+<span class="c1"># Note: Durbin-Watson close to zero means positive autocorrelation, close to 4 is negative autocorrelation. </span>
+<span class="c1">#       2 is non-correlated. (calculated by: value of the error minus the previous error are calculated and squared)</span>
+<span class="c1"># check_nonconstant_variance(est)  # A basic test for heteroskedasticity (null hypothesis = no relationship)</span>
 </pre></div>
 
 </div>
@@ -18762,9 +18766,9 @@ strong multicollinearity or other numerical problems.
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># data[&#39;production_kcal&#39;].plot(kind=&#39;kde&#39;)</span>
-<span class="c"># stats.normaltest(np.log(data[&#39;production_kcal&#39;]))</span>
-<span class="c"># # data[&#39;production_kcal&#39;].describe()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># data[&#39;production_kcal&#39;].plot(kind=&#39;kde&#39;)</span>
+<span class="c1"># stats.normaltest(np.log(data[&#39;production_kcal&#39;]))</span>
+<span class="c1"># # data[&#39;production_kcal&#39;].describe()</span>
 </pre></div>
 
 </div>
@@ -18777,33 +18781,33 @@ strong multicollinearity or other numerical problems.
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">longley</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">longley</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">tmp2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s">&#39;production_kcal&#39;</span><span class="p">,</span> <span class="s">&#39;log_production_kcal&#39;</span><span class="p">,</span> <span class="s">&#39;production_kcal_std&#39;</span><span class="p">,</span>
-                    <span class="s">&#39;Proxy_fs&#39;</span><span class="p">,</span> <span class="s">&#39;log_Proxy_fs&#39;</span><span class="p">,</span> <span class="s">&#39;Proxy_fs_std&#39;</span><span class="p">,</span>
-                    <span class="s">&#39;Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="s">&#39;Prod_FAO_kcal_std&#39;</span><span class="p">,</span>
-                    <span class="s">&#39;Gross_Domestic_Product_per_capita_std&#39;</span><span class="p">,</span>
-                    <span class="s">&#39;Gross_Domestic_Product_std&#39;</span><span class="p">,</span> 
-                    <span class="s">&#39;Value_Added_Agriculture_Forestry_and_Fishing_std&#39;</span><span class="p">]]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;production_kcal&#39;</span><span class="p">,</span> <span class="s1">&#39;log_production_kcal&#39;</span><span class="p">,</span> <span class="s1">&#39;production_kcal_std&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Proxy_fs&#39;</span><span class="p">,</span> <span class="s1">&#39;log_Proxy_fs&#39;</span><span class="p">,</span> <span class="s1">&#39;Proxy_fs_std&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span> <span class="s1">&#39;Prod_FAO_kcal_std&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Gross_Domestic_Product_per_capita_std&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Gross_Domestic_Product_std&#39;</span><span class="p">,</span> 
+                    <span class="s1">&#39;Value_Added_Agriculture_Forestry_and_Fishing_std&#39;</span><span class="p">]]</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">data_exog</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span>
-                         <span class="s">&#39;log_Proxy_fs&#39;</span><span class="p">,</span> 
-                         <span class="s">&#39;Gross_Domestic_Product_per_capita_std&#39;</span><span class="p">,</span>
-                         <span class="s">&#39;Gross_Domestic_Product_std&#39;</span><span class="p">,</span> 
-                         <span class="s">&#39;Value_Added_Agriculture_Forestry_and_Fishing_std&#39;</span><span class="p">]]</span>
+<span class="n">data_exog</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;log_Prod_FAO_kcal&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;log_Proxy_fs&#39;</span><span class="p">,</span> 
+                         <span class="s1">&#39;Gross_Domestic_Product_per_capita_std&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;Gross_Domestic_Product_std&#39;</span><span class="p">,</span> 
+                         <span class="s1">&#39;Value_Added_Agriculture_Forestry_and_Fishing_std&#39;</span><span class="p">]]</span>
 
-<span class="n">data_endog</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s">&#39;log_production_kcal&#39;</span><span class="p">]]</span>
+<span class="n">data_endog</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;log_production_kcal&#39;</span><span class="p">]]</span>
 
     
 <span class="n">data_exog</span> <span class="o">=</span> <span class="n">data_exog</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
 <span class="n">data_endog</span> <span class="o">=</span> <span class="n">data_endog</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
 
 <span class="n">data_exog</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">data_exog</span><span class="p">)</span>
-<span class="c"># data.head()</span>
+<span class="c1"># data.head()</span>
 </pre></div>
 
 </div>
@@ -18816,32 +18820,32 @@ strong multicollinearity or other numerical problems.
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ols_resid</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">data_endog</span><span class="p">,</span> <span class="n">data_exog</span><span class="p">,</span> <span class="n">missing</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">resid</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ols_resid</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">data_endog</span><span class="p">,</span> <span class="n">data_exog</span><span class="p">,</span> <span class="n">missing</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">resid</span>
 <span class="n">resid_fit</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">ols_resid</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">ols_resid</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
-<span class="c"># Since this is correlated, we can adjust the covariance matrix in a GLS model</span>
-<span class="c"># print(&quot;t-stat: {} \np-value: {}&quot;.format(round(resid_fit.tvalues[1], 2), round(resid_fit.pvalues[1]), 2))</span>
+<span class="c1"># Since this is correlated, we can adjust the covariance matrix in a GLS model</span>
+<span class="c1"># print(&quot;t-stat: {} \np-value: {}&quot;.format(round(resid_fit.tvalues[1], 2), round(resid_fit.pvalues[1]), 2))</span>
 
 
-<span class="c"># Nice tutorial on GLS: http://www.statsmodels.org/dev/examples/notebooks/generated/gls.html</span>
-<span class="c"># A toeplitz matrix mimics nearestneighbor covaraiance (multicollinearity), </span>
-<span class="c"># use with rho from our OLS model to map onto our data</span>
+<span class="c1"># Nice tutorial on GLS: http://www.statsmodels.org/dev/examples/notebooks/generated/gls.html</span>
+<span class="c1"># A toeplitz matrix mimics nearestneighbor covaraiance (multicollinearity), </span>
+<span class="c1"># use with rho from our OLS model to map onto our data</span>
 <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">toeplitz</span>
 <span class="n">order</span> <span class="o">=</span> <span class="n">toeplitz</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ols_resid</span><span class="p">)))</span>
 <span class="n">rho</span> <span class="o">=</span> <span class="n">resid_fit</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="n">rho</span><span class="o">**</span><span class="n">order</span>
 <span class="n">gls_model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GLS</span><span class="p">(</span><span class="n">data_endog</span><span class="p">,</span> <span class="n">data_exog</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">missing</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">gls_results</span> <span class="o">=</span> <span class="n">gls_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="c"># gls_results = gls_results.get_robustcov_results()</span>
+<span class="c1"># gls_results = gls_results.get_robustcov_results()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">gls_results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="c"># However, since the exact rho is not known, we can estimate a &#39;feasible gls&#39;</span>
-<span class="c"># ... But it turns out using nearest neighbor covariance structure worked very well. Use above model.}</span>
-<span class="c"># glsar_model = sm.GLSAR(data_endog, data_exog, 1)</span>
-<span class="c"># glsar_results = glsar_model.iterative_fit(1)</span>
-<span class="c"># gls_results = gls_results.get_robustcov_results()</span>
-<span class="c"># print(glsar_results.summary())</span>
+<span class="c1"># However, since the exact rho is not known, we can estimate a &#39;feasible gls&#39;</span>
+<span class="c1"># ... But it turns out using nearest neighbor covariance structure worked very well. Use above model.}</span>
+<span class="c1"># glsar_model = sm.GLSAR(data_endog, data_exog, 1)</span>
+<span class="c1"># glsar_results = glsar_model.iterative_fit(1)</span>
+<span class="c1"># gls_results = gls_results.get_robustcov_results()</span>
+<span class="c1"># print(glsar_results.summary())</span>
 </pre></div>
 
 </div>
@@ -18903,26 +18907,26 @@ Warnings:
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># #http://www.statsmodels.org/devel/examples/notebooks/generated/regression_diagnostics.html</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># #http://www.statsmodels.org/devel/examples/notebooks/generated/regression_diagnostics.html</span>
 
-<span class="c"># from statsmodels.stats.outliers_influence import OLSInfluence</span>
-<span class="c"># test_class = OLSInfluence(gls_results)</span>
-<span class="c"># len(test_class.dfbetas[:5,:])</span>
+<span class="c1"># from statsmodels.stats.outliers_influence import OLSInfluence</span>
+<span class="c1"># test_class = OLSInfluence(gls_results)</span>
+<span class="c1"># len(test_class.dfbetas[:5,:])</span>
 
-<span class="c"># np.linalg.cond(gls_results.model.exog)</span>
+<span class="c1"># np.linalg.cond(gls_results.model.exog)</span>
 
-<span class="c"># name = [&#39;Lagrange multiplier statistic&#39;, &#39;p-value&#39;, </span>
-<span class="c">#         &#39;f-value&#39;, &#39;f p-value&#39;]</span>
-<span class="c"># test = sms.het_breushpagan(gls_results.resid, gls_results.model.exog)</span>
-<span class="c"># zip(name, test)</span>
+<span class="c1"># name = [&#39;Lagrange multiplier statistic&#39;, &#39;p-value&#39;, </span>
+<span class="c1">#         &#39;f-value&#39;, &#39;f p-value&#39;]</span>
+<span class="c1"># test = sms.het_breushpagan(gls_results.resid, gls_results.model.exog)</span>
+<span class="c1"># zip(name, test)</span>
 
-<span class="c"># name = [&#39;F statistic&#39;, &#39;p-value&#39;]</span>
-<span class="c"># test = sms.het_goldfeldquandt(gls_results.resid, gls_results.model.exog)</span>
-<span class="c"># zip(name, test)</span>
+<span class="c1"># name = [&#39;F statistic&#39;, &#39;p-value&#39;]</span>
+<span class="c1"># test = sms.het_goldfeldquandt(gls_results.resid, gls_results.model.exog)</span>
+<span class="c1"># zip(name, test)</span>
 
-<span class="c"># name = [&#39;t value&#39;, &#39;p value&#39;]</span>
-<span class="c"># test = sms.linear_harvey_collier(gls_results)</span>
-<span class="c"># zip(name, test)</span>
+<span class="c1"># name = [&#39;t value&#39;, &#39;p value&#39;]</span>
+<span class="c1"># test = sms.linear_harvey_collier(gls_results)</span>
+<span class="c1"># zip(name, test)</span>
 </pre></div>
 
 </div>
@@ -18935,7 +18939,7 @@ Warnings:
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># check_nonconstant_variance(glsar_results)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># check_nonconstant_variance(glsar_results)</span>
 </pre></div>
 
 </div>
@@ -18948,7 +18952,7 @@ Warnings:
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># plt.hist(gls_results.resid);</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># plt.hist(gls_results.resid);</span>
 
 <span class="k">def</span> <span class="nf">plot_regression</span><span class="p">(</span><span class="n">data_endog</span><span class="p">,</span> <span class="n">data_exog</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 
@@ -18959,37 +18963,37 @@ Warnings:
     <span class="n">iv_plotagainst</span> <span class="o">=</span> <span class="n">data_exog</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">est_parm</span> <span class="o">=</span> <span class="mi">1</span>
     
-<span class="c">#     var_linspace = np.linspace(iv_plotagainst.min(), iv_plotagainst.max(), 100)[:, np.newaxis]</span>
-<span class="c">#     ax.scatter(iv_plotagainst, dv_plotagainst, alpha=0.3, label=&#39;Countries&#39;)</span>
-<span class="c">#     ax.plot(var_linspace, model.params[0] + model.params[est_parm] * var_linspace + model.params[est_parm] * 0, &#39;r&#39;, </span>
-<span class="c">#             label=&#39;Linear fit, coeff = {}&#39;.format(round(model.params[est_parm], 2)))  </span>
+<span class="c1">#     var_linspace = np.linspace(iv_plotagainst.min(), iv_plotagainst.max(), 100)[:, np.newaxis]</span>
+<span class="c1">#     ax.scatter(iv_plotagainst, dv_plotagainst, alpha=0.3, label=&#39;Countries&#39;)</span>
+<span class="c1">#     ax.plot(var_linspace, model.params[0] + model.params[est_parm] * var_linspace + model.params[est_parm] * 0, &#39;r&#39;, </span>
+<span class="c1">#             label=&#39;Linear fit, coeff = {}&#39;.format(round(model.params[est_parm], 2)))  </span>
     <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">iv_plotagainst</span><span class="p">,</span> <span class="n">dv_plotagainst</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;FAO data food produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Our data food produced </span><span class="se">\n</span><span class="s">(log kcal)&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;All farms with farm sizes as dummies</span><span class="se">\n</span><span class="s">Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> 
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;FAO data food produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Our data food produced </span><span class="se">\n</span><span class="s1">(log kcal)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;All farms with farm sizes as dummies</span><span class="se">\n</span><span class="s1">Adj. r^2: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> 
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="c">#     legend = ax.legend(loc=&#39;upper left&#39;, </span>
-<span class="c">#                        fontsize=12, </span>
-<span class="c">#                        frameon=1)</span>
-<span class="c">#     frame = legend.get_frame()</span>
-<span class="c">#     frame.set_color(&#39;white&#39;)</span>
+<span class="c1">#     legend = ax.legend(loc=&#39;upper left&#39;, </span>
+<span class="c1">#                        fontsize=12, </span>
+<span class="c1">#                        frameon=1)</span>
+<span class="c1">#     frame = legend.get_frame()</span>
+<span class="c1">#     frame.set_color(&#39;white&#39;)</span>
 
     <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
-    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Density Plot&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Density Plot&#39;</span><span class="p">)</span>
 
     <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">lowess</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Fitted&#39;</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Residuals&#39;</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Fitted vs. Residuals&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fitted vs. Residuals&#39;</span><span class="p">)</span>
 
     <span class="n">ax4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
-    <span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s">&quot;norm&quot;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">ax4</span><span class="p">);</span>
-    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_marker</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
-    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;#A2782B&#39;</span><span class="p">)</span>
-    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;#4A79CF&#39;</span><span class="p">)</span>
-    <span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Q-Q Plot&#39;</span><span class="p">)</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&quot;norm&quot;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">ax4</span><span class="p">);</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_marker</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;#A2782B&#39;</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;#4A79CF&#39;</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Q-Q Plot&#39;</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     
     <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -19005,8 +19009,8 @@ Warnings:
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># plot_regression(data_endog, data_exog, glsar_results)</span>
-<span class="c"># np.shape(data_endog[:, 0])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># plot_regression(data_endog, data_exog, glsar_results)</span>
+<span class="c1"># np.shape(data_endog[:, 0])</span>
 </pre></div>
 
 </div>

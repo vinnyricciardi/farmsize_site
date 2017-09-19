@@ -11611,8 +11611,10 @@ ul.typeahead-list > li > a {
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -11647,12 +11649,15 @@ ul.typeahead-list > li > a {
 .highlight .nv { color: #19177C } /* Name.Variable */
 .highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11663,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11706,9 +11713,6 @@ ul.typeahead-list > li > a {
 
 .ansi-bold { font-weight: bold; }
 
-    </style>
-<style type="text/css">
-    
     </style>
 
 
@@ -11772,19 +11776,19 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;&lt;script&gt;</span>
-<span class="s">code_show=true; </span>
-<span class="s">function code_toggle() {</span>
-<span class="s"> if (code_show){</span>
-<span class="s"> $(&#39;div.input&#39;).hide();</span>
-<span class="s"> } else {</span>
-<span class="s"> $(&#39;div.input&#39;).show();</span>
-<span class="s"> }</span>
-<span class="s"> code_show = !code_show</span>
-<span class="s">} </span>
-<span class="s">$( document ).ready(code_toggle);</span>
-<span class="s">&lt;/script&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11827,30 +11831,30 @@ $( document ).ready(code_toggle);
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 
-<span class="s">&lt;script&gt;</span>
-<span class="s">function showthis(url) {</span>
-<span class="s">	window.open(url, &quot;pres&quot;, </span>
-<span class="s">                &quot;toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500&quot;);</span>
-<span class="s">	return(false);</span>
-<span class="s">}</span>
-<span class="s">&lt;/script&gt;</span>
+<span class="s1">&lt;script&gt;</span>
+<span class="s1">function showthis(url) {</span>
+<span class="s1">	window.open(url, &quot;pres&quot;, </span>
+<span class="s1">                &quot;toolbar=yes,scrollbars=yes,resizable=yes,top=10,left=400,width=500,height=500&quot;);</span>
+<span class="s1">	return(false);</span>
+<span class="s1">}</span>
+<span class="s1">&lt;/script&gt;</span>
 
-<span class="s">&lt;div class=yourDiv&gt;</span>
-<span class="s">    &lt;a href=&quot;javascript:code_toggle()&quot;&gt;Toggle Code On/Off&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    </span>
-<span class="s">    &lt;h4&gt;PROJECT NOTEBOOKS&lt;/h4&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Project_Overview&#39;&gt;Project Overview&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Data_Coverage&#39;&gt;Data Coverage&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/General_Results&#39;&gt;General Results&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Global_Estimate&#39;&gt;Global Estimates&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Crop_Diversity&#39;&gt;Crop Diversity&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Sensitivity_Analyses&#39;&gt;Sensitivity Analyses&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/&#39;&gt;Site Index&lt;/a&gt;&lt;br&gt;</span>
-<span class="s">&lt;/div&gt;</span>
-<span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="s1">&lt;div class=yourDiv&gt;</span>
+<span class="s1">    &lt;a href=&quot;javascript:code_toggle()&quot;&gt;Toggle Code On/Off&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    </span>
+<span class="s1">    &lt;h4&gt;PROJECT NOTEBOOKS&lt;/h4&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Project_Overview&#39;&gt;Project Overview&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Data_Coverage&#39;&gt;Data Coverage&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/General_Results&#39;&gt;General Results&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Global_Estimate&#39;&gt;Global Estimates&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Crop_Diversity&#39;&gt;Crop Diversity&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/Html/Sensitivity_Analyses&#39;&gt;Sensitivity Analyses&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">    &lt;a href=&#39;https://vinnyricciardi.github.io/farmsize_site/&#39;&gt;Site Index&lt;/a&gt;&lt;br&gt;</span>
+<span class="s1">&lt;/div&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
