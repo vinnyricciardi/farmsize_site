@@ -4,7 +4,7 @@
 
 # Generate the Slides and Pages
 jupyter-nbconvert Notebooks/Index.ipynb --reveal-prefix=reveal.js
-mv Notebooks/Index.html  index.html
+#mv Notebooks/Index.html  index.html
 
 cd Notebooks
 arr=(*.ipynb)
