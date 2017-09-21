@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<script>
-function password() {
-  var testV = 1;
-  var pass1 = prompt('Enter Your Password', ' ');
-  while (testV < 3) {
-    if (!pass1)
-      history.go(-1);
-    if (pass1.toLowerCase() == "Guest") {
-      alert('Password Correct');
-      window.open("https://vinnyricciardi.github.io/farmsize_site/Html/General_Results");
-      break;
-    }
-    testV += 1;
-    var pass1 =
-      prompt('Access Denied - Password Incorrect, Please Try Again.', 'Password');
-  }
-  if (pass1.toLowerCase() != "password" & testV == 3)
-    history.go(-1);
-  return " ";
-}
-</script>
-
 <title>Index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
