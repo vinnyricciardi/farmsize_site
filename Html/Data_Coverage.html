@@ -11948,11 +11948,10 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import dependencies</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
@@ -11983,7 +11982,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -12007,178 +12006,11 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Top harvest area in world</span>
-<span class="c1"># tmp = fao.loc[(fao[&#39;Element&#39;] == &#39;Area harvested&#39;) &amp; (fao[&#39;Year&#39;] == 2011)]</span>
-<span class="c1"># pivot = pd.pivot_table(tmp, index=&#39;Area&#39;, values=&#39;Value&#39;, aggfunc=np.nansum)</span>
-<span class="c1"># pivot = pivot.reset_index()</span>
-<span class="c1"># pivot = pivot.sort_values(&#39;Value&#39;)</span>
-<span class="c1"># pivot.tail(40)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># earthstat = [&#39;Algeria&#39;, </span>
-<span class="c1">#               &#39;Argentina&#39;, </span>
-<span class="c1">#               &#39;Austria&#39;, </span>
-<span class="c1">#               &#39;Denmark&#39;, </span>
-<span class="c1">#               &#39;Estonia&#39;, </span>
-<span class="c1">#               &#39;Lithuania&#39;, </span>
-<span class="c1">#               &#39;Luxembourg&#39;, </span>
-<span class="c1">#               &#39;Netherlands&#39;, </span>
-<span class="c1">#               &#39;Norway&#39;, </span>
-<span class="c1">#               &#39;Poland&#39;, </span>
-<span class="c1">#               &#39;Portugal&#39;, </span>
-<span class="c1">#               &#39;Romania&#39;, </span>
-<span class="c1">#               &#39;Slovakia&#39;, </span>
-<span class="c1">#               &#39;Cote divoire&#39;, </span>
-<span class="c1">#               &#39;Elsalvador&#39;, </span>
-<span class="c1">#               &#39;Laos&#39;, </span>
-<span class="c1">#               &#39;Panama&#39;, </span>
-<span class="c1">#               &#39;Oman&#39;, </span>
-<span class="c1">#               &#39;Uruguay&#39;, </span>
-<span class="c1">#               &#39;Spain&#39;, </span>
-<span class="c1">#               &#39;Belgium&#39;, </span>
-<span class="c1">#               &#39;Czechrepublic&#39;, </span>
-<span class="c1">#               &#39;Slovenia&#39;, </span>
-<span class="c1">#               &#39;Rwanda&#39;, </span>
-<span class="c1">#               &#39;Malta&#39;]</span>
-
-<span class="c1"># lowder = [&quot;China&quot;, </span>
-<span class="c1">#           &quot;Albania&quot;,</span>
-<span class="c1">#           &quot;Algeria&quot;,</span>
-<span class="c1">#           &quot;American Samoa&quot;,</span>
-<span class="c1">#           &quot;Argentina&quot;,</span>
-<span class="c1">#           &quot;Austria&quot;,</span>
-<span class="c1">#           &quot;Bahamas&quot;,</span>
-<span class="c1">#           &quot;Barbados&quot;,</span>
-<span class="c1">#           &quot;Belgium&quot;,</span>
-<span class="c1">#           &quot;Brazil&quot;,</span>
-<span class="c1">#           &quot;Bulgaria&quot;,</span>
-<span class="c1">#           &quot;Burkina Faso&quot;,</span>
-<span class="c1">#           &quot;Chile&quot;,</span>
-<span class="c1">#           &quot;Colombia&quot;,</span>
-<span class="c1">#           &quot;Cote d&#39;Ivoire&quot;,</span>
-<span class="c1">#           &quot;Croatia&quot;,</span>
-<span class="c1">#           &quot;Cyprus&quot;,</span>
-<span class="c1">#           &quot;Czech Republic&quot;,</span>
-<span class="c1">#           &quot;Democratic Republic of the Congo&quot;,</span>
-<span class="c1">#           &quot;Denmark&quot;,</span>
-<span class="c1">#           &quot;Dominica&quot;,</span>
-<span class="c1">#           &quot;Ecuador&quot;,</span>
-<span class="c1">#           &quot;Egypt&quot;,</span>
-<span class="c1">#           &quot;Estonia&quot;,</span>
-<span class="c1">#           &quot;Ethiopia&quot;,</span>
-<span class="c1">#           &quot;Fiji&quot;,</span>
-<span class="c1">#           &quot;Finland&quot;,</span>
-<span class="c1">#           &quot;France&quot;,</span>
-<span class="c1">#           &quot;French Polynesia&quot;,</span>
-<span class="c1">#           &quot;Georgia&quot;,</span>
-<span class="c1">#           &quot;Germany&quot;,</span>
-<span class="c1">#           &quot;Greece&quot;,</span>
-<span class="c1">#           &quot;Grenada&quot;,</span>
-<span class="c1">#           &quot;Guam&quot;,</span>
-<span class="c1">#           &quot;Guatemala&quot;,</span>
-<span class="c1">#           &quot;Guinea&quot;,</span>
-<span class="c1">#           &quot;Honduras&quot;,</span>
-<span class="c1">#           &quot;India&quot;,</span>
-<span class="c1">#           &quot;Indonesia&quot;,</span>
-<span class="c1">#           &quot;Iran (Islamic Republic of)&quot;,</span>
-<span class="c1">#           &quot;Ireland&quot;,</span>
-<span class="c1">#           &quot;Italy&quot;,</span>
-<span class="c1">#           &quot;Japan&quot;,</span>
-<span class="c1">#           &quot;Jamaica&quot;,</span>
-<span class="c1">#           &quot;Jordan&quot;,</span>
-<span class="c1">#           &quot;Korea, Rep. of&quot;,</span>
-<span class="c1">#           &quot;Kyrgyzstan&quot;,</span>
-<span class="c1">#           &quot;Lao People&#39;s Democratic Republic&quot;,</span>
-<span class="c1">#           &quot;Latvia&quot;,</span>
-<span class="c1">#           &quot;Lebanon&quot;,</span>
-<span class="c1">#           &quot;Lithuania&quot;,</span>
-<span class="c1">#           &quot;Luxembourg&quot;,</span>
-<span class="c1">#           &quot;Malta&quot;,</span>
-<span class="c1">#           &quot;Morocco&quot;,</span>
-<span class="c1">#           &quot;Myanmar&quot;,</span>
-<span class="c1">#           &quot;Namibia&quot;,</span>
-<span class="c1">#           &quot;Nepal&quot;,</span>
-<span class="c1">#           &quot;Netherlands&quot;,</span>
-<span class="c1">#           &quot;Nicaragua&quot;,</span>
-<span class="c1">#           &quot;Northern Mariana Islands&quot;,</span>
-<span class="c1">#           &quot;Norway&quot;,</span>
-<span class="c1">#           &quot;Pakistan&quot;,</span>
-<span class="c1">#           &quot;Panama&quot;,</span>
-<span class="c1">#           &quot;Paraguay&quot;,</span>
-<span class="c1">#           &quot;Peru&quot;,</span>
-<span class="c1">#           &quot;Philippines&quot;,</span>
-<span class="c1">#           &quot;Poland&quot;,</span>
-<span class="c1">#           &quot;Portugal&quot;,</span>
-<span class="c1">#           &quot;Puerto Rico&quot;,</span>
-<span class="c1">#           &quot;Qatar&quot;,</span>
-<span class="c1">#           &quot;Romania&quot;,</span>
-<span class="c1">#           &quot;Saint Lucia&quot;,</span>
-<span class="c1">#           &quot;Saint Vincent and the Grenadines&quot;,</span>
-<span class="c1">#           &quot;Samoa&quot;,</span>
-<span class="c1">#           &quot;Senegal&quot;,</span>
-<span class="c1">#           &quot;Serbia&quot;,</span>
-<span class="c1">#           &quot;Sweden&quot;,</span>
-<span class="c1">#           &quot;Switzerland&quot;,</span>
-<span class="c1">#           &quot;Thailand&quot;,</span>
-<span class="c1">#           &quot;Trinidad and Tobago&quot;,</span>
-<span class="c1">#           &quot;Turkey&quot;,</span>
-<span class="c1">#           &quot;Uganda&quot;,</span>
-<span class="c1">#           &quot;United Kingdom&quot;,</span>
-<span class="c1">#           &quot;United States of America&quot;,</span>
-<span class="c1">#           &quot;Uruguay&quot;,</span>
-<span class="c1">#           &quot;Venezuela (Bolivarian Republic of)&quot;,</span>
-<span class="c1"># #           &quot;Virgin Islands, United States&quot;,</span>
-<span class="c1">#           &quot;Yemen&quot;,</span>
-<span class="c1">#           &quot;Cook Islands&quot;,</span>
-<span class="c1">#           &quot;French Guiana&quot;,</span>
-<span class="c1">#           &quot;Guadeloupe&quot;,</span>
-<span class="c1">#           &quot;Martinique&quot;,</span>
-<span class="c1">#           &quot;R_union&quot;,</span>
-<span class="c1">#           &quot;Canada&quot;,</span>
-<span class="c1">#           &quot;China&quot;,</span>
-<span class="c1">#           &quot;Guinea Bissau&quot;,</span>
-<span class="c1">#           &quot;Hungary&quot;,</span>
-<span class="c1">#           &quot;Lesotho&quot;,</span>
-<span class="c1">#           &quot;Libya&quot;,</span>
-<span class="c1">#           &quot;Malawi&quot;,</span>
-<span class="c1">#           &quot;Mozambique&quot;,</span>
-<span class="c1">#           &quot;New Zealand&quot;,</span>
-<span class="c1">#           &quot;Slovakia&quot;,</span>
-<span class="c1">#           &quot;Slovenia&quot;,</span>
-<span class="c1">#           &quot;Spain&quot;,</span>
-<span class="c1">#           &quot;St. Kitts &amp; Nevis&quot;,</span>
-<span class="c1">#           &quot;Viet Nam&quot;,</span>
-<span class="c1">#           &quot;Australia&quot;,</span>
-<span class="c1">#           &quot;Djibouti&quot;,</span>
-<span class="c1">#           &quot;Mali&quot;,</span>
-<span class="c1">#           &quot;Togo&quot;,</span>
-<span class="c1">#           &quot;Zambia&quot;]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">lowder</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Algeria&#39;</span><span class="p">,</span> <span class="s1">&#39;American Samoa&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Australia&#39;</span><span class="p">,</span> <span class="s1">&#39;Bahamas&#39;</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Countries in Lowder et. al (2014) database on farm sizes</span>
+<span class="n">lowder</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Algeria&#39;</span><span class="p">,</span> <span class="s1">&#39;American Samoa&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Australia&#39;</span><span class="p">,</span> <span class="s1">&#39;Bahamas&#39;</span><span class="p">,</span>
           <span class="s1">&#39;Barbados&#39;</span><span class="p">,</span> <span class="s1">&#39;Canada&#39;</span><span class="p">,</span> <span class="s1">&#39;Chile&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="s1">&#39;Cook Islands&#39;</span><span class="p">,</span>
           <span class="s2">&quot;Cote d&#39;Ivoire&quot;</span><span class="p">,</span> <span class="s1">&#39;Czech Republic&#39;</span><span class="p">,</span>
           <span class="s1">&#39;Democratic Republic of the Congo&#39;</span><span class="p">,</span> <span class="s1">&#39;Djibouti&#39;</span><span class="p">,</span> <span class="s1">&#39;Dominica&#39;</span><span class="p">,</span>
@@ -12204,8 +12036,8 @@ function showthis(url) {
         <span class="n">p</span> <span class="o">=</span> <span class="n">perc</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">perc</span>
-<span class="k">print</span> <span class="s1">&#39;Percent of Ag</span><span class="se">\n</span><span class="s1">Area Production&#39;</span>
-<span class="k">print</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;--- Actual&#39;</span>
+<span class="c1"># print &#39;Percent of Ag\nArea Production&#39;</span>
+<span class="c1"># print round(100*a, 2), round(100*p, 2), &#39;--- Actual&#39;</span>
 
 
 <span class="n">has</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">has_woL</span><span class="p">)</span> <span class="o">+</span> <span class="n">lowder</span><span class="p">)</span>
@@ -12218,11 +12050,10 @@ function showthis(url) {
         <span class="n">modeled_p</span> <span class="o">=</span> <span class="n">perc</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">modeled_a</span> <span class="o">=</span> <span class="n">perc</span>
-<span class="k">print</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">modeled_p</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">modeled_a</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;--- Actual + Modeled&#39;</span>
+<span class="c1"># print round(100*modeled_a, 2), round(100*modeled_p, 2), &#39;--- Actual + Modeled&#39;</span>
 
 
 <span class="c1"># Use for arable crop and permanent crop (% cropland according to Fritz et al. 2013)</span>
-
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span><span class="n">has_woL</span><span class="p">,</span> <span class="n">has</span><span class="p">]:</span>
     <span class="n">tmp1</span> <span class="o">=</span> <span class="n">fao2</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">fao2</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
                     <span class="p">(</span><span class="n">fao2</span><span class="p">[</span><span class="s1">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Area&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
@@ -12240,44 +12071,19 @@ function showthis(url) {
     <span class="k">else</span><span class="p">:</span>
         <span class="n">wl</span> <span class="o">=</span> <span class="n">perc</span>
         
-<span class="k">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Cropland, Number&#39;</span>
-<span class="k">print</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">wol</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">has_woL</span><span class="p">),</span> <span class="s1">&#39;--- Actual&#39;</span> 
-<span class="k">print</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">wl</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">has</span><span class="p">),</span> <span class="s1">&#39;--- Actual + Modeled&#39;</span>
+<span class="c1"># print &#39;\nCropland, Number&#39;</span>
+<span class="c1"># print round(100*wol, 2), len(has_woL), &#39;--- Actual&#39; </span>
+<span class="c1"># print round(100*wl, 2), len(has), &#39;--- Actual + Modeled&#39;</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> Percent of Ag
-Area Production
-46.86 51.26 --- Actual
-91.16 87.4 --- Actual + Modeled
-
-Cropland, Number
-52.86 56 --- Actual
-85.82 115 --- Actual + Modeled
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;production_Food_kcal == production_Food_kcal&quot;</span><span class="p">)</span>
@@ -12292,11 +12098,11 @@ Cropland, Number
 <span class="n">avg_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
 <span class="n">min_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">max_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">perc_area</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">perc_area</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">wol</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">perc_prod</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">num_countries_plus_modeled</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">has</span><span class="p">)</span>
-<span class="n">perc_area_modeled</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">modeled_a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">perc_area_modeled</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">wl</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">perc_prod_modeled</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">modeled_p</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -12323,14 +12129,14 @@ Cropland, Number
 <li>Our dataset caputres the amount crop production by farms size<br></li>
 <li>55 countries are represented at either the national or subnational level.<br></li>
 <li>In total, there are 3410 national or subnational units.<br></li>
-<li>This captures 51.3% of global harvest area and 46.9% of global crop production<br></li>
+<li>This captures 52.9% of global cropland area and 46.7% of global crop production<br></li>
 <li>There are 127 crops which we were able to match with the FAO's database to calculate the amount of crops produced by farm size class for food, feed, waste, seed, proccessing, and other in terms of kcal.<br></li>
 <li>We used 34 tabulated datasets, and 21 microdatasets (i.e., data at the household record level)</li>
 <li>38 agricultural  censuses were used. Where census data was not used, nationally or subnationally representative household surveys were used (17 in total).</li>
 <li>On average the data was from 2012, with the oldest datasets from 2001 and the newest from 2015<br></li>
 <li>We used the World Census of Agriculture's (WCA) farm size categories to be consistent with other studies.<br></li>
-<li>We were able to model an additional 60 countries at the national level (115 countries total).<br></li>
-<li>The modeled results plus the direct measurements in our database cover 87.4% of global agricultural area and 91.2% of global crop production.<br><br></li>
+<li>We were able to model an additional 59 countries at the national level (114 countries total).<br></li>
+<li>The modeled results plus the direct measurements in our database cover 85.8% of global agricultural area and 91.0% of global crop production.<br><br></li>
 </ul>
 <p><a href="https://vinnyricciardi.github.io/farmsize_site/Html/General_Results">Click here to see our main findings</a></p>
 
@@ -12351,7 +12157,8 @@ Cropland, Number
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;United States of America&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;United States&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Cleaning names to match to our database</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;United States of America&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;United States&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;Bosnia and Herzegovina&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Bosnia and Herz.&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;United Republic of Tanzania&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Tanzania&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NAME_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;Russian Federation&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Russia&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -12392,7 +12199,6 @@ Cropland, Number
                                                     <span class="n">colors</span><span class="p">[</span><span class="s1">&#39;nodata&#39;</span><span class="p">]])</span>
 
 <span class="n">world</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;/home/vinny_ricciardi/Documents/Data_Library_SSD/Survey/Global/Farm_Size/Data/Shapefile/FSize.shp&#39;</span><span class="p">)</span>
-<span class="c1"># world = world.query(&quot;geometry == geometry&quot;)</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">world</span><span class="p">[</span><span class="n">world</span><span class="p">[</span><span class="s1">&#39;shpID&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;ATA&quot;</span><span class="p">]</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s2">&quot;+proj=robin&quot;</span><span class="p">)</span>
 
@@ -12424,7 +12230,8 @@ Cropland, Number
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">world2</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gpd</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth_lowres&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Cleaning names to match to geopandas world map</span>
+<span class="n">world2</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gpd</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth_lowres&#39;</span><span class="p">))</span>
 <span class="n">world2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">world2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Venezuela&#39;</span><span class="p">,</span> <span class="s1">&#39;Venezuela (Bolivarian Republic of)&#39;</span><span class="p">)</span>
 <span class="n">world2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">world2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;C</span><span class="se">\xf4</span><span class="s2">te d&#39;Ivoire&quot;</span><span class="p">,</span>  <span class="s2">&quot;Cote d&#39;Ivoire&quot;</span><span class="p">)</span>
 <span class="n">world2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">world2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Dem. Rep. Congo&#39;</span><span class="p">,</span>  <span class="s1">&#39;Democratic Republic of the Congo&#39;</span><span class="p">)</span>
@@ -12474,7 +12281,6 @@ Cropland, Number
     <span class="n">nodata</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;coverage&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s1">&#39;nodata&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="n">modeled</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;coverage&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s1">&#39;modeled&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
     <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;coverage&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="c1">#     world.plot(column=&#39;coverage&#39;, cmap=cmap, ax=ax, alpha=1, linewidth=0.1)</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 

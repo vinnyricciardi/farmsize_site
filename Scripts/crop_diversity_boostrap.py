@@ -315,28 +315,28 @@ def plot_cumulative_richness(data=None, fs_range=3, boots=1, ax=None, grouped=Tr
 print 'bootstrapping'
 
 boots = 100
-f_range = 12
-t = area_richness_parallel(farmsizes=[0, f_range], boots=boots, grouped=False)
-# t = area_richness_parallel(farmsizes=[0, 4], boots=boots, grouped=True)
+# f_range = 12
+# t = area_richness_parallel(farmsizes=[0, f_range], boots=boots, grouped=False)
+t = area_richness_parallel(farmsizes=[0, 4], boots=boots, grouped=True)
 
 
 data = t
 
-fs_order = ['(0, 1]',
-            '(1, 2]',
-            '(2, 5]',
-            '(5, 10]',
-            '(10, 20]',
-            '(20, 50]',
-            '(50, 100]',
-            '(100, 200]',
-            '(200, 500]',
-            '(500, 1000]',
-            '(1000, 100000]']
-#
-# fs_order = ['(0, 10]',
-#             '(10, 100]',
-#             '(100, 100000]']
+# fs_order = ['(0, 1]',
+#             '(1, 2]',
+#             '(2, 5]',
+#             '(5, 10]',
+#             '(10, 20]',
+#             '(20, 50]',
+#             '(50, 100]',
+#             '(100, 200]',
+#             '(200, 500]',
+#             '(500, 1000]',
+#             '(1000, 100000]']
+
+fs_order = ['(0, 10]',
+            '(10, 100]',
+            '(100, 100000]']
 
 print 'plotting'
 
