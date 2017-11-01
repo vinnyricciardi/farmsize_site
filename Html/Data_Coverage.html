@@ -12006,7 +12006,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Countries in Lowder et. al (2014) database on farm sizes</span>
@@ -12083,7 +12083,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;production_Food_kcal == production_Food_kcal&quot;</span><span class="p">)</span>
@@ -12129,14 +12129,14 @@ function showthis(url) {
 <li>Our dataset caputres the amount crop production by farms size<br></li>
 <li>55 countries are represented at either the national or subnational level.<br></li>
 <li>In total, there are 3410 national or subnational units.<br></li>
-<li>This captures 52.9% of global cropland area and 46.7% of global crop production<br></li>
+<li>This captures 52.9% of global cropland area and 46.9% of global crop production<br></li>
 <li>There are 127 crops which we were able to match with the FAO's database to calculate the amount of crops produced by farm size class for food, feed, waste, seed, proccessing, and other in terms of kcal.<br></li>
 <li>We used 34 tabulated datasets, and 21 microdatasets (i.e., data at the household record level)</li>
 <li>38 agricultural  censuses were used. Where census data was not used, nationally or subnationally representative household surveys were used (17 in total).</li>
 <li>On average the data was from 2012, with the oldest datasets from 2001 and the newest from 2015<br></li>
 <li>We used the World Census of Agriculture's (WCA) farm size categories to be consistent with other studies.<br></li>
-<li>We were able to model an additional 59 countries at the national level (114 countries total).<br></li>
-<li>The modeled results plus the direct measurements in our database cover 85.8% of global agricultural area and 91.0% of global crop production.<br><br></li>
+<li>We were able to model an additional 60 countries at the national level (115 countries total).<br></li>
+<li>The modeled results plus the direct measurements in our database cover 85.8% of global agricultural area and 91.2% of global crop production.<br><br></li>
 </ul>
 <p><a href="https://vinnyricciardi.github.io/farmsize_site/Html/General_Results">Click here to see our main findings</a></p>
 
@@ -12154,7 +12154,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Cleaning names to match to our database</span>
@@ -12174,7 +12174,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">pivoted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> 
@@ -12227,7 +12227,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Cleaning names to match to geopandas world map</span>
@@ -12256,7 +12256,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">world</span><span class="p">[</span><span class="s1">&#39;coverage&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;data&#39;</span><span class="p">]</span>
@@ -12272,7 +12272,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">try</span><span class="p">:</span>
