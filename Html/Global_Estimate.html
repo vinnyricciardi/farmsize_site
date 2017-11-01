@@ -11946,7 +11946,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
@@ -11991,7 +11991,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">read_data_init</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
@@ -12014,7 +12014,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -12048,7 +12048,7 @@ function showthis(url) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the mean area per farm size.</span>
@@ -12160,7 +12160,7 @@ f = farm size<br>
 t = type of production<br><br>
 &lt;/font&gt;</p>
 <p><br>
-Note: the FAO data does not have production by farm size, but Lowder et al. 2014 has the distributions of farm operations for 111 countries. Combined with our dataset we would have 42 country level estimates for the amount of food produced by each farm size, and 38 countries with subnational resolution.</p>
+Note: the FAO data does not have production by farm size, but Lowder et al. 2014 has the distributions of farm operations for 111 countries. Combined with our dataset we would have {{num_tog}} country level estimates for the amount of food produced by each farm size, and {{num_subnational}} countries with subnational resolution.</p>
 <p>For the countries not in our dataset we won't have the amount of food produced per farm size. We will need to estimate this based on the FAO data. First, we will measure the relationship between the FAO data and our data - comparing amount of food produced per country without grouping farm sizes. Then we will compare the relationship between the FAO data and our data when we group by farm sizes. The assumption will be that there will be less of a relationship after we group by farm sizes since the FAO production cannot be evenly allocated to each farm size class. To remedy this error, and estimate a better relationship between the FAO data and each of the farm size classes' food production in our data, we will use Lowder et al.'s distribution of farm operations per country. Ideally, we will find the amount of food produced per farm size will be a function of the FAO food production data and Lowder et. al's farm size distributions.</p>
 
 </div>

@@ -12442,7 +12442,7 @@ rel="some text">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This plot shows the percentage that each farm size contributes to each category (e.g., food, feed, other, etc.). For example, farms between 500 to 1000 ha produce 9.8% of the total food supply in our sample.</p>
+<p>This plot shows the percentage that each farm size contributes to each category (e.g., food, feed, other, etc.). For example, farms between 500 to 1000 ha produce {{round(100 * df_across.iloc[1,-2], 1)}}% of the total food supply in our sample.</p>
 
 </div>
 </div>
@@ -13089,7 +13089,7 @@ jDGBcCHGGGOMMSYQLsQYY4wxxgTyf7Wcj1jGn7Q+AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This plot also shows the percentage that each farm size contributes to each category but in cumulative percentages. For example, farms under 2 ha produce 31.7% of the total food supply in our sample and farms 50 ha and under produce 63.4% of the total food supply in our sample. Again, here is a <a href="https://vinnyricciardi.github.io/farmsize_site/Html/pivottablejs">link</a> to an interactive pivot table so you can explore the data in more detail.</p>
+<p>This plot also shows the percentage that each farm size contributes to each category but in cumulative percentages. For example, farms under 2 ha produce {{under_two}}% of the total food supply in our sample and farms 50 ha and under produce {{under_fifty}}% of the total food supply in our sample. Again, here is a <a href="https://vinnyricciardi.github.io/farmsize_site/Html/pivottablejs">link</a> to an interactive pivot table so you can explore the data in more detail.</p>
 
 </div>
 </div>
@@ -16400,7 +16400,7 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since our sample is very large (55 countries which comprise of 243274 total records due to subnational units and crop types) we cannot use p-values to determine significance between the amount of production by varying farm sizes.<br><br>
+<p>Since our sample is very large ({{number_countries}} countries which comprise of {{number_records}} total records due to subnational units and crop types) we cannot use p-values to determine significance between the amount of production by varying farm sizes.<br><br>
 To circumvent the large dataset issue, the effect size was used to determine differences between farm sizes rather than statistical significance. Cohen's d was calculated via taking the (mean of farmsize 1 - mean of farmsize 2) / (standard deviation of farmsize 1) then taking the absolute value. The relative significance was calculated by thresholds according to <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/">Sullivan and Feinn 2012</a>.</p>
 <p>Where the Cohen d's effect size values correspond to percent non-overlapping observations, as in:</p>
 <table>
@@ -17257,7 +17257,7 @@ AElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This plot shows the percentage of Food, Feed, Seed, Waste, Processing, and Other for each farm size category. For example, 58.1 % of the crops produced for farms under 1 ha is food, while 3.6% of their crop production is waste.</p>
+<p>This plot shows the percentage of Food, Feed, Seed, Waste, Processing, and Other for each farm size category. For example, {{one_food}} % of the crops produced for farms under 1 ha is food, while {{one_waste}}% of their crop production is waste.</p>
 
 </div>
 </div>
