@@ -230,7 +230,7 @@ def plot_cumulative_richness(data=None, fs_range=3, boots=1, ax=None, grouped=Tr
 
         color_p = 'Set2'
         color_n = 3
-        alpha = 0.1
+        alpha = 0.2
 
     else:
 
@@ -240,7 +240,7 @@ def plot_cumulative_richness(data=None, fs_range=3, boots=1, ax=None, grouped=Tr
 
         color_p = 'BuPu_r'
         color_n = 11
-        alpha = 0.05
+        alpha = 0.2
 
     for i in xrange(len(fs_order)):
 
@@ -261,7 +261,7 @@ def plot_cumulative_richness(data=None, fs_range=3, boots=1, ax=None, grouped=Tr
             ax.plot(y['cumsum_area_{}'.format(c)][:-1],
                     y['cumsum_items_{}'.format(c)][:-1], '-',
                     color=sns.color_palette(color_p, color_n)[i],
-                    linewidth=0.5,
+                    linewidth=2,
                     alpha=alpha)
 
         out['areas'] = out.filter(regex='area').mean(axis=1)
@@ -287,14 +287,16 @@ def plot_cumulative_richness(data=None, fs_range=3, boots=1, ax=None, grouped=Tr
         else:
             out2 = pd.concat([out2, out], axis=0)
 
-    for i in xrange(len(fs_order)):
-        x = out2.loc[out2['Farm_Sizes'] == fs_order[i]]
-
-        ax.plot(x['areas'][:-1],
-                x['items'][:-1],
-                color=sns.color_palette(color_p, color_n)[i],
-                alpha=1.,
-                linewidth=1)
+    # for i in xrange(len(fs_order)):
+    #
+    #     x = out2.loc[out2['Farm_Sizes'] == fs_order[i]]
+    #
+    #     ax.plot(x['areas'][:-1],
+    #             x['items'][:-1],
+    #             # color=sns.color_palette(color_p, color_n)[i],
+    #             color='k',
+    #             alpha=0.7,
+    #             linewidth=5)
 
     ax.set_xlabel('Cumulative area (10e9 ha)')
     ax.set_ylabel('Cumulative species richness')
@@ -314,10 +316,10 @@ def plot_cumulative_richness(data=None, fs_range=3, boots=1, ax=None, grouped=Tr
 
 print 'bootstrapping'
 
-boots = 100
-# f_range = 12
-# t = area_richness_parallel(farmsizes=[0, f_range], boots=boots, grouped=False)
-t = area_richness_parallel(farmsizes=[0, 4], boots=boots, grouped=True)
+boots = 300
+f_range = 12
+t = area_richness_parallel(farmsizes=[0, f_range], boots=boots, grouped=False)
+# t = area_richness_parallel(farmsizes=[0, 4], boots=boots, grouped=True)
 
 
 data = t
