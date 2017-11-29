@@ -23,10 +23,10 @@ for f in "${arr[@]}"; do
    # Copy all changes to pelican site
    p="~/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline"
    cp Notebooks/"$filename".ipynb p/"$filename".ipynb
+   wcho p/"$filename".ipynb
    DATE=date "+%Y-%m-%d %H:%M"
    
    echo "Title: $filename; Slug: $filename; $Date: DATE; Category: Tags: Data Harmonization; Author: Vinny Ricciardi; Summary:" > p/"$filename".ipynb-meta
-   echo $PATH
 
    # Convert the Notebook to slides
    #jupyter-nbconvert --to slides Notebooks/"$filename".ipynb --reveal-prefix=reveal.js
