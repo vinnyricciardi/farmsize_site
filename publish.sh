@@ -24,9 +24,9 @@ for f in "${arr[@]}"; do
    p="~/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline"
    cp Notebooks/"$filename".ipynb "$p"/"$filename".ipynb
    echo "$p"/"$filename".ipynb
-   DATE=date "+%Y-%m-%d %H:%M"
+   d=$(date +%Y-%m-%d)
    
-   echo "Title: $filename; Slug: $filename; $Date: DATE; Category: Tags: Data Harmonization; Author: Vinny Ricciardi; Summary:" > "$p"/"$filename".ipynb-meta
+   echo "Title: $filename; Slug: $filename; Date: $d; Category: Tags: Data Harmonization; Author: Vinny Ricciardi; Summary:" > "$p"/"$filename".ipynb-meta
 
    # Convert the Notebook to slides
    #jupyter-nbconvert --to slides Notebooks/"$filename".ipynb --reveal-prefix=reveal.js
