@@ -21,7 +21,7 @@ for f in "${arr[@]}"; do
    mv Notebooks/"$filename".html  Html/"$filename".html
 
    # Copy all changes to pelican site
-   p="~/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline"
+   p="/Users/Vinny_Ricciardi/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline"
    cp Notebooks/"$filename".ipynb "$p"/"$filename".ipynb
    echo "$p"/"$filename".ipynb
    d=$(date +%Y-%m-%d)
