@@ -26,7 +26,7 @@ for f in "${arr[@]}"; do
    echo "$p"/"$filename".ipynb
    d=$(date +%Y-%m-%d)
    
-   echo "Title: $filename; Slug: $filename; Date: $d; Category: Tags: Data Harmonization; Author: Vinny Ricciardi; Summary:" > "$p"/"$filename".ipynb-meta
+   echo "Title: $filename\nSlug: $filename\nDate: $d\nCategory: $filename\nTags: Data Harmonization\nAuthor: Vinny Ricciardi\nSummary:" > "$p"/"$filename".ipynb-meta
 
    # Convert the Notebook to slides
    #jupyter-nbconvert --to slides Notebooks/"$filename".ipynb --reveal-prefix=reveal.js
