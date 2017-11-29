@@ -24,7 +24,7 @@ for f in "${arr[@]}"; do
    p="/Users/Vinny_Ricciardi/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline"
    cp Notebooks/"$filename".ipynb "$p"/"$filename".ipynb
    echo "$p"/"$filename".ipynb
-   d=$(date +%Y-%m-%d)
+   d=$(date +%Y-%m-%d %H:%M)
    t=$(printf "Title: $filename\nSlug: $filename\nDate: $d\nCategory: $filename\nTags: Data Harmonization\nAuthor: Vinny Ricciardi\nSummary:")
    printf "$t" > "$p"/"$filename".ipynb-meta
 
