@@ -19,7 +19,14 @@ for f in "${arr[@]}"; do
    jupyter-nbconvert --to html Notebooks/"$filename".ipynb
    # Move to the Html directory
    mv Notebooks/"$filename".html  Html/"$filename".html
-   cp Notebooks/"$filename".ipynb ~/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline/"$filename".ipynb
+
+   # Copy all changes to pelican site
+   p="~/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline"
+   cp Notebooks/"$filename".ipynb PATH/"$filename".ipynb
+   DATE=date '+%Y-%m-%d %H:%M'
+   
+   echo "Title: $filename; Slug: $filename; $Date: DATE; Category: Tags: Data Harmonization; Author: Vinny Ricciardi; Summary:" > PATH/"$filename".ipynb-meta
+
 
    # Convert the Notebook to slides
    #jupyter-nbconvert --to slides Notebooks/"$filename".ipynb --reveal-prefix=reveal.js
