@@ -24,7 +24,7 @@ for f in "${arr[@]}"; do
    p="/Users/Vinny_Ricciardi/Documents/Scripts/Python/Projects/Webpage_Research/site/content/projects/SDG23_global_baseline"
    cp Notebooks/"$filename".ipynb "$p"/"$filename".ipynb
    
-   t=$(sed "s/_//g" <<< "$filename")
+   t=$(sed "s/_/ /g" <<< "$filename")
    d=$(date +%Y-%m-%d %H:%M)
 
    txt=$(printf "Title: $filename\nSlug: $filename\nDate: $d\nCategory: $filename\nTags: Data Harmonization, SDG 2.3\nAuthor: Vinny Ricciardi\nSummary:")
