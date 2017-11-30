@@ -27,7 +27,7 @@ for f in "${arr[@]}"; do
    t=$(sed "s/_/ /g" <<< "$filename")
    d=$(date +%Y-%m-%d)
 
-   txt=$(printf "Title: $filename\nSlug: $filename\nDate: $d\nCategory: $filename\nTags: DataHarmonization, SDG23\nAuthor: Vinny Ricciardi\nSummary:")
+   txt=$(printf "Title: $t\nSlug: $filename\nDate: $d\nCategory: $filename\nTags: DataHarmonization, SDG23\nAuthor: Vinny Ricciardi\nSummary:")
    printf "$txt" > "$p"/"$filename".ipynb-meta
 
    # Convert the Notebook to slides
