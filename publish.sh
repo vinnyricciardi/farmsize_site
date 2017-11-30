@@ -25,9 +25,9 @@ for f in "${arr[@]}"; do
    cp Notebooks/"$filename".ipynb "$p"/"$filename".ipynb
    
    t=$(sed "s/_/ /g" <<< "$filename")
-   d=$(date +%Y-%m-%d %H:%M)
+   d=$(date +%Y-%m-%d)
 
-   txt=$(printf "Title: $filename\nSlug: $filename\nDate: $d\nCategory: $filename\nTags: Data Harmonization, SDG 2.3\nAuthor: Vinny Ricciardi\nSummary:")
+   txt=$(printf "Title: $filename\nSlug: $filename\nDate: $d\nCategory: $filename\nTags: DataHarmonization, SDG23\nAuthor: Vinny Ricciardi\nSummary:")
    printf "$txt" > "$p"/"$filename".ipynb-meta
 
    # Convert the Notebook to slides
